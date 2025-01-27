@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="AudioFile" id="{5f569c07-2023-4cf7-ae03-3deb8f28d4f4}">
+		<property name="assetPath">
+			<value>ScreamMale4.wav</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>44.0999985</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>0.8199773242630386</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{db097d22-9d6d-451b-9052-7b69a2d0266b}</destination>
+		</relationship>
+	</object>
+</objects>
