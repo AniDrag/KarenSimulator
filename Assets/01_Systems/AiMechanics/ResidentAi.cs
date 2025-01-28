@@ -8,6 +8,165 @@ using UnityEngine.Events;
 [RequireComponent(typeof(Animator))]
 public class ResidentAi : MonoBehaviour
 {
+
+    [Header("AI stats")]
+    public int annoyance;
+    public int maxAnnoyance;
+    public float decreaseAnnoyanceSpeed;
+
+    [Header("AI Movemant Settigns")]
+    public Transform target;
+    [SerializeField] float attackRange;
+    [SerializeField] float updateSpeed;
+    [SerializeField] float attackSpeed;
+    [SerializeField] LayerMask player;
+    [SerializeField]
+    private Animator aiAnimator;
+    //[SerializeField] AnimationClip
+    [SerializeField] float attackAnimation;
+
+    [Header("Animation bool names")]
+    [SerializeField] const string isMoving = "IsMoving";
+    [SerializeField] const string isSpinting = "IsSprinting";
+    [SerializeField] const string isAttackig = "IsAttacking";
+    [SerializeField] const string isDamaged = "isDamaged";
+
+    [Header("Events")]
+    [Tooltip("Only SFX and VFX,")]
+    [SerializeField] UnityEvent playOnAttack; // Only SFX and VFX
+    [SerializeField] UnityEvent playOnTakeDamage; // Only SFX and VFX
+    [SerializeField] UnityEvent playOnMaxAnoyance;
+
+    // other
+    public Transform home;
+    private bool attacked;
+    private bool tookDamage;
+    NavMeshAgent agentAI;
+    Rigidbody aiBody;
+
+    private void Awake()
+    {
+        agentAI = GetComponent<NavMeshAgent>();
+        attackSpeed = attackAnimation;
+        //aiBody = GetComponent<Rigidbody>();
+        //aiBody.freezeRotation = true;
+    }
+    private void Start()
+    {
+        agentAI.stoppingDistance = attackRange;
+        FindPlayer();
+    }
+
+    private void Update()
+    {
+        aiAnimator.SetBool(isMoving, agentAI.velocity.magnitude > 0.01f);
+        // same but if stat is sprinting when it finds a player it sprints otherwise it pattrols witch it will only walk around.
+        if (annoyance != 0 && !tookDamage && Vector3.Distance(target.position, transform.position) < attackRange + 0.2f)
+        {
+            aiAnimator.SetBool(isAttackig, attacked);
+        }
+    }
+
+    //Patroll
+
+    IEnumerator ChasePlayer()
+    {
+        WaitForSeconds Wait = new WaitForSeconds(updateSpeed);
+        while (enabled)// this is enabled when called witc corutine and dissabled wneh corutine stop
+        {
+            // if is attacking it will wait before it will start moving so it finishes the attack anim
+            if (annoyance == 0)
+            {
+                agentAI.SetDestination(home.position);
+            }
+            else if (attacked || tookDamage)
+            {
+                agentAI.SetDestination(transform.position);
+            }
+            else
+            {
+                agentAI.SetDestination(target.position);
+            }
+            if (Vector3.Distance(target.position, transform.position) <= attackRange + 1 && !tookDamage)
+            {
+                //look at player function
+                if (!attacked)
+                {
+                    attacked = true;
+
+                    StartCoroutine(AttackPlayer());
+                }
+            }
+
+            yield return Wait;
+        }
+    }
+    void FindPlayer()
+    {
+        Collider[] hits = Physics.OverlapSphere(transform.position, 300);
+        foreach (Collider hit in hits)
+        {
+            if (hit.gameObject.CompareTag("Player"))
+            {
+                target = hit.transform;
+                Debug.Log("PlayerFound");
+                StartCoroutine(ChasePlayer());
+            }
+        }
+    }
+    //attacks player every reset of attack
+    IEnumerator AttackPlayer()
+    {
+        Debug.Log("Attacked player");
+
+        yield return new WaitForSeconds(attackSpeed);
+        attacked = false;
+
+    }
+    /// <summary> /////////////////////////////////////////////////////////////////////////////////////////////////////
+    ///                 Take Damage
+    /// </summary>//////////////////////////////////////////////////////////////////////////////////////////////////////
+    public void TakeDamage(int dpsAmount)
+    {
+        annoyance += dpsAmount;
+        if (annoyance >= maxAnnoyance)
+        {
+            annoyance = maxAnnoyance;
+            playOnMaxAnoyance?.Invoke();
+
+        }
+
+        tookDamage = true;
+
+    }
+    IEnumerator TookDamageReset()
+    {
+        yield return new WaitForSeconds(1);
+        tookDamage = false;
+    }
+    //////////////////////////////////////////////////////////////////////////////////////
+    ///         Annoyance settigns
+    //////////////////////////////////////////////////////////////////////////////////////
+
+    public IEnumerator DecreaseAnnoyanceOverTime()
+    {
+        WaitForSeconds Wait = new WaitForSeconds(decreaseAnnoyanceSpeed);
+        while (enabled && annoyance >= 0)
+        {
+            annoyance -= 1;
+
+            if (annoyance == 0)
+            {
+                StopCoroutine(DecreaseAnnoyanceOverTime());
+            }
+        }
+        yield return Wait;
+    }
+
+}
+//////////////////////////////////////////////////////////////////////////////////////////
+///
+    /*
     [Header("AI Settings (for people to use)")]
     [SerializeField] float aiSpeed;
     [SerializeField] float attackSpeed;
@@ -147,7 +306,6 @@ public class ResidentAi : MonoBehaviour
             playOnMaxAnoyance?.Invoke();
             // Optionally, add additional effects or behavior when annoyance maxes out
         }
-
         aiAnimator.SetBool("TakeDamage", true); // Trigger damage animation
         playOnTakeDamage?.Invoke(); // Trigger take damage sound/effects
 
@@ -215,7 +373,9 @@ public class ResidentAi : MonoBehaviour
         aiAgent.speed = aiSpeed;
     }
 
-    /*
+    //////////////////////////////////////////////////////////////////////////////////////
+    ///             Old
+    //////////////////////////////////////////////////////////////////////////////////////
     [Header("Ai settings (for people to use)")]
     [SerializeField] float aiSpeed;
     [SerializeField] float playKillAnimationRange;
@@ -318,5 +478,6 @@ public class ResidentAi : MonoBehaviour
     void ResetTakeDamage()
     {
         aiAnimator.SetBool("TakeDamage", false);
-    }*/
+    }
 }
+    */

@@ -112,7 +112,7 @@ public class Building : MonoBehaviour
             for (int i = 0; i < peopleToSpawn; i++)
             {
                 GameObject resident = Instantiate(residentPrefab, residentSpawnPoint.position, Quaternion.identity);
-                resident.GetComponent<ResidentAi>().GetSpawnPoint(transform);
+                resident.GetComponent<ResidentAi>().home = transform;// add adoor position
                 spawnedResidents.Add(resident);
                 residentsSpawned++;
                 gameData.multiplier += 1;
