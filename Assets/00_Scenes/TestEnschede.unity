@@ -161,6 +161,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1384851576}
     m_Modifications:
+    - target: {fileID: 3873559467058077822, guid: b273de5c65005c74a9f512845801b09a, type: 3}
+      propertyPath: m_Name
+      value: Building2_Prefab
+      objectReference: {fileID: 0}
     - target: {fileID: 4506543446959946436, guid: b273de5c65005c74a9f512845801b09a, type: 3}
       propertyPath: m_LocalScale.x
       value: 1.5
@@ -217,10 +221,6 @@ PrefabInstance:
       propertyPath: m_ConstrainProportionsScale
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 3873559467058077822, guid: b273de5c65005c74a9f512845801b09a, type: 3}
-      propertyPath: m_Name
-      value: Building2_Prefab
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -239,6 +239,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 369545275}
     m_Modifications:
+    - target: {fileID: 3741338645755666368, guid: bb55a71cac9d8554793fae720a9c0818, type: 3}
+      propertyPath: m_Name
+      value: Building1_prefab
+      objectReference: {fileID: 0}
     - target: {fileID: 7091962964629982014, guid: bb55a71cac9d8554793fae720a9c0818, type: 3}
       propertyPath: m_LocalScale.x
       value: 1.4999999
@@ -294,10 +298,6 @@ PrefabInstance:
     - target: {fileID: 7091962964629982014, guid: bb55a71cac9d8554793fae720a9c0818, type: 3}
       propertyPath: m_ConstrainProportionsScale
       value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3741338645755666368, guid: bb55a71cac9d8554793fae720a9c0818, type: 3}
-      propertyPath: m_Name
-      value: Building1_prefab
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -619,6 +619,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1199941774}
     m_Modifications:
+    - target: {fileID: 3873559467058077822, guid: b273de5c65005c74a9f512845801b09a, type: 3}
+      propertyPath: m_Name
+      value: Building2_Prefab
+      objectReference: {fileID: 0}
     - target: {fileID: 4506543446959946436, guid: b273de5c65005c74a9f512845801b09a, type: 3}
       propertyPath: m_LocalScale.x
       value: 1.4999998
@@ -674,10 +678,6 @@ PrefabInstance:
     - target: {fileID: 4506543446959946436, guid: b273de5c65005c74a9f512845801b09a, type: 3}
       propertyPath: m_ConstrainProportionsScale
       value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3873559467058077822, guid: b273de5c65005c74a9f512845801b09a, type: 3}
-      propertyPath: m_Name
-      value: Building2_Prefab
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -921,6 +921,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 721409871}
     m_Modifications:
+    - target: {fileID: 3741338645755666368, guid: bb55a71cac9d8554793fae720a9c0818, type: 3}
+      propertyPath: m_Name
+      value: Building1_prefab
+      objectReference: {fileID: 0}
     - target: {fileID: 7091962964629982014, guid: bb55a71cac9d8554793fae720a9c0818, type: 3}
       propertyPath: m_LocalScale.x
       value: 1.5
@@ -976,10 +980,6 @@ PrefabInstance:
     - target: {fileID: 7091962964629982014, guid: bb55a71cac9d8554793fae720a9c0818, type: 3}
       propertyPath: m_ConstrainProportionsScale
       value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3741338645755666368, guid: bb55a71cac9d8554793fae720a9c0818, type: 3}
-      propertyPath: m_Name
-      value: Building1_prefab
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1217,6 +1217,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 57420755}
     m_Modifications:
+    - target: {fileID: 3741338645755666368, guid: bb55a71cac9d8554793fae720a9c0818, type: 3}
+      propertyPath: m_Name
+      value: Building1_prefab
+      objectReference: {fileID: 0}
     - target: {fileID: 7091962964629982014, guid: bb55a71cac9d8554793fae720a9c0818, type: 3}
       propertyPath: m_LocalScale.x
       value: 1.5
@@ -1272,10 +1276,6 @@ PrefabInstance:
     - target: {fileID: 7091962964629982014, guid: bb55a71cac9d8554793fae720a9c0818, type: 3}
       propertyPath: m_ConstrainProportionsScale
       value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3741338645755666368, guid: bb55a71cac9d8554793fae720a9c0818, type: 3}
-      propertyPath: m_Name
-      value: Building1_prefab
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1373,6 +1373,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1380168628}
     m_Modifications:
+    - target: {fileID: 3873559467058077822, guid: b273de5c65005c74a9f512845801b09a, type: 3}
+      propertyPath: m_Name
+      value: Building2_Prefab
+      objectReference: {fileID: 0}
     - target: {fileID: 4506543446959946436, guid: b273de5c65005c74a9f512845801b09a, type: 3}
       propertyPath: m_LocalScale.x
       value: 1.5
@@ -1428,10 +1432,6 @@ PrefabInstance:
     - target: {fileID: 4506543446959946436, guid: b273de5c65005c74a9f512845801b09a, type: 3}
       propertyPath: m_ConstrainProportionsScale
       value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3873559467058077822, guid: b273de5c65005c74a9f512845801b09a, type: 3}
-      propertyPath: m_Name
-      value: Building2_Prefab
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1529,6 +1529,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 978464070}
     m_Modifications:
+    - target: {fileID: 3741338645755666368, guid: bb55a71cac9d8554793fae720a9c0818, type: 3}
+      propertyPath: m_Name
+      value: Building1_prefab
+      objectReference: {fileID: 0}
     - target: {fileID: 7091962964629982014, guid: bb55a71cac9d8554793fae720a9c0818, type: 3}
       propertyPath: m_LocalScale.x
       value: 1.5
@@ -1584,10 +1588,6 @@ PrefabInstance:
     - target: {fileID: 7091962964629982014, guid: bb55a71cac9d8554793fae720a9c0818, type: 3}
       propertyPath: m_ConstrainProportionsScale
       value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3741338645755666368, guid: bb55a71cac9d8554793fae720a9c0818, type: 3}
-      propertyPath: m_Name
-      value: Building1_prefab
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1641,6 +1641,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 398553201}
     m_Modifications:
+    - target: {fileID: 3741338645755666368, guid: bb55a71cac9d8554793fae720a9c0818, type: 3}
+      propertyPath: m_Name
+      value: Building1_prefab
+      objectReference: {fileID: 0}
     - target: {fileID: 7091962964629982014, guid: bb55a71cac9d8554793fae720a9c0818, type: 3}
       propertyPath: m_LocalScale.x
       value: 1.5
@@ -1696,10 +1700,6 @@ PrefabInstance:
     - target: {fileID: 7091962964629982014, guid: bb55a71cac9d8554793fae720a9c0818, type: 3}
       propertyPath: m_ConstrainProportionsScale
       value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3741338645755666368, guid: bb55a71cac9d8554793fae720a9c0818, type: 3}
-      propertyPath: m_Name
-      value: Building1_prefab
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1753,6 +1753,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 27439063}
     m_Modifications:
+    - target: {fileID: 3741338645755666368, guid: bb55a71cac9d8554793fae720a9c0818, type: 3}
+      propertyPath: m_Name
+      value: Building1_prefab
+      objectReference: {fileID: 0}
     - target: {fileID: 7091962964629982014, guid: bb55a71cac9d8554793fae720a9c0818, type: 3}
       propertyPath: m_LocalScale.x
       value: 1.5
@@ -1808,10 +1812,6 @@ PrefabInstance:
     - target: {fileID: 7091962964629982014, guid: bb55a71cac9d8554793fae720a9c0818, type: 3}
       propertyPath: m_ConstrainProportionsScale
       value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3741338645755666368, guid: bb55a71cac9d8554793fae720a9c0818, type: 3}
-      propertyPath: m_Name
-      value: Building1_prefab
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1943,6 +1943,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2125077748}
     m_Modifications:
+    - target: {fileID: 3873559467058077822, guid: b273de5c65005c74a9f512845801b09a, type: 3}
+      propertyPath: m_Name
+      value: Building2_Prefab
+      objectReference: {fileID: 0}
     - target: {fileID: 4506543446959946436, guid: b273de5c65005c74a9f512845801b09a, type: 3}
       propertyPath: m_LocalScale.x
       value: 1.5
@@ -1998,10 +2002,6 @@ PrefabInstance:
     - target: {fileID: 4506543446959946436, guid: b273de5c65005c74a9f512845801b09a, type: 3}
       propertyPath: m_ConstrainProportionsScale
       value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3873559467058077822, guid: b273de5c65005c74a9f512845801b09a, type: 3}
-      propertyPath: m_Name
-      value: Building2_Prefab
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2367,6 +2367,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2107740490}
     m_Modifications:
+    - target: {fileID: 3873559467058077822, guid: b273de5c65005c74a9f512845801b09a, type: 3}
+      propertyPath: m_Name
+      value: Building2_Prefab
+      objectReference: {fileID: 0}
     - target: {fileID: 4506543446959946436, guid: b273de5c65005c74a9f512845801b09a, type: 3}
       propertyPath: m_LocalScale.x
       value: 1.5
@@ -2423,10 +2427,6 @@ PrefabInstance:
       propertyPath: m_ConstrainProportionsScale
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 3873559467058077822, guid: b273de5c65005c74a9f512845801b09a, type: 3}
-      propertyPath: m_Name
-      value: Building2_Prefab
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2445,6 +2445,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 458483984}
     m_Modifications:
+    - target: {fileID: 3741338645755666368, guid: bb55a71cac9d8554793fae720a9c0818, type: 3}
+      propertyPath: m_Name
+      value: Building1_prefab
+      objectReference: {fileID: 0}
     - target: {fileID: 7091962964629982014, guid: bb55a71cac9d8554793fae720a9c0818, type: 3}
       propertyPath: m_LocalScale.x
       value: 1.5
@@ -2500,10 +2504,6 @@ PrefabInstance:
     - target: {fileID: 7091962964629982014, guid: bb55a71cac9d8554793fae720a9c0818, type: 3}
       propertyPath: m_ConstrainProportionsScale
       value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3741338645755666368, guid: bb55a71cac9d8554793fae720a9c0818, type: 3}
-      propertyPath: m_Name
-      value: Building1_prefab
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2781,6 +2781,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1019250626}
     m_Modifications:
+    - target: {fileID: 3741338645755666368, guid: bb55a71cac9d8554793fae720a9c0818, type: 3}
+      propertyPath: m_Name
+      value: Building1_prefab
+      objectReference: {fileID: 0}
     - target: {fileID: 7091962964629982014, guid: bb55a71cac9d8554793fae720a9c0818, type: 3}
       propertyPath: m_LocalScale.x
       value: 1.5
@@ -2836,10 +2840,6 @@ PrefabInstance:
     - target: {fileID: 7091962964629982014, guid: bb55a71cac9d8554793fae720a9c0818, type: 3}
       propertyPath: m_ConstrainProportionsScale
       value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3741338645755666368, guid: bb55a71cac9d8554793fae720a9c0818, type: 3}
-      propertyPath: m_Name
-      value: Building1_prefab
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -3584,6 +3584,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1380168628}
     m_Modifications:
+    - target: {fileID: 3741338645755666368, guid: bb55a71cac9d8554793fae720a9c0818, type: 3}
+      propertyPath: m_Name
+      value: Building1_prefab
+      objectReference: {fileID: 0}
     - target: {fileID: 7091962964629982014, guid: bb55a71cac9d8554793fae720a9c0818, type: 3}
       propertyPath: m_LocalScale.x
       value: 1.5
@@ -3639,10 +3643,6 @@ PrefabInstance:
     - target: {fileID: 7091962964629982014, guid: bb55a71cac9d8554793fae720a9c0818, type: 3}
       propertyPath: m_ConstrainProportionsScale
       value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3741338645755666368, guid: bb55a71cac9d8554793fae720a9c0818, type: 3}
-      propertyPath: m_Name
-      value: Building1_prefab
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -4042,6 +4042,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 303390322}
     m_Modifications:
+    - target: {fileID: 3873559467058077822, guid: b273de5c65005c74a9f512845801b09a, type: 3}
+      propertyPath: m_Name
+      value: Building2_Prefab
+      objectReference: {fileID: 0}
     - target: {fileID: 4506543446959946436, guid: b273de5c65005c74a9f512845801b09a, type: 3}
       propertyPath: m_LocalScale.x
       value: 1.5
@@ -4097,10 +4101,6 @@ PrefabInstance:
     - target: {fileID: 4506543446959946436, guid: b273de5c65005c74a9f512845801b09a, type: 3}
       propertyPath: m_ConstrainProportionsScale
       value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3873559467058077822, guid: b273de5c65005c74a9f512845801b09a, type: 3}
-      propertyPath: m_Name
-      value: Building2_Prefab
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -4198,6 +4198,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1640668293}
     m_Modifications:
+    - target: {fileID: -7511558181221131132, guid: 926fe3a9e8bad3a44b851a1f9a43daff, type: 3}
+      propertyPath: 'm_Materials.Array.data[2]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 7e93094e9a9e0ad44adc6e38f458d794, type: 2}
+    - target: {fileID: 244167615882767097, guid: dde2ae1c223c3b3478eb072b139831cf, type: 3}
+      propertyPath: m_Name
+      value: Fountain_Prefab
+      objectReference: {fileID: 0}
     - target: {fileID: 537066158405260645, guid: dde2ae1c223c3b3478eb072b139831cf, type: 3}
       propertyPath: m_LocalPosition.x
       value: -2.2999992
@@ -4237,14 +4245,6 @@ PrefabInstance:
     - target: {fileID: 537066158405260645, guid: dde2ae1c223c3b3478eb072b139831cf, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -7511558181221131132, guid: 926fe3a9e8bad3a44b851a1f9a43daff, type: 3}
-      propertyPath: 'm_Materials.Array.data[2]'
-      value: 
-      objectReference: {fileID: 2100000, guid: 7e93094e9a9e0ad44adc6e38f458d794, type: 2}
-    - target: {fileID: 244167615882767097, guid: dde2ae1c223c3b3478eb072b139831cf, type: 3}
-      propertyPath: m_Name
-      value: Fountain_Prefab
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -4532,6 +4532,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 458483984}
     m_Modifications:
+    - target: {fileID: 3873559467058077822, guid: b273de5c65005c74a9f512845801b09a, type: 3}
+      propertyPath: m_Name
+      value: Building2_Prefab
+      objectReference: {fileID: 0}
     - target: {fileID: 4506543446959946436, guid: b273de5c65005c74a9f512845801b09a, type: 3}
       propertyPath: m_LocalScale.x
       value: 1.5
@@ -4587,10 +4591,6 @@ PrefabInstance:
     - target: {fileID: 4506543446959946436, guid: b273de5c65005c74a9f512845801b09a, type: 3}
       propertyPath: m_ConstrainProportionsScale
       value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3873559467058077822, guid: b273de5c65005c74a9f512845801b09a, type: 3}
-      propertyPath: m_Name
-      value: Building2_Prefab
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -5369,6 +5369,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1740468295}
     m_Modifications:
+    - target: {fileID: 3873559467058077822, guid: b273de5c65005c74a9f512845801b09a, type: 3}
+      propertyPath: m_Name
+      value: Building2_Prefab
+      objectReference: {fileID: 0}
     - target: {fileID: 4506543446959946436, guid: b273de5c65005c74a9f512845801b09a, type: 3}
       propertyPath: m_LocalScale.x
       value: 1.5
@@ -5424,10 +5428,6 @@ PrefabInstance:
     - target: {fileID: 4506543446959946436, guid: b273de5c65005c74a9f512845801b09a, type: 3}
       propertyPath: m_ConstrainProportionsScale
       value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3873559467058077822, guid: b273de5c65005c74a9f512845801b09a, type: 3}
-      propertyPath: m_Name
-      value: Building2_Prefab
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -5447,6 +5447,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1109329693}
     m_Modifications:
+    - target: {fileID: 3873559467058077822, guid: b273de5c65005c74a9f512845801b09a, type: 3}
+      propertyPath: m_Name
+      value: Building2_Prefab
+      objectReference: {fileID: 0}
     - target: {fileID: 4506543446959946436, guid: b273de5c65005c74a9f512845801b09a, type: 3}
       propertyPath: m_LocalScale.x
       value: 1.5
@@ -5502,10 +5506,6 @@ PrefabInstance:
     - target: {fileID: 4506543446959946436, guid: b273de5c65005c74a9f512845801b09a, type: 3}
       propertyPath: m_ConstrainProportionsScale
       value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3873559467058077822, guid: b273de5c65005c74a9f512845801b09a, type: 3}
-      propertyPath: m_Name
-      value: Building2_Prefab
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -5525,6 +5525,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 721409871}
     m_Modifications:
+    - target: {fileID: 3873559467058077822, guid: b273de5c65005c74a9f512845801b09a, type: 3}
+      propertyPath: m_Name
+      value: Building2_Prefab
+      objectReference: {fileID: 0}
     - target: {fileID: 4506543446959946436, guid: b273de5c65005c74a9f512845801b09a, type: 3}
       propertyPath: m_LocalScale.x
       value: 1.5
@@ -5580,10 +5584,6 @@ PrefabInstance:
     - target: {fileID: 4506543446959946436, guid: b273de5c65005c74a9f512845801b09a, type: 3}
       propertyPath: m_ConstrainProportionsScale
       value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3873559467058077822, guid: b273de5c65005c74a9f512845801b09a, type: 3}
-      propertyPath: m_Name
-      value: Building2_Prefab
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -5836,6 +5836,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 669632227}
     m_Modifications:
+    - target: {fileID: 3741338645755666368, guid: bb55a71cac9d8554793fae720a9c0818, type: 3}
+      propertyPath: m_Name
+      value: Building1_prefab
+      objectReference: {fileID: 0}
     - target: {fileID: 7091962964629982014, guid: bb55a71cac9d8554793fae720a9c0818, type: 3}
       propertyPath: m_LocalScale.x
       value: 1.5
@@ -5891,10 +5895,6 @@ PrefabInstance:
     - target: {fileID: 7091962964629982014, guid: bb55a71cac9d8554793fae720a9c0818, type: 3}
       propertyPath: m_ConstrainProportionsScale
       value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3741338645755666368, guid: bb55a71cac9d8554793fae720a9c0818, type: 3}
-      propertyPath: m_Name
-      value: Building1_prefab
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -5992,6 +5992,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2070823156}
     m_Modifications:
+    - target: {fileID: 3873559467058077822, guid: b273de5c65005c74a9f512845801b09a, type: 3}
+      propertyPath: m_Name
+      value: Building2_Prefab
+      objectReference: {fileID: 0}
     - target: {fileID: 4506543446959946436, guid: b273de5c65005c74a9f512845801b09a, type: 3}
       propertyPath: m_LocalScale.x
       value: 1.5
@@ -6047,10 +6051,6 @@ PrefabInstance:
     - target: {fileID: 4506543446959946436, guid: b273de5c65005c74a9f512845801b09a, type: 3}
       propertyPath: m_ConstrainProportionsScale
       value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3873559467058077822, guid: b273de5c65005c74a9f512845801b09a, type: 3}
-      propertyPath: m_Name
-      value: Building2_Prefab
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -6250,6 +6250,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1391223195}
     m_Modifications:
+    - target: {fileID: 3741338645755666368, guid: bb55a71cac9d8554793fae720a9c0818, type: 3}
+      propertyPath: m_Name
+      value: Building1_prefab
+      objectReference: {fileID: 0}
     - target: {fileID: 7091962964629982014, guid: bb55a71cac9d8554793fae720a9c0818, type: 3}
       propertyPath: m_LocalScale.x
       value: 1.5
@@ -6305,10 +6309,6 @@ PrefabInstance:
     - target: {fileID: 7091962964629982014, guid: bb55a71cac9d8554793fae720a9c0818, type: 3}
       propertyPath: m_ConstrainProportionsScale
       value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3741338645755666368, guid: bb55a71cac9d8554793fae720a9c0818, type: 3}
-      propertyPath: m_Name
-      value: Building1_prefab
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -6519,6 +6519,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 471840431}
     m_Modifications:
+    - target: {fileID: 3873559467058077822, guid: b273de5c65005c74a9f512845801b09a, type: 3}
+      propertyPath: m_Name
+      value: Building2_Prefab
+      objectReference: {fileID: 0}
     - target: {fileID: 4506543446959946436, guid: b273de5c65005c74a9f512845801b09a, type: 3}
       propertyPath: m_LocalScale.x
       value: 1.4999999
@@ -6575,10 +6579,6 @@ PrefabInstance:
       propertyPath: m_ConstrainProportionsScale
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 3873559467058077822, guid: b273de5c65005c74a9f512845801b09a, type: 3}
-      propertyPath: m_Name
-      value: Building2_Prefab
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -6597,6 +6597,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 398553201}
     m_Modifications:
+    - target: {fileID: 3873559467058077822, guid: b273de5c65005c74a9f512845801b09a, type: 3}
+      propertyPath: m_Name
+      value: Building2_Prefab
+      objectReference: {fileID: 0}
     - target: {fileID: 4506543446959946436, guid: b273de5c65005c74a9f512845801b09a, type: 3}
       propertyPath: m_LocalScale.x
       value: 1.5
@@ -6652,10 +6656,6 @@ PrefabInstance:
     - target: {fileID: 4506543446959946436, guid: b273de5c65005c74a9f512845801b09a, type: 3}
       propertyPath: m_ConstrainProportionsScale
       value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3873559467058077822, guid: b273de5c65005c74a9f512845801b09a, type: 3}
-      propertyPath: m_Name
-      value: Building2_Prefab
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -6979,6 +6979,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 57420755}
     m_Modifications:
+    - target: {fileID: 3873559467058077822, guid: b273de5c65005c74a9f512845801b09a, type: 3}
+      propertyPath: m_Name
+      value: Building2_Prefab
+      objectReference: {fileID: 0}
     - target: {fileID: 4506543446959946436, guid: b273de5c65005c74a9f512845801b09a, type: 3}
       propertyPath: m_LocalScale.x
       value: 1.5
@@ -7035,10 +7039,6 @@ PrefabInstance:
       propertyPath: m_ConstrainProportionsScale
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 3873559467058077822, guid: b273de5c65005c74a9f512845801b09a, type: 3}
-      propertyPath: m_Name
-      value: Building2_Prefab
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -7057,6 +7057,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1246875696}
     m_Modifications:
+    - target: {fileID: 3741338645755666368, guid: bb55a71cac9d8554793fae720a9c0818, type: 3}
+      propertyPath: m_Name
+      value: Building1_prefab
+      objectReference: {fileID: 0}
     - target: {fileID: 7091962964629982014, guid: bb55a71cac9d8554793fae720a9c0818, type: 3}
       propertyPath: m_LocalScale.x
       value: 1.5
@@ -7112,10 +7116,6 @@ PrefabInstance:
     - target: {fileID: 7091962964629982014, guid: bb55a71cac9d8554793fae720a9c0818, type: 3}
       propertyPath: m_ConstrainProportionsScale
       value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3741338645755666368, guid: bb55a71cac9d8554793fae720a9c0818, type: 3}
-      propertyPath: m_Name
-      value: Building1_prefab
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -7403,6 +7403,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1719621558}
     m_Modifications:
+    - target: {fileID: 3741338645755666368, guid: bb55a71cac9d8554793fae720a9c0818, type: 3}
+      propertyPath: m_Name
+      value: Building1_prefab
+      objectReference: {fileID: 0}
     - target: {fileID: 7091962964629982014, guid: bb55a71cac9d8554793fae720a9c0818, type: 3}
       propertyPath: m_LocalScale.x
       value: 1.4999999
@@ -7459,10 +7463,6 @@ PrefabInstance:
       propertyPath: m_ConstrainProportionsScale
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 3741338645755666368, guid: bb55a71cac9d8554793fae720a9c0818, type: 3}
-      propertyPath: m_Name
-      value: Building1_prefab
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -7481,6 +7481,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 217770558}
     m_Modifications:
+    - target: {fileID: 3741338645755666368, guid: bb55a71cac9d8554793fae720a9c0818, type: 3}
+      propertyPath: m_Name
+      value: Building1_prefab
+      objectReference: {fileID: 0}
     - target: {fileID: 7091962964629982014, guid: bb55a71cac9d8554793fae720a9c0818, type: 3}
       propertyPath: m_LocalScale.x
       value: 1.5
@@ -7537,10 +7541,6 @@ PrefabInstance:
       propertyPath: m_ConstrainProportionsScale
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 3741338645755666368, guid: bb55a71cac9d8554793fae720a9c0818, type: 3}
-      propertyPath: m_Name
-      value: Building1_prefab
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -7559,6 +7559,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1019250626}
     m_Modifications:
+    - target: {fileID: 3873559467058077822, guid: b273de5c65005c74a9f512845801b09a, type: 3}
+      propertyPath: m_Name
+      value: Building2_Prefab
+      objectReference: {fileID: 0}
     - target: {fileID: 4506543446959946436, guid: b273de5c65005c74a9f512845801b09a, type: 3}
       propertyPath: m_LocalScale.x
       value: 1.5
@@ -7614,10 +7618,6 @@ PrefabInstance:
     - target: {fileID: 4506543446959946436, guid: b273de5c65005c74a9f512845801b09a, type: 3}
       propertyPath: m_ConstrainProportionsScale
       value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3873559467058077822, guid: b273de5c65005c74a9f512845801b09a, type: 3}
-      propertyPath: m_Name
-      value: Building2_Prefab
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -7671,6 +7671,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 669632227}
     m_Modifications:
+    - target: {fileID: 3873559467058077822, guid: b273de5c65005c74a9f512845801b09a, type: 3}
+      propertyPath: m_Name
+      value: Building2_Prefab
+      objectReference: {fileID: 0}
     - target: {fileID: 4506543446959946436, guid: b273de5c65005c74a9f512845801b09a, type: 3}
       propertyPath: m_LocalScale.x
       value: 1.5
@@ -7726,10 +7730,6 @@ PrefabInstance:
     - target: {fileID: 4506543446959946436, guid: b273de5c65005c74a9f512845801b09a, type: 3}
       propertyPath: m_ConstrainProportionsScale
       value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3873559467058077822, guid: b273de5c65005c74a9f512845801b09a, type: 3}
-      propertyPath: m_Name
-      value: Building2_Prefab
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -7827,6 +7827,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 764404425}
     m_Modifications:
+    - target: {fileID: 3741338645755666368, guid: bb55a71cac9d8554793fae720a9c0818, type: 3}
+      propertyPath: m_Name
+      value: Building1_prefab
+      objectReference: {fileID: 0}
     - target: {fileID: 7091962964629982014, guid: bb55a71cac9d8554793fae720a9c0818, type: 3}
       propertyPath: m_LocalScale.x
       value: 1.5
@@ -7882,10 +7886,6 @@ PrefabInstance:
     - target: {fileID: 7091962964629982014, guid: bb55a71cac9d8554793fae720a9c0818, type: 3}
       propertyPath: m_ConstrainProportionsScale
       value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3741338645755666368, guid: bb55a71cac9d8554793fae720a9c0818, type: 3}
-      propertyPath: m_Name
-      value: Building1_prefab
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -8248,6 +8248,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 978464070}
     m_Modifications:
+    - target: {fileID: 3873559467058077822, guid: b273de5c65005c74a9f512845801b09a, type: 3}
+      propertyPath: m_Name
+      value: Building2_Prefab
+      objectReference: {fileID: 0}
     - target: {fileID: 4506543446959946436, guid: b273de5c65005c74a9f512845801b09a, type: 3}
       propertyPath: m_LocalScale.x
       value: 1.5
@@ -8303,10 +8307,6 @@ PrefabInstance:
     - target: {fileID: 4506543446959946436, guid: b273de5c65005c74a9f512845801b09a, type: 3}
       propertyPath: m_ConstrainProportionsScale
       value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3873559467058077822, guid: b273de5c65005c74a9f512845801b09a, type: 3}
-      propertyPath: m_Name
-      value: Building2_Prefab
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -8372,6 +8372,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 303390322}
     m_Modifications:
+    - target: {fileID: 3741338645755666368, guid: bb55a71cac9d8554793fae720a9c0818, type: 3}
+      propertyPath: m_Name
+      value: Building1_prefab
+      objectReference: {fileID: 0}
     - target: {fileID: 7091962964629982014, guid: bb55a71cac9d8554793fae720a9c0818, type: 3}
       propertyPath: m_LocalScale.x
       value: 1.5
@@ -8427,10 +8431,6 @@ PrefabInstance:
     - target: {fileID: 7091962964629982014, guid: bb55a71cac9d8554793fae720a9c0818, type: 3}
       propertyPath: m_ConstrainProportionsScale
       value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3741338645755666368, guid: bb55a71cac9d8554793fae720a9c0818, type: 3}
-      propertyPath: m_Name
-      value: Building1_prefab
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -8796,6 +8796,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 508415176}
     m_Modifications:
+    - target: {fileID: 3873559467058077822, guid: b273de5c65005c74a9f512845801b09a, type: 3}
+      propertyPath: m_Name
+      value: Building2_Prefab
+      objectReference: {fileID: 0}
     - target: {fileID: 4506543446959946436, guid: b273de5c65005c74a9f512845801b09a, type: 3}
       propertyPath: m_LocalScale.x
       value: 1.4999999
@@ -8851,10 +8855,6 @@ PrefabInstance:
     - target: {fileID: 4506543446959946436, guid: b273de5c65005c74a9f512845801b09a, type: 3}
       propertyPath: m_ConstrainProportionsScale
       value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3873559467058077822, guid: b273de5c65005c74a9f512845801b09a, type: 3}
-      propertyPath: m_Name
-      value: Building2_Prefab
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -9095,6 +9095,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1288051827}
     m_Modifications:
+    - target: {fileID: 3741338645755666368, guid: bb55a71cac9d8554793fae720a9c0818, type: 3}
+      propertyPath: m_Name
+      value: Building1_prefab
+      objectReference: {fileID: 0}
     - target: {fileID: 7091962964629982014, guid: bb55a71cac9d8554793fae720a9c0818, type: 3}
       propertyPath: m_LocalScale.x
       value: 1.5
@@ -9150,10 +9154,6 @@ PrefabInstance:
     - target: {fileID: 7091962964629982014, guid: bb55a71cac9d8554793fae720a9c0818, type: 3}
       propertyPath: m_ConstrainProportionsScale
       value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3741338645755666368, guid: bb55a71cac9d8554793fae720a9c0818, type: 3}
-      propertyPath: m_Name
-      value: Building1_prefab
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -9363,6 +9363,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1232057366}
     m_Modifications:
+    - target: {fileID: 3741338645755666368, guid: bb55a71cac9d8554793fae720a9c0818, type: 3}
+      propertyPath: m_Name
+      value: Building1_prefab
+      objectReference: {fileID: 0}
     - target: {fileID: 7091962964629982014, guid: bb55a71cac9d8554793fae720a9c0818, type: 3}
       propertyPath: m_LocalScale.x
       value: 1.5
@@ -9418,10 +9422,6 @@ PrefabInstance:
     - target: {fileID: 7091962964629982014, guid: bb55a71cac9d8554793fae720a9c0818, type: 3}
       propertyPath: m_ConstrainProportionsScale
       value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3741338645755666368, guid: bb55a71cac9d8554793fae720a9c0818, type: 3}
-      propertyPath: m_Name
-      value: Building1_prefab
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -9675,6 +9675,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2122176530}
     m_Modifications:
+    - target: {fileID: 3873559467058077822, guid: b273de5c65005c74a9f512845801b09a, type: 3}
+      propertyPath: m_Name
+      value: Building2_Prefab
+      objectReference: {fileID: 0}
     - target: {fileID: 4506543446959946436, guid: b273de5c65005c74a9f512845801b09a, type: 3}
       propertyPath: m_LocalScale.x
       value: 1.5
@@ -9730,10 +9734,6 @@ PrefabInstance:
     - target: {fileID: 4506543446959946436, guid: b273de5c65005c74a9f512845801b09a, type: 3}
       propertyPath: m_ConstrainProportionsScale
       value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3873559467058077822, guid: b273de5c65005c74a9f512845801b09a, type: 3}
-      propertyPath: m_Name
-      value: Building2_Prefab
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -10167,6 +10167,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1295355270}
     m_Modifications:
+    - target: {fileID: 3873559467058077822, guid: b273de5c65005c74a9f512845801b09a, type: 3}
+      propertyPath: m_Name
+      value: Building2_Prefab
+      objectReference: {fileID: 0}
     - target: {fileID: 4506543446959946436, guid: b273de5c65005c74a9f512845801b09a, type: 3}
       propertyPath: m_LocalScale.x
       value: 1.5
@@ -10222,10 +10226,6 @@ PrefabInstance:
     - target: {fileID: 4506543446959946436, guid: b273de5c65005c74a9f512845801b09a, type: 3}
       propertyPath: m_ConstrainProportionsScale
       value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3873559467058077822, guid: b273de5c65005c74a9f512845801b09a, type: 3}
-      propertyPath: m_Name
-      value: Building2_Prefab
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -10864,6 +10864,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2105965966}
     m_Modifications:
+    - target: {fileID: 3873559467058077822, guid: b273de5c65005c74a9f512845801b09a, type: 3}
+      propertyPath: m_Name
+      value: Building2_Prefab
+      objectReference: {fileID: 0}
     - target: {fileID: 4506543446959946436, guid: b273de5c65005c74a9f512845801b09a, type: 3}
       propertyPath: m_LocalScale.x
       value: 1.5
@@ -10920,10 +10924,6 @@ PrefabInstance:
       propertyPath: m_ConstrainProportionsScale
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 3873559467058077822, guid: b273de5c65005c74a9f512845801b09a, type: 3}
-      propertyPath: m_Name
-      value: Building2_Prefab
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -10942,6 +10942,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 458931773}
     m_Modifications:
+    - target: {fileID: 3741338645755666368, guid: bb55a71cac9d8554793fae720a9c0818, type: 3}
+      propertyPath: m_Name
+      value: Building1_prefab
+      objectReference: {fileID: 0}
     - target: {fileID: 7091962964629982014, guid: bb55a71cac9d8554793fae720a9c0818, type: 3}
       propertyPath: m_LocalScale.x
       value: 1.5
@@ -10997,10 +11001,6 @@ PrefabInstance:
     - target: {fileID: 7091962964629982014, guid: bb55a71cac9d8554793fae720a9c0818, type: 3}
       propertyPath: m_ConstrainProportionsScale
       value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3741338645755666368, guid: bb55a71cac9d8554793fae720a9c0818, type: 3}
-      propertyPath: m_Name
-      value: Building1_prefab
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -11020,6 +11020,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2122176530}
     m_Modifications:
+    - target: {fileID: 3741338645755666368, guid: bb55a71cac9d8554793fae720a9c0818, type: 3}
+      propertyPath: m_Name
+      value: Building1_prefab
+      objectReference: {fileID: 0}
     - target: {fileID: 7091962964629982014, guid: bb55a71cac9d8554793fae720a9c0818, type: 3}
       propertyPath: m_LocalScale.x
       value: 1.5
@@ -11076,10 +11080,6 @@ PrefabInstance:
       propertyPath: m_ConstrainProportionsScale
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 3741338645755666368, guid: bb55a71cac9d8554793fae720a9c0818, type: 3}
-      propertyPath: m_Name
-      value: Building1_prefab
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -11098,6 +11098,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1421528976}
     m_Modifications:
+    - target: {fileID: 3873559467058077822, guid: b273de5c65005c74a9f512845801b09a, type: 3}
+      propertyPath: m_Name
+      value: Building2_Prefab
+      objectReference: {fileID: 0}
     - target: {fileID: 4506543446959946436, guid: b273de5c65005c74a9f512845801b09a, type: 3}
       propertyPath: m_LocalScale.x
       value: 1.4999999
@@ -11153,10 +11157,6 @@ PrefabInstance:
     - target: {fileID: 4506543446959946436, guid: b273de5c65005c74a9f512845801b09a, type: 3}
       propertyPath: m_ConstrainProportionsScale
       value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3873559467058077822, guid: b273de5c65005c74a9f512845801b09a, type: 3}
-      propertyPath: m_Name
-      value: Building2_Prefab
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -11836,6 +11836,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1187242855}
     m_Modifications:
+    - target: {fileID: 3741338645755666368, guid: bb55a71cac9d8554793fae720a9c0818, type: 3}
+      propertyPath: m_Name
+      value: Building1_prefab
+      objectReference: {fileID: 0}
     - target: {fileID: 7091962964629982014, guid: bb55a71cac9d8554793fae720a9c0818, type: 3}
       propertyPath: m_LocalScale.x
       value: 1.5
@@ -11891,10 +11895,6 @@ PrefabInstance:
     - target: {fileID: 7091962964629982014, guid: bb55a71cac9d8554793fae720a9c0818, type: 3}
       propertyPath: m_ConstrainProportionsScale
       value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3741338645755666368, guid: bb55a71cac9d8554793fae720a9c0818, type: 3}
-      propertyPath: m_Name
-      value: Building1_prefab
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -12226,6 +12226,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 812904138}
     m_Modifications:
+    - target: {fileID: 3873559467058077822, guid: b273de5c65005c74a9f512845801b09a, type: 3}
+      propertyPath: m_Name
+      value: Building2_Prefab
+      objectReference: {fileID: 0}
     - target: {fileID: 4506543446959946436, guid: b273de5c65005c74a9f512845801b09a, type: 3}
       propertyPath: m_LocalScale.x
       value: 1.5
@@ -12281,10 +12285,6 @@ PrefabInstance:
     - target: {fileID: 4506543446959946436, guid: b273de5c65005c74a9f512845801b09a, type: 3}
       propertyPath: m_ConstrainProportionsScale
       value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3873559467058077822, guid: b273de5c65005c74a9f512845801b09a, type: 3}
-      propertyPath: m_Name
-      value: Building2_Prefab
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -12304,6 +12304,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 458931773}
     m_Modifications:
+    - target: {fileID: 3873559467058077822, guid: b273de5c65005c74a9f512845801b09a, type: 3}
+      propertyPath: m_Name
+      value: Building2_Prefab
+      objectReference: {fileID: 0}
     - target: {fileID: 4506543446959946436, guid: b273de5c65005c74a9f512845801b09a, type: 3}
       propertyPath: m_LocalScale.x
       value: 1.5
@@ -12359,10 +12363,6 @@ PrefabInstance:
     - target: {fileID: 4506543446959946436, guid: b273de5c65005c74a9f512845801b09a, type: 3}
       propertyPath: m_ConstrainProportionsScale
       value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3873559467058077822, guid: b273de5c65005c74a9f512845801b09a, type: 3}
-      propertyPath: m_Name
-      value: Building2_Prefab
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -12389,7 +12389,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &897405947
 Transform:
   m_ObjectHideFlags: 0
@@ -12561,6 +12561,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 369545275}
     m_Modifications:
+    - target: {fileID: 3873559467058077822, guid: b273de5c65005c74a9f512845801b09a, type: 3}
+      propertyPath: m_Name
+      value: Building2_Prefab
+      objectReference: {fileID: 0}
     - target: {fileID: 4506543446959946436, guid: b273de5c65005c74a9f512845801b09a, type: 3}
       propertyPath: m_LocalScale.x
       value: 1.4999999
@@ -12616,10 +12620,6 @@ PrefabInstance:
     - target: {fileID: 4506543446959946436, guid: b273de5c65005c74a9f512845801b09a, type: 3}
       propertyPath: m_ConstrainProportionsScale
       value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3873559467058077822, guid: b273de5c65005c74a9f512845801b09a, type: 3}
-      propertyPath: m_Name
-      value: Building2_Prefab
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -12717,6 +12717,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 217770558}
     m_Modifications:
+    - target: {fileID: 3873559467058077822, guid: b273de5c65005c74a9f512845801b09a, type: 3}
+      propertyPath: m_Name
+      value: Building2_Prefab
+      objectReference: {fileID: 0}
     - target: {fileID: 4506543446959946436, guid: b273de5c65005c74a9f512845801b09a, type: 3}
       propertyPath: m_LocalScale.x
       value: 1.5
@@ -12772,10 +12776,6 @@ PrefabInstance:
     - target: {fileID: 4506543446959946436, guid: b273de5c65005c74a9f512845801b09a, type: 3}
       propertyPath: m_ConstrainProportionsScale
       value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3873559467058077822, guid: b273de5c65005c74a9f512845801b09a, type: 3}
-      propertyPath: m_Name
-      value: Building2_Prefab
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -13190,6 +13190,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 10963685}
     m_Modifications:
+    - target: {fileID: 3873559467058077822, guid: b273de5c65005c74a9f512845801b09a, type: 3}
+      propertyPath: m_Name
+      value: Building2_Prefab
+      objectReference: {fileID: 0}
     - target: {fileID: 4506543446959946436, guid: b273de5c65005c74a9f512845801b09a, type: 3}
       propertyPath: m_LocalScale.x
       value: 1.5
@@ -13245,10 +13249,6 @@ PrefabInstance:
     - target: {fileID: 4506543446959946436, guid: b273de5c65005c74a9f512845801b09a, type: 3}
       propertyPath: m_ConstrainProportionsScale
       value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3873559467058077822, guid: b273de5c65005c74a9f512845801b09a, type: 3}
-      propertyPath: m_Name
-      value: Building2_Prefab
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -13268,6 +13268,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2065843208}
     m_Modifications:
+    - target: {fileID: 3873559467058077822, guid: b273de5c65005c74a9f512845801b09a, type: 3}
+      propertyPath: m_Name
+      value: Building2_Prefab
+      objectReference: {fileID: 0}
     - target: {fileID: 4506543446959946436, guid: b273de5c65005c74a9f512845801b09a, type: 3}
       propertyPath: m_LocalScale.x
       value: 1.5
@@ -13323,10 +13327,6 @@ PrefabInstance:
     - target: {fileID: 4506543446959946436, guid: b273de5c65005c74a9f512845801b09a, type: 3}
       propertyPath: m_ConstrainProportionsScale
       value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3873559467058077822, guid: b273de5c65005c74a9f512845801b09a, type: 3}
-      propertyPath: m_Name
-      value: Building2_Prefab
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -13418,6 +13418,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1763414015}
     m_Modifications:
+    - target: {fileID: 3873559467058077822, guid: b273de5c65005c74a9f512845801b09a, type: 3}
+      propertyPath: m_Name
+      value: Building2_Prefab
+      objectReference: {fileID: 0}
     - target: {fileID: 4506543446959946436, guid: b273de5c65005c74a9f512845801b09a, type: 3}
       propertyPath: m_LocalScale.x
       value: 1.5
@@ -13473,10 +13477,6 @@ PrefabInstance:
     - target: {fileID: 4506543446959946436, guid: b273de5c65005c74a9f512845801b09a, type: 3}
       propertyPath: m_ConstrainProportionsScale
       value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3873559467058077822, guid: b273de5c65005c74a9f512845801b09a, type: 3}
-      propertyPath: m_Name
-      value: Building2_Prefab
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -13976,6 +13976,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1879276187}
     m_Modifications:
+    - target: {fileID: 3873559467058077822, guid: b273de5c65005c74a9f512845801b09a, type: 3}
+      propertyPath: m_Name
+      value: Building2_Prefab
+      objectReference: {fileID: 0}
     - target: {fileID: 4506543446959946436, guid: b273de5c65005c74a9f512845801b09a, type: 3}
       propertyPath: m_LocalScale.x
       value: 1.5
@@ -14031,10 +14035,6 @@ PrefabInstance:
     - target: {fileID: 4506543446959946436, guid: b273de5c65005c74a9f512845801b09a, type: 3}
       propertyPath: m_ConstrainProportionsScale
       value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3873559467058077822, guid: b273de5c65005c74a9f512845801b09a, type: 3}
-      propertyPath: m_Name
-      value: Building2_Prefab
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -14210,6 +14210,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 812904138}
     m_Modifications:
+    - target: {fileID: 3741338645755666368, guid: bb55a71cac9d8554793fae720a9c0818, type: 3}
+      propertyPath: m_Name
+      value: Building1_prefab
+      objectReference: {fileID: 0}
     - target: {fileID: 7091962964629982014, guid: bb55a71cac9d8554793fae720a9c0818, type: 3}
       propertyPath: m_LocalScale.x
       value: 1.5
@@ -14266,10 +14270,6 @@ PrefabInstance:
       propertyPath: m_ConstrainProportionsScale
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 3741338645755666368, guid: bb55a71cac9d8554793fae720a9c0818, type: 3}
-      propertyPath: m_Name
-      value: Building1_prefab
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -14288,6 +14288,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 764404425}
     m_Modifications:
+    - target: {fileID: 3873559467058077822, guid: b273de5c65005c74a9f512845801b09a, type: 3}
+      propertyPath: m_Name
+      value: Building2_Prefab
+      objectReference: {fileID: 0}
     - target: {fileID: 4506543446959946436, guid: b273de5c65005c74a9f512845801b09a, type: 3}
       propertyPath: m_LocalScale.x
       value: 1.5
@@ -14343,10 +14347,6 @@ PrefabInstance:
     - target: {fileID: 4506543446959946436, guid: b273de5c65005c74a9f512845801b09a, type: 3}
       propertyPath: m_ConstrainProportionsScale
       value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3873559467058077822, guid: b273de5c65005c74a9f512845801b09a, type: 3}
-      propertyPath: m_Name
-      value: Building2_Prefab
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -15177,6 +15177,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 372904571}
     m_Modifications:
+    - target: {fileID: 3873559467058077822, guid: b273de5c65005c74a9f512845801b09a, type: 3}
+      propertyPath: m_Name
+      value: Building2_Prefab
+      objectReference: {fileID: 0}
     - target: {fileID: 4506543446959946436, guid: b273de5c65005c74a9f512845801b09a, type: 3}
       propertyPath: m_LocalScale.x
       value: 1.5
@@ -15232,10 +15236,6 @@ PrefabInstance:
     - target: {fileID: 4506543446959946436, guid: b273de5c65005c74a9f512845801b09a, type: 3}
       propertyPath: m_ConstrainProportionsScale
       value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3873559467058077822, guid: b273de5c65005c74a9f512845801b09a, type: 3}
-      propertyPath: m_Name
-      value: Building2_Prefab
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -15520,6 +15520,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 227944484}
     m_Modifications:
+    - target: {fileID: 3873559467058077822, guid: b273de5c65005c74a9f512845801b09a, type: 3}
+      propertyPath: m_Name
+      value: Building2_Prefab
+      objectReference: {fileID: 0}
     - target: {fileID: 4506543446959946436, guid: b273de5c65005c74a9f512845801b09a, type: 3}
       propertyPath: m_LocalScale.x
       value: 1.4999999
@@ -15575,10 +15579,6 @@ PrefabInstance:
     - target: {fileID: 4506543446959946436, guid: b273de5c65005c74a9f512845801b09a, type: 3}
       propertyPath: m_ConstrainProportionsScale
       value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3873559467058077822, guid: b273de5c65005c74a9f512845801b09a, type: 3}
-      propertyPath: m_Name
-      value: Building2_Prefab
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -15710,6 +15710,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1232057366}
     m_Modifications:
+    - target: {fileID: 3873559467058077822, guid: b273de5c65005c74a9f512845801b09a, type: 3}
+      propertyPath: m_Name
+      value: Building2_Prefab
+      objectReference: {fileID: 0}
     - target: {fileID: 4506543446959946436, guid: b273de5c65005c74a9f512845801b09a, type: 3}
       propertyPath: m_LocalScale.x
       value: 1.5
@@ -15766,10 +15770,6 @@ PrefabInstance:
       propertyPath: m_ConstrainProportionsScale
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 3873559467058077822, guid: b273de5c65005c74a9f512845801b09a, type: 3}
-      propertyPath: m_Name
-      value: Building2_Prefab
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -15788,6 +15788,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1487058103}
     m_Modifications:
+    - target: {fileID: 3741338645755666368, guid: bb55a71cac9d8554793fae720a9c0818, type: 3}
+      propertyPath: m_Name
+      value: Building1_prefab
+      objectReference: {fileID: 0}
     - target: {fileID: 7091962964629982014, guid: bb55a71cac9d8554793fae720a9c0818, type: 3}
       propertyPath: m_LocalScale.x
       value: 1.4999999
@@ -15843,10 +15847,6 @@ PrefabInstance:
     - target: {fileID: 7091962964629982014, guid: bb55a71cac9d8554793fae720a9c0818, type: 3}
       propertyPath: m_ConstrainProportionsScale
       value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3741338645755666368, guid: bb55a71cac9d8554793fae720a9c0818, type: 3}
-      propertyPath: m_Name
-      value: Building1_prefab
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -16441,6 +16441,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 531794597}
     m_Modifications:
+    - target: {fileID: 3873559467058077822, guid: b273de5c65005c74a9f512845801b09a, type: 3}
+      propertyPath: m_Name
+      value: Building2_Prefab
+      objectReference: {fileID: 0}
     - target: {fileID: 4506543446959946436, guid: b273de5c65005c74a9f512845801b09a, type: 3}
       propertyPath: m_LocalScale.x
       value: 1.5
@@ -16496,10 +16500,6 @@ PrefabInstance:
     - target: {fileID: 4506543446959946436, guid: b273de5c65005c74a9f512845801b09a, type: 3}
       propertyPath: m_ConstrainProportionsScale
       value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3873559467058077822, guid: b273de5c65005c74a9f512845801b09a, type: 3}
-      propertyPath: m_Name
-      value: Building2_Prefab
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -16519,6 +16519,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1164443572}
     m_Modifications:
+    - target: {fileID: 3873559467058077822, guid: b273de5c65005c74a9f512845801b09a, type: 3}
+      propertyPath: m_Name
+      value: Building2_Prefab
+      objectReference: {fileID: 0}
     - target: {fileID: 4506543446959946436, guid: b273de5c65005c74a9f512845801b09a, type: 3}
       propertyPath: m_LocalScale.x
       value: 1.5
@@ -16574,10 +16578,6 @@ PrefabInstance:
     - target: {fileID: 4506543446959946436, guid: b273de5c65005c74a9f512845801b09a, type: 3}
       propertyPath: m_ConstrainProportionsScale
       value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3873559467058077822, guid: b273de5c65005c74a9f512845801b09a, type: 3}
-      propertyPath: m_Name
-      value: Building2_Prefab
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -16665,6 +16665,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1719621558}
     m_Modifications:
+    - target: {fileID: 3873559467058077822, guid: b273de5c65005c74a9f512845801b09a, type: 3}
+      propertyPath: m_Name
+      value: Building2_Prefab
+      objectReference: {fileID: 0}
     - target: {fileID: 4506543446959946436, guid: b273de5c65005c74a9f512845801b09a, type: 3}
       propertyPath: m_LocalScale.x
       value: 1.4999999
@@ -16721,10 +16725,6 @@ PrefabInstance:
       propertyPath: m_ConstrainProportionsScale
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 3873559467058077822, guid: b273de5c65005c74a9f512845801b09a, type: 3}
-      propertyPath: m_Name
-      value: Building2_Prefab
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -16743,6 +16743,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1740468295}
     m_Modifications:
+    - target: {fileID: 3741338645755666368, guid: bb55a71cac9d8554793fae720a9c0818, type: 3}
+      propertyPath: m_Name
+      value: Building1_prefab
+      objectReference: {fileID: 0}
     - target: {fileID: 7091962964629982014, guid: bb55a71cac9d8554793fae720a9c0818, type: 3}
       propertyPath: m_LocalScale.x
       value: 1.5
@@ -16798,10 +16802,6 @@ PrefabInstance:
     - target: {fileID: 7091962964629982014, guid: bb55a71cac9d8554793fae720a9c0818, type: 3}
       propertyPath: m_ConstrainProportionsScale
       value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3741338645755666368, guid: bb55a71cac9d8554793fae720a9c0818, type: 3}
-      propertyPath: m_Name
-      value: Building1_prefab
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -16899,6 +16899,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 44331452}
     m_Modifications:
+    - target: {fileID: 3873559467058077822, guid: b273de5c65005c74a9f512845801b09a, type: 3}
+      propertyPath: m_Name
+      value: Building2_Prefab
+      objectReference: {fileID: 0}
     - target: {fileID: 4506543446959946436, guid: b273de5c65005c74a9f512845801b09a, type: 3}
       propertyPath: m_LocalScale.x
       value: 1.5
@@ -16954,10 +16958,6 @@ PrefabInstance:
     - target: {fileID: 4506543446959946436, guid: b273de5c65005c74a9f512845801b09a, type: 3}
       propertyPath: m_ConstrainProportionsScale
       value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3873559467058077822, guid: b273de5c65005c74a9f512845801b09a, type: 3}
-      propertyPath: m_Name
-      value: Building2_Prefab
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -17167,6 +17167,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1164443572}
     m_Modifications:
+    - target: {fileID: 3741338645755666368, guid: bb55a71cac9d8554793fae720a9c0818, type: 3}
+      propertyPath: m_Name
+      value: Building1_prefab
+      objectReference: {fileID: 0}
     - target: {fileID: 7091962964629982014, guid: bb55a71cac9d8554793fae720a9c0818, type: 3}
       propertyPath: m_LocalScale.x
       value: 1.5
@@ -17222,10 +17226,6 @@ PrefabInstance:
     - target: {fileID: 7091962964629982014, guid: bb55a71cac9d8554793fae720a9c0818, type: 3}
       propertyPath: m_ConstrainProportionsScale
       value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3741338645755666368, guid: bb55a71cac9d8554793fae720a9c0818, type: 3}
-      propertyPath: m_Name
-      value: Building1_prefab
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -17663,6 +17663,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1945645303}
     m_Modifications:
+    - target: {fileID: 3741338645755666368, guid: bb55a71cac9d8554793fae720a9c0818, type: 3}
+      propertyPath: m_Name
+      value: Building1_prefab
+      objectReference: {fileID: 0}
     - target: {fileID: 7091962964629982014, guid: bb55a71cac9d8554793fae720a9c0818, type: 3}
       propertyPath: m_LocalScale.x
       value: 1.5
@@ -17718,10 +17722,6 @@ PrefabInstance:
     - target: {fileID: 7091962964629982014, guid: bb55a71cac9d8554793fae720a9c0818, type: 3}
       propertyPath: m_ConstrainProportionsScale
       value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3741338645755666368, guid: bb55a71cac9d8554793fae720a9c0818, type: 3}
-      propertyPath: m_Name
-      value: Building1_prefab
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -17887,6 +17887,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2107740490}
     m_Modifications:
+    - target: {fileID: 3741338645755666368, guid: bb55a71cac9d8554793fae720a9c0818, type: 3}
+      propertyPath: m_Name
+      value: Building1_prefab
+      objectReference: {fileID: 0}
     - target: {fileID: 7091962964629982014, guid: bb55a71cac9d8554793fae720a9c0818, type: 3}
       propertyPath: m_LocalScale.x
       value: 1.5
@@ -17942,10 +17946,6 @@ PrefabInstance:
     - target: {fileID: 7091962964629982014, guid: bb55a71cac9d8554793fae720a9c0818, type: 3}
       propertyPath: m_ConstrainProportionsScale
       value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3741338645755666368, guid: bb55a71cac9d8554793fae720a9c0818, type: 3}
-      propertyPath: m_Name
-      value: Building1_prefab
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -18155,6 +18155,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 10963685}
     m_Modifications:
+    - target: {fileID: 3741338645755666368, guid: bb55a71cac9d8554793fae720a9c0818, type: 3}
+      propertyPath: m_Name
+      value: Building1_prefab
+      objectReference: {fileID: 0}
     - target: {fileID: 7091962964629982014, guid: bb55a71cac9d8554793fae720a9c0818, type: 3}
       propertyPath: m_LocalScale.x
       value: 1.5
@@ -18211,10 +18215,6 @@ PrefabInstance:
       propertyPath: m_ConstrainProportionsScale
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 3741338645755666368, guid: bb55a71cac9d8554793fae720a9c0818, type: 3}
-      propertyPath: m_Name
-      value: Building1_prefab
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -18233,6 +18233,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 471840431}
     m_Modifications:
+    - target: {fileID: 3741338645755666368, guid: bb55a71cac9d8554793fae720a9c0818, type: 3}
+      propertyPath: m_Name
+      value: Building1_prefab
+      objectReference: {fileID: 0}
     - target: {fileID: 7091962964629982014, guid: bb55a71cac9d8554793fae720a9c0818, type: 3}
       propertyPath: m_LocalScale.x
       value: 1.4999999
@@ -18289,10 +18293,6 @@ PrefabInstance:
       propertyPath: m_ConstrainProportionsScale
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 3741338645755666368, guid: bb55a71cac9d8554793fae720a9c0818, type: 3}
-      propertyPath: m_Name
-      value: Building1_prefab
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -18311,6 +18311,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 484895915}
     m_Modifications:
+    - target: {fileID: 3873559467058077822, guid: b273de5c65005c74a9f512845801b09a, type: 3}
+      propertyPath: m_Name
+      value: Building2_Prefab
+      objectReference: {fileID: 0}
     - target: {fileID: 4506543446959946436, guid: b273de5c65005c74a9f512845801b09a, type: 3}
       propertyPath: m_LocalScale.x
       value: 1.5
@@ -18366,10 +18370,6 @@ PrefabInstance:
     - target: {fileID: 4506543446959946436, guid: b273de5c65005c74a9f512845801b09a, type: 3}
       propertyPath: m_ConstrainProportionsScale
       value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3873559467058077822, guid: b273de5c65005c74a9f512845801b09a, type: 3}
-      propertyPath: m_Name
-      value: Building2_Prefab
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -18389,6 +18389,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1246875696}
     m_Modifications:
+    - target: {fileID: 3873559467058077822, guid: b273de5c65005c74a9f512845801b09a, type: 3}
+      propertyPath: m_Name
+      value: Building2_Prefab
+      objectReference: {fileID: 0}
     - target: {fileID: 4506543446959946436, guid: b273de5c65005c74a9f512845801b09a, type: 3}
       propertyPath: m_LocalScale.x
       value: 1.5
@@ -18445,10 +18449,6 @@ PrefabInstance:
       propertyPath: m_ConstrainProportionsScale
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 3873559467058077822, guid: b273de5c65005c74a9f512845801b09a, type: 3}
-      propertyPath: m_Name
-      value: Building2_Prefab
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -18467,6 +18467,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 484895915}
     m_Modifications:
+    - target: {fileID: 3741338645755666368, guid: bb55a71cac9d8554793fae720a9c0818, type: 3}
+      propertyPath: m_Name
+      value: Building1_prefab
+      objectReference: {fileID: 0}
     - target: {fileID: 7091962964629982014, guid: bb55a71cac9d8554793fae720a9c0818, type: 3}
       propertyPath: m_LocalScale.x
       value: 1.5
@@ -18522,10 +18526,6 @@ PrefabInstance:
     - target: {fileID: 7091962964629982014, guid: bb55a71cac9d8554793fae720a9c0818, type: 3}
       propertyPath: m_ConstrainProportionsScale
       value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3741338645755666368, guid: bb55a71cac9d8554793fae720a9c0818, type: 3}
-      propertyPath: m_Name
-      value: Building1_prefab
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -19183,6 +19183,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2061651265}
     m_Modifications:
+    - target: {fileID: 3873559467058077822, guid: b273de5c65005c74a9f512845801b09a, type: 3}
+      propertyPath: m_Name
+      value: Building2_Prefab
+      objectReference: {fileID: 0}
     - target: {fileID: 4506543446959946436, guid: b273de5c65005c74a9f512845801b09a, type: 3}
       propertyPath: m_LocalScale.x
       value: 1.5
@@ -19239,10 +19243,6 @@ PrefabInstance:
       propertyPath: m_ConstrainProportionsScale
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 3873559467058077822, guid: b273de5c65005c74a9f512845801b09a, type: 3}
-      propertyPath: m_Name
-      value: Building2_Prefab
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -19261,6 +19261,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2070823156}
     m_Modifications:
+    - target: {fileID: 3741338645755666368, guid: bb55a71cac9d8554793fae720a9c0818, type: 3}
+      propertyPath: m_Name
+      value: Building1_prefab
+      objectReference: {fileID: 0}
     - target: {fileID: 7091962964629982014, guid: bb55a71cac9d8554793fae720a9c0818, type: 3}
       propertyPath: m_LocalScale.x
       value: 1.5
@@ -19316,10 +19320,6 @@ PrefabInstance:
     - target: {fileID: 7091962964629982014, guid: bb55a71cac9d8554793fae720a9c0818, type: 3}
       propertyPath: m_ConstrainProportionsScale
       value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3741338645755666368, guid: bb55a71cac9d8554793fae720a9c0818, type: 3}
-      propertyPath: m_Name
-      value: Building1_prefab
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -19418,6 +19418,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1391223195}
     m_Modifications:
+    - target: {fileID: 3873559467058077822, guid: b273de5c65005c74a9f512845801b09a, type: 3}
+      propertyPath: m_Name
+      value: Building2_Prefab
+      objectReference: {fileID: 0}
     - target: {fileID: 4506543446959946436, guid: b273de5c65005c74a9f512845801b09a, type: 3}
       propertyPath: m_LocalScale.x
       value: 1.5
@@ -19473,10 +19477,6 @@ PrefabInstance:
     - target: {fileID: 4506543446959946436, guid: b273de5c65005c74a9f512845801b09a, type: 3}
       propertyPath: m_ConstrainProportionsScale
       value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3873559467058077822, guid: b273de5c65005c74a9f512845801b09a, type: 3}
-      propertyPath: m_Name
-      value: Building2_Prefab
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -19764,13 +19764,25 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1640668293}
     m_Modifications:
+    - target: {fileID: -7511558181221131132, guid: 1d4c1eb1f2899ab41a64c0deee9864ed, type: 3}
+      propertyPath: 'm_Materials.Array.data[1]'
+      value: 
+      objectReference: {fileID: 2100000, guid: c7e50978f2f89f845a5cf6d899490a16, type: 2}
+    - target: {fileID: -7511558181221131132, guid: 1d4c1eb1f2899ab41a64c0deee9864ed, type: 3}
+      propertyPath: 'm_Materials.Array.data[2]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 3d219d318b433144eb238da2959d281d, type: 2}
+    - target: {fileID: 196139452612065246, guid: 18bbd970bdc98364ea63027e707caf69, type: 3}
+      propertyPath: m_Name
+      value: Church_prefab
+      objectReference: {fileID: 0}
     - target: {fileID: 8357486866070996422, guid: 18bbd970bdc98364ea63027e707caf69, type: 3}
       propertyPath: m_LocalPosition.x
       value: -7.446472
       objectReference: {fileID: 0}
     - target: {fileID: 8357486866070996422, guid: 18bbd970bdc98364ea63027e707caf69, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0
+      value: 0.4
       objectReference: {fileID: 0}
     - target: {fileID: 8357486866070996422, guid: 18bbd970bdc98364ea63027e707caf69, type: 3}
       propertyPath: m_LocalPosition.z
@@ -19803,18 +19815,6 @@ PrefabInstance:
     - target: {fileID: 8357486866070996422, guid: 18bbd970bdc98364ea63027e707caf69, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -7511558181221131132, guid: 1d4c1eb1f2899ab41a64c0deee9864ed, type: 3}
-      propertyPath: 'm_Materials.Array.data[1]'
-      value: 
-      objectReference: {fileID: 2100000, guid: c7e50978f2f89f845a5cf6d899490a16, type: 2}
-    - target: {fileID: -7511558181221131132, guid: 1d4c1eb1f2899ab41a64c0deee9864ed, type: 3}
-      propertyPath: 'm_Materials.Array.data[2]'
-      value: 
-      objectReference: {fileID: 2100000, guid: 3d219d318b433144eb238da2959d281d, type: 2}
-    - target: {fileID: 196139452612065246, guid: 18bbd970bdc98364ea63027e707caf69, type: 3}
-      propertyPath: m_Name
-      value: Church_prefab
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -19990,6 +19990,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 531794597}
     m_Modifications:
+    - target: {fileID: 3741338645755666368, guid: bb55a71cac9d8554793fae720a9c0818, type: 3}
+      propertyPath: m_Name
+      value: Building1_prefab
+      objectReference: {fileID: 0}
     - target: {fileID: 7091962964629982014, guid: bb55a71cac9d8554793fae720a9c0818, type: 3}
       propertyPath: m_LocalScale.x
       value: 1.5
@@ -20045,10 +20049,6 @@ PrefabInstance:
     - target: {fileID: 7091962964629982014, guid: bb55a71cac9d8554793fae720a9c0818, type: 3}
       propertyPath: m_ConstrainProportionsScale
       value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3741338645755666368, guid: bb55a71cac9d8554793fae720a9c0818, type: 3}
-      propertyPath: m_Name
-      value: Building1_prefab
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -20146,6 +20146,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 27439063}
     m_Modifications:
+    - target: {fileID: 3873559467058077822, guid: b273de5c65005c74a9f512845801b09a, type: 3}
+      propertyPath: m_Name
+      value: Building2_Prefab
+      objectReference: {fileID: 0}
     - target: {fileID: 4506543446959946436, guid: b273de5c65005c74a9f512845801b09a, type: 3}
       propertyPath: m_LocalScale.x
       value: 1.5
@@ -20202,10 +20206,6 @@ PrefabInstance:
       propertyPath: m_ConstrainProportionsScale
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 3873559467058077822, guid: b273de5c65005c74a9f512845801b09a, type: 3}
-      propertyPath: m_Name
-      value: Building2_Prefab
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -20258,6 +20258,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 227944484}
     m_Modifications:
+    - target: {fileID: 3741338645755666368, guid: bb55a71cac9d8554793fae720a9c0818, type: 3}
+      propertyPath: m_Name
+      value: Building1_prefab
+      objectReference: {fileID: 0}
     - target: {fileID: 7091962964629982014, guid: bb55a71cac9d8554793fae720a9c0818, type: 3}
       propertyPath: m_LocalScale.x
       value: 1.4999999
@@ -20313,10 +20317,6 @@ PrefabInstance:
     - target: {fileID: 7091962964629982014, guid: bb55a71cac9d8554793fae720a9c0818, type: 3}
       propertyPath: m_ConstrainProportionsScale
       value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3741338645755666368, guid: bb55a71cac9d8554793fae720a9c0818, type: 3}
-      propertyPath: m_Name
-      value: Building1_prefab
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -20526,6 +20526,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 508415176}
     m_Modifications:
+    - target: {fileID: 3741338645755666368, guid: bb55a71cac9d8554793fae720a9c0818, type: 3}
+      propertyPath: m_Name
+      value: Building1_prefab
+      objectReference: {fileID: 0}
     - target: {fileID: 7091962964629982014, guid: bb55a71cac9d8554793fae720a9c0818, type: 3}
       propertyPath: m_LocalScale.x
       value: 1.4999999
@@ -20581,10 +20585,6 @@ PrefabInstance:
     - target: {fileID: 7091962964629982014, guid: bb55a71cac9d8554793fae720a9c0818, type: 3}
       propertyPath: m_ConstrainProportionsScale
       value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3741338645755666368, guid: bb55a71cac9d8554793fae720a9c0818, type: 3}
-      propertyPath: m_Name
-      value: Building1_prefab
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -20682,6 +20682,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1961284375}
     m_Modifications:
+    - target: {fileID: 3873559467058077822, guid: b273de5c65005c74a9f512845801b09a, type: 3}
+      propertyPath: m_Name
+      value: Building2_Prefab
+      objectReference: {fileID: 0}
     - target: {fileID: 4506543446959946436, guid: b273de5c65005c74a9f512845801b09a, type: 3}
       propertyPath: m_LocalScale.x
       value: 1.4999999
@@ -20696,7 +20700,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4506543446959946436, guid: b273de5c65005c74a9f512845801b09a, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -41.26628
+      value: -42.346283
       objectReference: {fileID: 0}
     - target: {fileID: 4506543446959946436, guid: b273de5c65005c74a9f512845801b09a, type: 3}
       propertyPath: m_LocalPosition.y
@@ -20704,7 +20708,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4506543446959946436, guid: b273de5c65005c74a9f512845801b09a, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -73.69615
+      value: -67.456154
       objectReference: {fileID: 0}
     - target: {fileID: 4506543446959946436, guid: b273de5c65005c74a9f512845801b09a, type: 3}
       propertyPath: m_LocalRotation.w
@@ -20737,10 +20741,6 @@ PrefabInstance:
     - target: {fileID: 4506543446959946436, guid: b273de5c65005c74a9f512845801b09a, type: 3}
       propertyPath: m_ConstrainProportionsScale
       value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3873559467058077822, guid: b273de5c65005c74a9f512845801b09a, type: 3}
-      propertyPath: m_Name
-      value: Building2_Prefab
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -21320,6 +21320,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1005072934}
     m_Modifications:
+    - target: {fileID: 3873559467058077822, guid: b273de5c65005c74a9f512845801b09a, type: 3}
+      propertyPath: m_Name
+      value: Building2_Prefab
+      objectReference: {fileID: 0}
     - target: {fileID: 4506543446959946436, guid: b273de5c65005c74a9f512845801b09a, type: 3}
       propertyPath: m_LocalScale.x
       value: 1.5
@@ -21375,10 +21379,6 @@ PrefabInstance:
     - target: {fileID: 4506543446959946436, guid: b273de5c65005c74a9f512845801b09a, type: 3}
       propertyPath: m_ConstrainProportionsScale
       value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3873559467058077822, guid: b273de5c65005c74a9f512845801b09a, type: 3}
-      propertyPath: m_Name
-      value: Building2_Prefab
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -21554,6 +21554,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 926386748}
     m_Modifications:
+    - target: {fileID: 3873559467058077822, guid: b273de5c65005c74a9f512845801b09a, type: 3}
+      propertyPath: m_Name
+      value: Building2_Prefab
+      objectReference: {fileID: 0}
     - target: {fileID: 4506543446959946436, guid: b273de5c65005c74a9f512845801b09a, type: 3}
       propertyPath: m_LocalScale.x
       value: 1.4999999
@@ -21609,10 +21613,6 @@ PrefabInstance:
     - target: {fileID: 4506543446959946436, guid: b273de5c65005c74a9f512845801b09a, type: 3}
       propertyPath: m_ConstrainProportionsScale
       value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3873559467058077822, guid: b273de5c65005c74a9f512845801b09a, type: 3}
-      propertyPath: m_Name
-      value: Building2_Prefab
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -22012,6 +22012,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1199941774}
     m_Modifications:
+    - target: {fileID: 3741338645755666368, guid: bb55a71cac9d8554793fae720a9c0818, type: 3}
+      propertyPath: m_Name
+      value: Building1_prefab
+      objectReference: {fileID: 0}
     - target: {fileID: 7091962964629982014, guid: bb55a71cac9d8554793fae720a9c0818, type: 3}
       propertyPath: m_LocalScale.x
       value: 1.4999998
@@ -22067,10 +22071,6 @@ PrefabInstance:
     - target: {fileID: 7091962964629982014, guid: bb55a71cac9d8554793fae720a9c0818, type: 3}
       propertyPath: m_ConstrainProportionsScale
       value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3741338645755666368, guid: bb55a71cac9d8554793fae720a9c0818, type: 3}
-      propertyPath: m_Name
-      value: Building1_prefab
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -22682,6 +22682,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 372904571}
     m_Modifications:
+    - target: {fileID: 3741338645755666368, guid: bb55a71cac9d8554793fae720a9c0818, type: 3}
+      propertyPath: m_Name
+      value: Building1_prefab
+      objectReference: {fileID: 0}
     - target: {fileID: 7091962964629982014, guid: bb55a71cac9d8554793fae720a9c0818, type: 3}
       propertyPath: m_LocalScale.x
       value: 1.5
@@ -22737,10 +22741,6 @@ PrefabInstance:
     - target: {fileID: 7091962964629982014, guid: bb55a71cac9d8554793fae720a9c0818, type: 3}
       propertyPath: m_ConstrainProportionsScale
       value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3741338645755666368, guid: bb55a71cac9d8554793fae720a9c0818, type: 3}
-      propertyPath: m_Name
-      value: Building1_prefab
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -22838,6 +22838,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1239805555}
     m_Modifications:
+    - target: {fileID: 3873559467058077822, guid: b273de5c65005c74a9f512845801b09a, type: 3}
+      propertyPath: m_Name
+      value: Building2_Prefab
+      objectReference: {fileID: 0}
     - target: {fileID: 4506543446959946436, guid: b273de5c65005c74a9f512845801b09a, type: 3}
       propertyPath: m_LocalScale.x
       value: 1.5
@@ -22894,10 +22898,6 @@ PrefabInstance:
       propertyPath: m_ConstrainProportionsScale
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 3873559467058077822, guid: b273de5c65005c74a9f512845801b09a, type: 3}
-      propertyPath: m_Name
-      value: Building2_Prefab
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -22916,6 +22916,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 926386748}
     m_Modifications:
+    - target: {fileID: 3741338645755666368, guid: bb55a71cac9d8554793fae720a9c0818, type: 3}
+      propertyPath: m_Name
+      value: Building1_prefab
+      objectReference: {fileID: 0}
     - target: {fileID: 7091962964629982014, guid: bb55a71cac9d8554793fae720a9c0818, type: 3}
       propertyPath: m_LocalScale.x
       value: 1.4999999
@@ -22971,10 +22975,6 @@ PrefabInstance:
     - target: {fileID: 7091962964629982014, guid: bb55a71cac9d8554793fae720a9c0818, type: 3}
       propertyPath: m_ConstrainProportionsScale
       value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3741338645755666368, guid: bb55a71cac9d8554793fae720a9c0818, type: 3}
-      propertyPath: m_Name
-      value: Building1_prefab
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -23150,6 +23150,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1005072934}
     m_Modifications:
+    - target: {fileID: 3741338645755666368, guid: bb55a71cac9d8554793fae720a9c0818, type: 3}
+      propertyPath: m_Name
+      value: Building1_prefab
+      objectReference: {fileID: 0}
     - target: {fileID: 7091962964629982014, guid: bb55a71cac9d8554793fae720a9c0818, type: 3}
       propertyPath: m_LocalScale.x
       value: 1.5
@@ -23205,10 +23209,6 @@ PrefabInstance:
     - target: {fileID: 7091962964629982014, guid: bb55a71cac9d8554793fae720a9c0818, type: 3}
       propertyPath: m_ConstrainProportionsScale
       value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3741338645755666368, guid: bb55a71cac9d8554793fae720a9c0818, type: 3}
-      propertyPath: m_Name
-      value: Building1_prefab
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -23228,6 +23228,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2061651265}
     m_Modifications:
+    - target: {fileID: 3741338645755666368, guid: bb55a71cac9d8554793fae720a9c0818, type: 3}
+      propertyPath: m_Name
+      value: Building1_prefab
+      objectReference: {fileID: 0}
     - target: {fileID: 7091962964629982014, guid: bb55a71cac9d8554793fae720a9c0818, type: 3}
       propertyPath: m_LocalScale.x
       value: 1.5
@@ -23283,10 +23287,6 @@ PrefabInstance:
     - target: {fileID: 7091962964629982014, guid: bb55a71cac9d8554793fae720a9c0818, type: 3}
       propertyPath: m_ConstrainProportionsScale
       value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3741338645755666368, guid: bb55a71cac9d8554793fae720a9c0818, type: 3}
-      propertyPath: m_Name
-      value: Building1_prefab
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -23632,6 +23632,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 289932508}
     m_Modifications:
+    - target: {fileID: 3741338645755666368, guid: bb55a71cac9d8554793fae720a9c0818, type: 3}
+      propertyPath: m_Name
+      value: Building1_prefab
+      objectReference: {fileID: 0}
     - target: {fileID: 7091962964629982014, guid: bb55a71cac9d8554793fae720a9c0818, type: 3}
       propertyPath: m_LocalScale.x
       value: 1.5
@@ -23687,10 +23691,6 @@ PrefabInstance:
     - target: {fileID: 7091962964629982014, guid: bb55a71cac9d8554793fae720a9c0818, type: 3}
       propertyPath: m_ConstrainProportionsScale
       value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3741338645755666368, guid: bb55a71cac9d8554793fae720a9c0818, type: 3}
-      propertyPath: m_Name
-      value: Building1_prefab
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -23788,6 +23788,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1763414015}
     m_Modifications:
+    - target: {fileID: 3741338645755666368, guid: bb55a71cac9d8554793fae720a9c0818, type: 3}
+      propertyPath: m_Name
+      value: Building1_prefab
+      objectReference: {fileID: 0}
     - target: {fileID: 7091962964629982014, guid: bb55a71cac9d8554793fae720a9c0818, type: 3}
       propertyPath: m_LocalScale.x
       value: 1.5
@@ -23843,10 +23847,6 @@ PrefabInstance:
     - target: {fileID: 7091962964629982014, guid: bb55a71cac9d8554793fae720a9c0818, type: 3}
       propertyPath: m_ConstrainProportionsScale
       value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3741338645755666368, guid: bb55a71cac9d8554793fae720a9c0818, type: 3}
-      propertyPath: m_Name
-      value: Building1_prefab
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -23866,6 +23866,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1109329693}
     m_Modifications:
+    - target: {fileID: 3741338645755666368, guid: bb55a71cac9d8554793fae720a9c0818, type: 3}
+      propertyPath: m_Name
+      value: Building1_prefab
+      objectReference: {fileID: 0}
     - target: {fileID: 7091962964629982014, guid: bb55a71cac9d8554793fae720a9c0818, type: 3}
       propertyPath: m_LocalScale.x
       value: 1.5
@@ -23921,10 +23925,6 @@ PrefabInstance:
     - target: {fileID: 7091962964629982014, guid: bb55a71cac9d8554793fae720a9c0818, type: 3}
       propertyPath: m_ConstrainProportionsScale
       value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3741338645755666368, guid: bb55a71cac9d8554793fae720a9c0818, type: 3}
-      propertyPath: m_Name
-      value: Building1_prefab
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -24594,6 +24594,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 978464070}
     m_Modifications:
+    - target: {fileID: 3873559467058077822, guid: b273de5c65005c74a9f512845801b09a, type: 3}
+      propertyPath: m_Name
+      value: Building2_Prefab (1)
+      objectReference: {fileID: 0}
     - target: {fileID: 4506543446959946436, guid: b273de5c65005c74a9f512845801b09a, type: 3}
       propertyPath: m_LocalScale.x
       value: 1.5
@@ -24650,10 +24654,6 @@ PrefabInstance:
       propertyPath: m_ConstrainProportionsScale
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 3873559467058077822, guid: b273de5c65005c74a9f512845801b09a, type: 3}
-      propertyPath: m_Name
-      value: Building2_Prefab (1)
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -24672,6 +24672,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1961284375}
     m_Modifications:
+    - target: {fileID: 3741338645755666368, guid: bb55a71cac9d8554793fae720a9c0818, type: 3}
+      propertyPath: m_Name
+      value: Building1_prefab
+      objectReference: {fileID: 0}
     - target: {fileID: 7091962964629982014, guid: bb55a71cac9d8554793fae720a9c0818, type: 3}
       propertyPath: m_LocalScale.x
       value: 1.4999999
@@ -24686,7 +24690,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7091962964629982014, guid: bb55a71cac9d8554793fae720a9c0818, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -41.51354
+      value: -38.38
       objectReference: {fileID: 0}
     - target: {fileID: 7091962964629982014, guid: bb55a71cac9d8554793fae720a9c0818, type: 3}
       propertyPath: m_LocalPosition.y
@@ -24694,11 +24698,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7091962964629982014, guid: bb55a71cac9d8554793fae720a9c0818, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -72.50081
+      value: -66.83
       objectReference: {fileID: 0}
     - target: {fileID: 7091962964629982014, guid: bb55a71cac9d8554793fae720a9c0818, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.085492715
+      value: -0.36688873
       objectReference: {fileID: 0}
     - target: {fileID: 7091962964629982014, guid: bb55a71cac9d8554793fae720a9c0818, type: 3}
       propertyPath: m_LocalRotation.x
@@ -24706,7 +24710,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7091962964629982014, guid: bb55a71cac9d8554793fae720a9c0818, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.9963388
+      value: 0.9302649
       objectReference: {fileID: 0}
     - target: {fileID: 7091962964629982014, guid: bb55a71cac9d8554793fae720a9c0818, type: 3}
       propertyPath: m_LocalRotation.z
@@ -24718,7 +24722,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7091962964629982014, guid: bb55a71cac9d8554793fae720a9c0818, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: 170.191
+      value: 223.048
       objectReference: {fileID: 0}
     - target: {fileID: 7091962964629982014, guid: bb55a71cac9d8554793fae720a9c0818, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
@@ -24727,10 +24731,6 @@ PrefabInstance:
     - target: {fileID: 7091962964629982014, guid: bb55a71cac9d8554793fae720a9c0818, type: 3}
       propertyPath: m_ConstrainProportionsScale
       value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3741338645755666368, guid: bb55a71cac9d8554793fae720a9c0818, type: 3}
-      propertyPath: m_Name
-      value: Building1_prefab
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -24750,6 +24750,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 289932508}
     m_Modifications:
+    - target: {fileID: 3873559467058077822, guid: b273de5c65005c74a9f512845801b09a, type: 3}
+      propertyPath: m_Name
+      value: Building2_Prefab
+      objectReference: {fileID: 0}
     - target: {fileID: 4506543446959946436, guid: b273de5c65005c74a9f512845801b09a, type: 3}
       propertyPath: m_LocalScale.x
       value: 1.5
@@ -24805,10 +24809,6 @@ PrefabInstance:
     - target: {fileID: 4506543446959946436, guid: b273de5c65005c74a9f512845801b09a, type: 3}
       propertyPath: m_ConstrainProportionsScale
       value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3873559467058077822, guid: b273de5c65005c74a9f512845801b09a, type: 3}
-      propertyPath: m_Name
-      value: Building2_Prefab
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -25563,6 +25563,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2065843208}
     m_Modifications:
+    - target: {fileID: 3741338645755666368, guid: bb55a71cac9d8554793fae720a9c0818, type: 3}
+      propertyPath: m_Name
+      value: Building1_prefab
+      objectReference: {fileID: 0}
     - target: {fileID: 7091962964629982014, guid: bb55a71cac9d8554793fae720a9c0818, type: 3}
       propertyPath: m_LocalScale.x
       value: 1.5
@@ -25618,10 +25622,6 @@ PrefabInstance:
     - target: {fileID: 7091962964629982014, guid: bb55a71cac9d8554793fae720a9c0818, type: 3}
       propertyPath: m_ConstrainProportionsScale
       value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3741338645755666368, guid: bb55a71cac9d8554793fae720a9c0818, type: 3}
-      propertyPath: m_Name
-      value: Building1_prefab
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -25641,6 +25641,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1295355270}
     m_Modifications:
+    - target: {fileID: 3741338645755666368, guid: bb55a71cac9d8554793fae720a9c0818, type: 3}
+      propertyPath: m_Name
+      value: Building1_prefab
+      objectReference: {fileID: 0}
     - target: {fileID: 7091962964629982014, guid: bb55a71cac9d8554793fae720a9c0818, type: 3}
       propertyPath: m_LocalScale.x
       value: 1.5
@@ -25696,10 +25700,6 @@ PrefabInstance:
     - target: {fileID: 7091962964629982014, guid: bb55a71cac9d8554793fae720a9c0818, type: 3}
       propertyPath: m_ConstrainProportionsScale
       value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3741338645755666368, guid: bb55a71cac9d8554793fae720a9c0818, type: 3}
-      propertyPath: m_Name
-      value: Building1_prefab
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -25831,6 +25831,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1239805555}
     m_Modifications:
+    - target: {fileID: 3741338645755666368, guid: bb55a71cac9d8554793fae720a9c0818, type: 3}
+      propertyPath: m_Name
+      value: Building1_prefab
+      objectReference: {fileID: 0}
     - target: {fileID: 7091962964629982014, guid: bb55a71cac9d8554793fae720a9c0818, type: 3}
       propertyPath: m_LocalScale.x
       value: 1.5
@@ -25886,10 +25890,6 @@ PrefabInstance:
     - target: {fileID: 7091962964629982014, guid: bb55a71cac9d8554793fae720a9c0818, type: 3}
       propertyPath: m_ConstrainProportionsScale
       value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3741338645755666368, guid: bb55a71cac9d8554793fae720a9c0818, type: 3}
-      propertyPath: m_Name
-      value: Building1_prefab
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -25943,6 +25943,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2125077748}
     m_Modifications:
+    - target: {fileID: 3741338645755666368, guid: bb55a71cac9d8554793fae720a9c0818, type: 3}
+      propertyPath: m_Name
+      value: Building1_prefab
+      objectReference: {fileID: 0}
     - target: {fileID: 7091962964629982014, guid: bb55a71cac9d8554793fae720a9c0818, type: 3}
       propertyPath: m_LocalScale.x
       value: 1.5
@@ -25998,10 +26002,6 @@ PrefabInstance:
     - target: {fileID: 7091962964629982014, guid: bb55a71cac9d8554793fae720a9c0818, type: 3}
       propertyPath: m_ConstrainProportionsScale
       value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3741338645755666368, guid: bb55a71cac9d8554793fae720a9c0818, type: 3}
-      propertyPath: m_Name
-      value: Building1_prefab
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -26093,6 +26093,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 44331452}
     m_Modifications:
+    - target: {fileID: 3741338645755666368, guid: bb55a71cac9d8554793fae720a9c0818, type: 3}
+      propertyPath: m_Name
+      value: Building1_prefab
+      objectReference: {fileID: 0}
     - target: {fileID: 7091962964629982014, guid: bb55a71cac9d8554793fae720a9c0818, type: 3}
       propertyPath: m_LocalScale.x
       value: 1.5
@@ -26148,10 +26152,6 @@ PrefabInstance:
     - target: {fileID: 7091962964629982014, guid: bb55a71cac9d8554793fae720a9c0818, type: 3}
       propertyPath: m_ConstrainProportionsScale
       value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3741338645755666368, guid: bb55a71cac9d8554793fae720a9c0818, type: 3}
-      propertyPath: m_Name
-      value: Building1_prefab
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -26249,6 +26249,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2105965966}
     m_Modifications:
+    - target: {fileID: 3741338645755666368, guid: bb55a71cac9d8554793fae720a9c0818, type: 3}
+      propertyPath: m_Name
+      value: Building1_prefab
+      objectReference: {fileID: 0}
     - target: {fileID: 7091962964629982014, guid: bb55a71cac9d8554793fae720a9c0818, type: 3}
       propertyPath: m_LocalScale.x
       value: 1.5
@@ -26304,10 +26308,6 @@ PrefabInstance:
     - target: {fileID: 7091962964629982014, guid: bb55a71cac9d8554793fae720a9c0818, type: 3}
       propertyPath: m_ConstrainProportionsScale
       value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3741338645755666368, guid: bb55a71cac9d8554793fae720a9c0818, type: 3}
-      propertyPath: m_Name
-      value: Building1_prefab
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -26717,6 +26717,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1879276187}
     m_Modifications:
+    - target: {fileID: 3741338645755666368, guid: bb55a71cac9d8554793fae720a9c0818, type: 3}
+      propertyPath: m_Name
+      value: Building1_prefab
+      objectReference: {fileID: 0}
     - target: {fileID: 7091962964629982014, guid: bb55a71cac9d8554793fae720a9c0818, type: 3}
       propertyPath: m_LocalScale.x
       value: 1.5
@@ -26772,10 +26776,6 @@ PrefabInstance:
     - target: {fileID: 7091962964629982014, guid: bb55a71cac9d8554793fae720a9c0818, type: 3}
       propertyPath: m_ConstrainProportionsScale
       value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3741338645755666368, guid: bb55a71cac9d8554793fae720a9c0818, type: 3}
-      propertyPath: m_Name
-      value: Building1_prefab
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -27157,6 +27157,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1288051827}
     m_Modifications:
+    - target: {fileID: 3873559467058077822, guid: b273de5c65005c74a9f512845801b09a, type: 3}
+      propertyPath: m_Name
+      value: Building2_Prefab
+      objectReference: {fileID: 0}
     - target: {fileID: 4506543446959946436, guid: b273de5c65005c74a9f512845801b09a, type: 3}
       propertyPath: m_LocalScale.x
       value: 1.5
@@ -27213,10 +27217,6 @@ PrefabInstance:
       propertyPath: m_ConstrainProportionsScale
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 3873559467058077822, guid: b273de5c65005c74a9f512845801b09a, type: 3}
-      propertyPath: m_Name
-      value: Building2_Prefab
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -27235,6 +27235,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1384851576}
     m_Modifications:
+    - target: {fileID: 3741338645755666368, guid: bb55a71cac9d8554793fae720a9c0818, type: 3}
+      propertyPath: m_Name
+      value: Building1_prefab
+      objectReference: {fileID: 0}
     - target: {fileID: 7091962964629982014, guid: bb55a71cac9d8554793fae720a9c0818, type: 3}
       propertyPath: m_LocalScale.x
       value: 1.5
@@ -27290,10 +27294,6 @@ PrefabInstance:
     - target: {fileID: 7091962964629982014, guid: bb55a71cac9d8554793fae720a9c0818, type: 3}
       propertyPath: m_ConstrainProportionsScale
       value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3741338645755666368, guid: bb55a71cac9d8554793fae720a9c0818, type: 3}
-      propertyPath: m_Name
-      value: Building1_prefab
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -27459,6 +27459,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1187242855}
     m_Modifications:
+    - target: {fileID: 3873559467058077822, guid: b273de5c65005c74a9f512845801b09a, type: 3}
+      propertyPath: m_Name
+      value: Building2_Prefab
+      objectReference: {fileID: 0}
     - target: {fileID: 4506543446959946436, guid: b273de5c65005c74a9f512845801b09a, type: 3}
       propertyPath: m_LocalScale.x
       value: 1.5
@@ -27514,10 +27518,6 @@ PrefabInstance:
     - target: {fileID: 4506543446959946436, guid: b273de5c65005c74a9f512845801b09a, type: 3}
       propertyPath: m_ConstrainProportionsScale
       value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3873559467058077822, guid: b273de5c65005c74a9f512845801b09a, type: 3}
-      propertyPath: m_Name
-      value: Building2_Prefab
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -27914,6 +27914,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1945645303}
     m_Modifications:
+    - target: {fileID: 3873559467058077822, guid: b273de5c65005c74a9f512845801b09a, type: 3}
+      propertyPath: m_Name
+      value: Building2_Prefab
+      objectReference: {fileID: 0}
     - target: {fileID: 4506543446959946436, guid: b273de5c65005c74a9f512845801b09a, type: 3}
       propertyPath: m_LocalScale.x
       value: 1.5
@@ -27969,10 +27973,6 @@ PrefabInstance:
     - target: {fileID: 4506543446959946436, guid: b273de5c65005c74a9f512845801b09a, type: 3}
       propertyPath: m_ConstrainProportionsScale
       value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3873559467058077822, guid: b273de5c65005c74a9f512845801b09a, type: 3}
-      propertyPath: m_Name
-      value: Building2_Prefab
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -28138,6 +28138,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1487058103}
     m_Modifications:
+    - target: {fileID: 3873559467058077822, guid: b273de5c65005c74a9f512845801b09a, type: 3}
+      propertyPath: m_Name
+      value: Building2_Prefab
+      objectReference: {fileID: 0}
     - target: {fileID: 4506543446959946436, guid: b273de5c65005c74a9f512845801b09a, type: 3}
       propertyPath: m_LocalScale.x
       value: 1.4999999
@@ -28193,10 +28197,6 @@ PrefabInstance:
     - target: {fileID: 4506543446959946436, guid: b273de5c65005c74a9f512845801b09a, type: 3}
       propertyPath: m_ConstrainProportionsScale
       value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3873559467058077822, guid: b273de5c65005c74a9f512845801b09a, type: 3}
-      propertyPath: m_Name
-      value: Building2_Prefab
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -28500,6 +28500,63 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 526e9f7e635a0a0499d3a6cbe091fbf9, type: 3}
   m_PrefabInstance: {fileID: 2143782006}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &8456938431722446815
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 126910432595313437, guid: 3c23b418545c19d49a70c9f0e87b2a00, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 126910432595313437, guid: 3c23b418545c19d49a70c9f0e87b2a00, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 126910432595313437, guid: 3c23b418545c19d49a70c9f0e87b2a00, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 126910432595313437, guid: 3c23b418545c19d49a70c9f0e87b2a00, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 126910432595313437, guid: 3c23b418545c19d49a70c9f0e87b2a00, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 126910432595313437, guid: 3c23b418545c19d49a70c9f0e87b2a00, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 126910432595313437, guid: 3c23b418545c19d49a70c9f0e87b2a00, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 126910432595313437, guid: 3c23b418545c19d49a70c9f0e87b2a00, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 126910432595313437, guid: 3c23b418545c19d49a70c9f0e87b2a00, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 126910432595313437, guid: 3c23b418545c19d49a70c9f0e87b2a00, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8863275538927030255, guid: 3c23b418545c19d49a70c9f0e87b2a00, type: 3}
+      propertyPath: m_Name
+      value: Environment
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 3c23b418545c19d49a70c9f0e87b2a00, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
@@ -28509,3 +28566,4 @@ SceneRoots:
   - {fileID: 897405947}
   - {fileID: 1620022785}
   - {fileID: 2033644591}
+  - {fileID: 8456938431722446815}
