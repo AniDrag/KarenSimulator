@@ -60,7 +60,7 @@ public class ItemSpawner : MonoBehaviour
 
         // Instantiate the item at the spawn location
         thisItem = Instantiate(prefabLsit.allSpawnables[spawnIndex], spawnItemLocation);
-
+        thisItem.transform.localScale = new Vector3(4, 4, 4);
         // Reset transform to align with the spawn location
         thisItem.transform.localPosition = Vector3.zero;
     }

@@ -1,16 +1,19 @@
+using NUnit.Framework;
 using UnityEngine;
 
 [CreateAssetMenu(fileName = "SaveName", menuName = "Tools/SaveOBJ")]
 public class SaveGameData : ScriptableObject
 {
     [Header("Player Details")]
+    [Tooltip("Name of the player for this save file.")]
     public string playerName;
-
+    public List scores;
     [Header("Progress Tracking")]
     [Tooltip("Player's current score.")]
     public int score;
-    public int multiplier = 1;
+    public int multiplier = 2;
     public float timescore;
+    public int highScore;
 
     // Enum for camera movement types
     public enum CameraMovemantType
@@ -19,28 +22,31 @@ public class SaveGameData : ScriptableObject
         InvertedAll,       // Both axes are inverted
         InvertedHorizontal, // Only horizontal axis is inverted
         InvertedVertical  // Only vertical axis is inverted
-                // No inversion
+                          // No inversion
     }
 
-    [Header("Sensitivity Settings")]
-    [Range(1f, 2f)]
+    [Header("Settings")]
     public float horizontalSensitivity = 1f;
-    [Range(1f, 2f)]
     public float verticalSensitivity = 1f;
-    [Header("Camera movemant types")]
+
+    [Tooltip("Type of camera movement inversion.")]
     public CameraMovemantType camMoveTypes = CameraMovemantType.Default;
 
-    [Header("Vamera Field of view settings")]
-    [Range(60f, 110f)]
+    [Tooltip("Field of view for the player camera.")]
     public float fieldOfView = 60f;
-
-    [Header("Master volume Settings")]
-    [Range(0f, 100f)]
     public float masterVolume = 100f;
 
     [Header("Key Bindings")]
+    [Tooltip("Player's custom key bindings.")]
     public KeyBinds inputKeys;
 
+    [Header("Save Details")]
+    [Tooltip("The current scene index for this save.")]
+    public int currentScene;
+
+    [Tooltip("Unique ID for this save file.")]
+    public int gameSaveID;
+}
 
 
     /*
@@ -70,4 +76,4 @@ public class SaveGameData : ScriptableObject
     public int currentScene;
     public int gameSaveID;
     */
-}
+

@@ -7,7 +7,6 @@ public class SettingSystem : MonoBehaviour
     public Slider verticalCamSensitivity;
     public Slider horizontalCamSensitivity;
     public Image Setting;
-    bool isActivated = false;
     bool settingIsActive;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()

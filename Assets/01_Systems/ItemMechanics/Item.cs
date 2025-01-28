@@ -30,6 +30,7 @@ public class Item : MonoBehaviour
     [SerializeField] float damageZone;
     [SerializeField] int damageAmount;
     [SerializeField] float itemMass;
+    [SerializeField] float stunTimer;
     [SerializeField] UnityEvent acivateThis;
 
     // Debug
@@ -90,7 +91,7 @@ public class Item : MonoBehaviour
                     residentAI.TakeDamage(damageAmount); // Call the TakeDamage method for People
                     if (canStun == CanStun.Stun)
                     {
-
+                        residentAI.Stun(stunTimer);
                     }
                 }
             }

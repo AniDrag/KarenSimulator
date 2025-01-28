@@ -9,16 +9,19 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e6165358aed33474b8fb41b97faa8c71, type: 3}
+  m_Script: {fileID: 11500000, guid: 9588bb95f292c6245a4fdfd6b82c88d2, type: 3}
   m_Name: Save_1
   m_EditorClassIdentifier: 
-  playerName: Tester
+  playerName: No idea, Jon public newsance
   score: 0
-  multiplier: 1
+  multiplier: 2
   timescore: 0
-  horizontalSensitivity: 1.121
-  verticalSensitivity: 1.208
+  highScore: 0
+  horizontalSensitivity: 1
+  verticalSensitivity: 1
   camMoveTypes: 0
   fieldOfView: 60
   masterVolume: 100
-  inputKeys: {fileID: 0}
+  inputKeys: {fileID: 11400000, guid: 69cb9bf180877064fbbb329d6af21eb8, type: 2}
+  currentScene: 0
+  gameSaveID: 0
