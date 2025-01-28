@@ -11,6 +11,13 @@ public class Item : MonoBehaviour
         Throwable
     }
 
+    public enum ConsumableItems
+    {
+        none,
+        Airhorn,
+        Firework
+    }
+
     public enum EffectLayer
     {
         All,
@@ -27,15 +34,20 @@ public class Item : MonoBehaviour
     public ItemType itemType;
     public EffectLayer effectLayer;
     public CanStun canStun;
+    public ConsumableItems consumableItems;
     [SerializeField] float damageZone;
     [SerializeField] int damageAmount;
     [SerializeField] float itemMass;
     [SerializeField] UnityEvent acivateThis;
 
+
+    public float time; 
+
     // Debug
     Rigidbody itemBody;
     CapsuleCollider itemCollider;
     public bool itemThrown;
+
 
     private void Awake()
     {
@@ -52,6 +64,10 @@ public class Item : MonoBehaviour
             transform.localPosition = Vector3.zero;
             transform.localRotation = Quaternion.identity;
         }
+        if (consumableItems == ConsumableItems.Airhorn && time > 0)
+        {
+            consumableItem();
+        }
     }
 
     public void ThrowItem()
@@ -66,7 +82,11 @@ public class Item : MonoBehaviour
         // Apply damage within the radius of the item impact
         ApplyDamageInRange();
         acivateThis?.Invoke();
-        Invoke("DestroyItem", 5); // Destroy after impact
+        if (itemType == ItemType.Throwable)
+        {
+            Invoke("DestroyItem", 5); // Destroy after impact
+        }
+
     }
 
     private void ApplyDamageInRange()
@@ -96,7 +116,7 @@ public class Item : MonoBehaviour
             }
             else
             {
-                Debug.Log($"Item ignored: {hitCollider.gameObject.name}");
+                //Debug.Log($"Item ignored: {hitCollider.gameObject.name}");
             }
         }
     }
@@ -122,12 +142,32 @@ public class Item : MonoBehaviour
                 return false;
         }
     }
-
+    void consumableItem()
+    {
+        if(consumableItems == ConsumableItems.Airhorn)
+        {
+            time -= Time.deltaTime;
+            int minutes = Mathf.FloorToInt(time / 60);
+            int seconds = Mathf.FloorToInt(time % 60);
+            Debug.Log("Plays airhorn animation");
+        }
+        if (time <= 0)
+        {
+            DestroyItem(); 
+        }
+    }
     public void ConsumeItem()
     {
-        ApplyDamageInRange();
-        acivateThis?.Invoke();
-        Invoke("DestroyItem", 5);
+        if (consumableItems == ConsumableItems.Airhorn)
+        {
+            consumableItem();
+        }
+        else
+        {
+            ApplyDamageInRange();
+            acivateThis?.Invoke();
+            Invoke("DestroyItem", 5);
+        }
     }
 
     void DestroyItem()
