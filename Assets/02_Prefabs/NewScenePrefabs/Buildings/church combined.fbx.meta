@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 2bef28fa3d4e4a341a966ae6d1d79906
+guid: 1d4c1eb1f2899ab41a64c0deee9864ed
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
@@ -7,8 +7,38 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: the_one_material
-    second: {fileID: 2100000, guid: 09beac68646a30341b97b476c24a5b2d, type: 2}
+      name: clock_face
+    second: {fileID: 2100000, guid: e49a618074ddb664ebe172c90d0d6e86, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: dark_brick
+    second: {fileID: 2100000, guid: a9278b5b9cf348f4a8249e1a662d0476, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: doors
+    second: {fileID: 2100000, guid: 6c7e50fbecc44ef4b882f030d5c78eb7, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: light_brick
+    second: {fileID: 2100000, guid: d0d488cd924e14f4596a4cb01270f74b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: roof_tiles
+    second: {fileID: 2100000, guid: 7a3b93c3d4f09544f97f95b97748afd9, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: standardSurface1
+    second: {fileID: 2100000, guid: 3d219d318b433144eb238da2959d281d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: window_grate
+    second: {fileID: 2100000, guid: c7e50978f2f89f845a5cf6d899490a16, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0

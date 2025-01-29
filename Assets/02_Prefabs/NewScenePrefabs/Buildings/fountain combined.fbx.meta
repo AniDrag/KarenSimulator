@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 2bef28fa3d4e4a341a966ae6d1d79906
+guid: 926fe3a9e8bad3a44b851a1f9a43daff
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
@@ -7,8 +7,18 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: the_one_material
-    second: {fileID: 2100000, guid: 09beac68646a30341b97b476c24a5b2d, type: 2}
+      name: bottom_fountain
+    second: {fileID: 2100000, guid: 7e93094e9a9e0ad44adc6e38f458d794, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: darker_fountain
+    second: {fileID: 2100000, guid: 304ea7d9b1033d64cb25cc319a918b91, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: main_material_fountain
+    second: {fileID: 2100000, guid: d6542fecd68be584b85d4a2989a0b650, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
