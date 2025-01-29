@@ -35,6 +35,7 @@ public class SaveGameData : ScriptableObject
     [Tooltip("Field of view for the player camera.")]
     public float fieldOfView = 60f;
     public float masterVolume = 100f;
+    public float ambientVolume = 100f;
 
     [Header("Key Bindings")]
     [Tooltip("Player's custom key bindings.")]

@@ -1,3 +1,4 @@
+using TMPro;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.UI;
@@ -12,6 +13,7 @@ public class ItemSliders : MonoBehaviour
     [Header("Slider settings")]
     public SliderType sliderType;
     public float fillSpeed;
+    [SerializeField] TMP_Text value;
     public bool isActive;
     public UnityEvent onDangerSliderFill;
 
@@ -54,6 +56,9 @@ public class ItemSliders : MonoBehaviour
                 fillIndex *= -1;
             }
         }
+
+        value.text = thisSlider.value +" / "+thisSlider.maxValue;
+
     }
 
     

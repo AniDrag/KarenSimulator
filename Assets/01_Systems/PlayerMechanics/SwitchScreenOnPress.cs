@@ -3,31 +3,40 @@ using UnityEngine.Events;
 
 public class SwitchScreenOnPress : MonoBehaviour
 {
-    [Header("Events for Screen Switching")]
-    [SerializeField] private UnityEvent onSwitchToFirstScreen;
-    [SerializeField] private UnityEvent onSwitchToSecondScreen;
 
-    [Header("Current POV State")]
-    public bool isFirstPersonView = true;
-    [SerializeField] PlayerBaseMovemant movemant;
-    
-    public void SwitchScreen()
+    private void Update()
     {
-        if (isFirstPersonView)
-        {
-            // Trigger event to switch to the second screen
-            onSwitchToSecondScreen?.Invoke();
-            isFirstPersonView = false; // Update state to third-person view
-            movemant.enabled = true;
-        }
-        else
-        {
-            // Trigger event to switch to the first screen
-            onSwitchToFirstScreen?.Invoke();
-            isFirstPersonView = true; // Update state to first-person view
-            movemant.enabled = false;
-        }
+        
     }
+    /* [Header("Events for Screen Switching")]
+     [Tooltip(" an event that happenes when the player switches screens")]
+     [SerializeField] private UnityEvent onSwitchToFirstScreen;
+     [SerializeField] private UnityEvent onSwitchToSecondScreen;
+
+     [Header("Current POV State")]
+     public bool isFirstPersonView = true;
+
+     public void SwitchScreen()
+     {
+         if (!isFirstPersonView)
+         {
+             UI_Manager.instance.bigScreenFPS.enabled = true;
+             UI_Manager.instance.smallScreenFPS.enabled = false;
+             UI_Manager.instance.bigScreenTPS.enabled = false;
+             UI_Manager.instance.smallScreenTPS.enabled = true;
+             // Trigger event to switch to the second screen
+             onSwitchToSecondScreen?.Invoke();
+         }
+         else
+         {
+             UI_Manager.instance.bigScreenFPS.enabled = false;
+             UI_Manager.instance.smallScreenFPS.enabled = true;
+             UI_Manager.instance.bigScreenTPS.enabled = true;
+             UI_Manager.instance.smallScreenTPS.enabled = false ;
+             // Trigger event to switch to the first screen
+             onSwitchToFirstScreen?.Invoke();
+         }*/
+
 
 
 
