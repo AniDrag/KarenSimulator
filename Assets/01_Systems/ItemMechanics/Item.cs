@@ -1,3 +1,4 @@
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -175,4 +176,22 @@ public class Item : MonoBehaviour
     {
         Destroy(gameObject);
     }
+
+    private void OnDrawGizmos()
+    {
+        // Draw a sphere to represent the damage zone
+        if (itemType == ItemType.Throwable && damageZone > 0)
+        {
+            Gizmos.color = Color.red; // Set color for damage zone
+            Gizmos.DrawWireSphere(transform.position, damageZone); // Draw the wire sphere
+        }
+
+        // Draw a wireframe cube or sphere for item collider if it's a throwable item
+        if (itemType == ItemType.Throwable && itemCollider != null)
+        {
+            Gizmos.color = Color.green; // Set color for the item collider
+            Gizmos.DrawWireCube(transform.position, itemCollider.bounds.size); // Use the bounds size of the collider
+        }
+    }
+
 }

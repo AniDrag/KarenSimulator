@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class PlayerInputs : MonoBehaviour
 {
     [Header("Refrences")]
+    [SerializeField] Camera fpsCam;
     [SerializeField] PlayerRefrences REF;
     public Transform playerHand;
     [SerializeField] Transform secondHand;
@@ -33,23 +34,8 @@ public class PlayerInputs : MonoBehaviour
     }
     private void Update()
     {
-        if(Input.GetKeyDown(REF.inputKeys.menu) && !inSettings)
-        {
-            activateSettings.Invoke();
-            CursorOn();
-            inSettings = true;
-        }
-        else if(inSettings && Input.GetKeyDown(REF.inputKeys.menu))
-        {
-            deactivateSettings.Invoke();
-            CursorOff();
-            inSettings = false;
-        }
-        if (Input.GetKeyDown(REF.inputKeys.screenSwitch))
-        {
-            REF.switchScreens.SwitchScreen();
-        }
-
+        AimCamera();
+        MenuInputs();
 
         if (inSettings) { return; }
         
@@ -125,6 +111,7 @@ public class PlayerInputs : MonoBehaviour
             itemInstance = Instantiate(newItem, playerHand);
             itemEquiped = itemInstance.GetComponent<Item>();
             itemInstance.transform.localPosition = Vector3.zero;
+            itemInstance.transform.localScale = Vector3.one;
 
             // Disable the CollectItem component so the item cannot be collected again
             itemInstance.GetComponent<CollectItem>().enabled = false;
@@ -152,6 +139,40 @@ public class PlayerInputs : MonoBehaviour
         else
         {
             REF.Ui.GetComponent<MainMenu>().PlayerDied();
+        }
+    }
+
+    void MenuInputs()
+    {
+        if (Input.GetKeyDown(REF.inputKeys.menu) && !inSettings)
+        {
+            activateSettings.Invoke();
+            CursorOn();
+            inSettings = true;
+        }
+        else if (inSettings && Input.GetKeyDown(REF.inputKeys.menu))
+        {
+            deactivateSettings.Invoke();
+            CursorOff();
+            inSettings = false;
+        }
+        if (Input.GetKeyDown(REF.inputKeys.screenSwitch))
+        {
+            REF.switchScreens.SwitchScreen();
+        }
+    }
+    void AimCamera()
+    {
+        Ray camRay = new Ray(fpsCam.transform.position, fpsCam.transform.forward);
+        RaycastHit hit;
+        if(Physics.Raycast(camRay, out hit, 100))
+        {
+            Vector3 lookAtPoint = hit.point - playerHand.position;
+            lookAtPoint.Normalize();
+
+            Quaternion rotateHand = Quaternion.LookRotation(lookAtPoint);
+
+            playerHand.rotation = Quaternion.Slerp(playerHand.rotation, rotateHand, 0.2f);
         }
     }
 }

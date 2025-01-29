@@ -66,8 +66,8 @@ public class CameraCTR : MonoBehaviour
         yInput = Input.GetAxisRaw("Mouse Y") * Time.deltaTime * verticalMultiplier * verticalSensitivity;
         xInput = Input.GetAxisRaw("Mouse X") * Time.deltaTime * horizontalMultiplier * horizontalSensitivity;
 
-        // Apply inversion settings
-        InversionSystem();
+        horizontalRotation -= yInput;
+        verticalRotation += xInput;
 
         // Clamp the vertical rotation to prevent flipping
         horizontalRotation = Mathf.Clamp(horizontalRotation, -90f, 90f);
@@ -108,42 +108,6 @@ public class CameraCTR : MonoBehaviour
             Debug.LogWarning("Player camera REFERENCE is missing.");
         }
     }
-
-    /// <summary>
-    /// Applies camera inversion settings based on the saved game data.
-    /// </summary>
-    void InversionSystem()
-    {
-        switch (saveGameData.camMoveTypes)
-        {
-            case SaveGameData.CameraMovemantType.InvertedAll:
-                horizontalRotation += yInput;
-                verticalRotation -= xInput;
-                break;
-
-            case SaveGameData.CameraMovemantType.InvertedVertical:
-                horizontalRotation -= yInput;
-                verticalRotation -= xInput;
-                break;
-
-            case SaveGameData.CameraMovemantType.InvertedHorizontal:
-                horizontalRotation += yInput;
-                verticalRotation += xInput;
-                break;
-
-            case SaveGameData.CameraMovemantType.Default:
-                // Default behavior: standard Unity camera inversion
-                horizontalRotation -= yInput;
-                verticalRotation += xInput;
-                break;
-
-            default:
-                Debug.LogWarning("Invalid camera movement type in inversion system.");
-                break;
-        }
-    }
-
-
     /*
     float yInput;
     float xInput;
