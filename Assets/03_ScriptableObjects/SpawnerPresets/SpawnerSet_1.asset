@@ -13,4 +13,8 @@ MonoBehaviour:
   m_Name: SpawnerSet_1
   m_EditorClassIdentifier: 
   allSpawnables:
-  - {fileID: 2020653594162335818, guid: 35d0e9618281c874ebd2fddf8965812e, type: 3}
+  - {fileID: 2020653594162335818, guid: ed6fad8409512ca49b1fabaf8cf88605, type: 3}
+  - {fileID: 2020653594162335818, guid: 45ff2622e0b187145bc9b27d3c40da60, type: 3}
+  - {fileID: 2020653594162335818, guid: d266b15b75a6f9d49b518c99322a0447, type: 3}
+  - {fileID: 2020653594162335818, guid: de5abf55b125adf43951bc2c77112e93, type: 3}
+  - {fileID: 2020653594162335818, guid: 78fd7ec99b2886148896785a25f97742, type: 3}
