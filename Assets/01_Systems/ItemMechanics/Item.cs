@@ -36,8 +36,8 @@ public class Item : MonoBehaviour
     public EffectLayer effectLayer;
     public CanStun canStun;
     public ConsumableItems consumableItems;
-    [SerializeField] float damageZone;
-    [SerializeField] int damageAmount;
+    public float damageZone;
+    public int damageAmount;
     [SerializeField] float itemMass;
     [SerializeField] float stunTimer;
     [SerializeField] UnityEvent acivateThis;

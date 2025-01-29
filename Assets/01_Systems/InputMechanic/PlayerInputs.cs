@@ -1,7 +1,9 @@
 using System.Collections;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.UI;
+using static Item;
 
 public class PlayerInputs : MonoBehaviour
 {
@@ -23,6 +25,7 @@ public class PlayerInputs : MonoBehaviour
     bool weaponInADS;
 
     [Header("Settings menu")]
+    [Tooltip("Not in use dont use! tel me if u want to do smthign")]
     public UnityEvent activateSettings;
     public UnityEvent deactivateSettings;
     bool inSettings;
@@ -75,6 +78,7 @@ public class PlayerInputs : MonoBehaviour
             // Clear item references
             itemEquiped = null;
             itemInstance = null;
+            CleareItemInfo();
 
             // Deactivate sliders and end aiming
             DeactivateSliders();
@@ -84,16 +88,21 @@ public class PlayerInputs : MonoBehaviour
 
     void ActivateSliders()
     {
-        activateDanger.isActive = true;
-        activateStrenght.isActive = true;
+        UI_Manager.instance.STR_data.isActive = true;
+        UI_Manager.instance.danger_data.isActive = true;
+
+        //activateDanger.isActive = true;
+        //activateStrenght.isActive = true;
     }
 
     void DeactivateSliders()
     {
+        UI_Manager.instance.STR_data.isActive = false;
+        UI_Manager.instance.danger_data.isActive = false;
         Debug.Log("Sliders inactive");
         activateDanger.isActive = false;
-        dangerSlider.value = 0;
-        activateStrenght.isActive = false;
+        UI_Manager.instance.strenghtSlider.value = 0;
+        UI_Manager.instance.dangerSlider.value = 0;
         strenghtSlider.value = 0;
     }
 
@@ -115,9 +124,52 @@ public class PlayerInputs : MonoBehaviour
 
             // Disable the CollectItem component so the item cannot be collected again
             itemInstance.GetComponent<CollectItem>().enabled = false;
+            DisplayItemStats();
         }
     }
 
+    void DisplayItemStats()
+    {
+        UI_Manager.instance.annoyanceAmount.text = "Annoyance: " + itemEquiped.damageAmount;
+        UI_Manager.instance.areaOfEffect.text = "Radious"+ itemEquiped.damageZone;
+        ItemLayerEffect();
+
+        IfItemCanStun();
+
+    }
+    void CleareItemInfo()
+    {
+        UI_Manager.instance.annoyanceAmount.text = string.Empty;
+        UI_Manager.instance.areaOfEffect.text = string.Empty;
+        UI_Manager.instance.damagelayers.text = string.Empty;
+        UI_Manager.instance.canStun.text = string.Empty;
+    }
+    void ItemLayerEffect()
+    {
+        if (itemEquiped.effectLayer == Item.EffectLayer.All)
+        {
+            UI_Manager.instance.annoyanceAmount.text = "Effects: all";
+        }
+        else if(itemEquiped.effectLayer == Item.EffectLayer.Buildings)
+        {
+            UI_Manager.instance.annoyanceAmount.text = "Effects: Buildings";
+        }
+        else 
+        {
+            UI_Manager.instance.annoyanceAmount.text = "Effects: People";
+        }
+    }
+    void IfItemCanStun()
+    {
+        if (itemEquiped.canStun == Item.CanStun.Stun)
+        {
+            UI_Manager.instance.canStun.text = "Stun - Yes";
+        }
+        else
+        {
+            UI_Manager.instance.canStun.text = "Stun - /";
+        }
+    }
     void CursorOff()
     {
         Cursor.lockState = CursorLockMode.Locked;
@@ -149,17 +201,16 @@ public class PlayerInputs : MonoBehaviour
             activateSettings.Invoke();
             CursorOn();
             inSettings = true;
+            UI_Manager.instance.inOptions = true;
         }
         else if (inSettings && Input.GetKeyDown(REF.inputKeys.menu))
         {
             deactivateSettings.Invoke();
             CursorOff();
             inSettings = false;
+            UI_Manager.instance.inOptions = false;
         }
-        if (Input.GetKeyDown(REF.inputKeys.screenSwitch))
-        {
-            REF.switchScreens.SwitchScreen();
-        }
+        
     }
     void AimCamera()
     {
