@@ -23,13 +23,18 @@ public class GameManager : MonoBehaviour
     }
     void Start()
     {
-        
+        FreshScore();
     }
 
     // Update is called once per frame
     void Update()
     {
+        if (isPlayerAlive)
+        {
         gameData.multiplier = 1 + multiplier;
+
+        }
+
         if (!isPlayerAlive)
         {
             playerMovemant.enabled = false;
@@ -46,6 +51,7 @@ public class GameManager : MonoBehaviour
         isPlayerAlive = false;
         ui.dethPanel.gameObject.SetActive(true);
         ui.dethPanel.gameObject.GetComponent<PlayerDeth>().DeadPlayer = true;
+        gameData.timescore = UI_Manager.instance.time;
         if (gameData.highScore[0] < gameData.score)
         {
             gameData.highScore[0] = gameData.score;
@@ -56,7 +62,15 @@ public class GameManager : MonoBehaviour
         playerLives--;
         if (playerLives == 0)
         {
+            isPlayerAlive = false;
             LoseGamel();
         }
+    }
+    public void FreshScore()
+    {
+        gameData.score = 0;
+        gameData.timescore = 0;
+        gameData.multiplier = 1;
+        gameData.highScore[0] = 0;
     }
 }
