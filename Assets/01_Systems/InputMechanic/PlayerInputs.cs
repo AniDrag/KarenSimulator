@@ -1,10 +1,7 @@
 using System.Collections;
-using System.Security.Cryptography;
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.UI;
-using static Item;
 
 public class PlayerInputs : MonoBehaviour
 {
@@ -36,10 +33,15 @@ public class PlayerInputs : MonoBehaviour
 
         if (!inSettings)
         {
-            AimCamera();
+            
+            if (weaponInADS)
+            {
+                AimCamera();
+            }
 
             if (itemEquiped != null && itemEquiped.itemType == Item.ItemType.Throwable && itemInstance != null)
             {
+                
                 ThrowableItemAction();
             }
             else if (itemEquiped != null && itemEquiped.itemType == Item.ItemType.Consumable && itemInstance != null)
@@ -74,7 +76,7 @@ public class PlayerInputs : MonoBehaviour
             itemBody.isKinematic = false;
             itemBody.transform.parent = null; // Detach the item from the player hand
             itemEquiped.ThrowItem();
-            itemBody.AddForce(playerHand.forward * strenghtSlider.value * _Debug_throwMultiplier, ForceMode.Impulse);
+            itemBody.AddForce(playerHand.forward * UI_Manager.instance.strenghtSlider.value * _Debug_throwMultiplier, ForceMode.Impulse);
 
             // Clear item references
             itemEquiped = null;
@@ -98,8 +100,9 @@ public class PlayerInputs : MonoBehaviour
         Debug.Log("Sliders inactive");
         UI_Manager.instance.STR_data.isActive = false;
         UI_Manager.instance.danger_data.isActive = false;
-        UI_Manager.instance.strenghtSlider.value = 0;
-        UI_Manager.instance.dangerSlider.value = 0;
+        UI_Manager.instance.STR_data.reset = false;
+        UI_Manager.instance.danger_data.reset = false;
+        
     }
 
     IEnumerator DeactivateAim()
@@ -185,15 +188,22 @@ public class PlayerInputs : MonoBehaviour
     {
         Ray camRay = new Ray(fpsCam.transform.position, fpsCam.transform.forward);
         RaycastHit hit;
-        if(Physics.Raycast(camRay, out hit, 100))
+        if (Physics.Raycast(camRay, out hit, 100))
         {
             hitlocation = hit.transform;
-            Vector3 lookAtPoint = hit.point - playerHand.position;
-            lookAtPoint.Normalize();
 
-            Quaternion rotateHand = Quaternion.LookRotation(lookAtPoint);
+            // Calculate the direction to the hit point, ignoring the Y-axis (we'll only rotate around Y-axis)
+            Vector3 direction = hit.point - playerHand.position;
+            direction.y = 0;  // Ignore any vertical difference
 
-            playerHand.rotation = Quaternion.Slerp(playerHand.rotation, rotateHand, 0.2f);
+            // Normalize the direction
+            direction.Normalize();
+
+            // Preserve the current X and Z rotation (pitch and roll), but only modify the Y-axis (yaw)
+            Quaternion targetRotation = Quaternion.LookRotation(direction);
+
+            // Slerp to the target rotation smoothly
+            playerHand.rotation = Quaternion.Slerp(playerHand.rotation, targetRotation, 0.2f);
         }
     }
     

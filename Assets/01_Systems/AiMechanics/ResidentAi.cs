@@ -7,6 +7,7 @@ using UnityEngine.Events;
 [RequireComponent(typeof(MeshCollider))]
 [RequireComponent(typeof(Animator))]
 [RequireComponent(typeof(Rigidbody))]
+[RequireComponent(typeof(AnnoyanceCounter))]
 public class ResidentAi : MonoBehaviour
 {
 
@@ -37,6 +38,7 @@ public class ResidentAi : MonoBehaviour
     [SerializeField] UnityEvent playOnAttack; // Only SFX and VFX
     [SerializeField] UnityEvent playOnTakeDamage; // Only SFX and VFX
     [SerializeField] UnityEvent playOnMaxAnoyance;
+    [SerializeField] GameObject localDeAnnoy;
 
     // other
     public Transform home;
@@ -48,6 +50,7 @@ public class ResidentAi : MonoBehaviour
     bool stuned;
     private void Awake()
     {
+        localDeAnnoy.SetActive(false);
         agentAI = GetComponent<NavMeshAgent>();
         attackSpeed = attackAnimation;
         aiBody = GetComponent<Rigidbody>();
@@ -82,6 +85,7 @@ public class ResidentAi : MonoBehaviour
             // if is attacking it will wait before it will start moving so it finishes the attack anim
             if (annoyance == 0 && home != null)
             {
+                localDeAnnoy.SetActive(true);
                 agentAI.SetDestination(home.position);
             }
             else if (attacked || tookDamage)
@@ -122,7 +126,7 @@ public class ResidentAi : MonoBehaviour
     //attacks player every reset of attack
     IEnumerator AttackPlayer()
     {
-        Debug.Log("Attacked player");
+        //Debug.Log("Attacked player");
 
         yield return new WaitForSeconds(attackSpeed);
         attacked = false;

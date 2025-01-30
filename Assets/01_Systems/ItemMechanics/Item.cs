@@ -37,6 +37,7 @@ public class Item : MonoBehaviour
     [Tooltip("How long the item is active")]
     public float activeTime;
     float time;
+    LayerMask effectlayer;
 
     [Header("Event on use of item")]
     [SerializeField] UnityEvent acivateThis;
@@ -62,6 +63,7 @@ public class Item : MonoBehaviour
         itemBody.mass = itemMass;
         itemCollider = GetComponent<CapsuleCollider>();
         itemCollider.isTrigger = true;
+        time = 0;
     }
     private void Update()
     {
@@ -80,13 +82,13 @@ public class Item : MonoBehaviour
         if (itemUsed)//
         {
             UI_Manager.instance.EnableItemTimer();
-            time -= Time.deltaTime;
+            time += Time.deltaTime;
             int minutes = Mathf.FloorToInt(time / 60);
             int seconds = Mathf.FloorToInt(time % 60);
             UI_Manager.instance.itemUseTimer.text = string.Format("{0:00}:{1:00}", minutes, seconds);
             if(time  >= activeTime)
             {
-                ConsumableItem();
+                ResetItemTimer();
             }
         }
     }
@@ -103,6 +105,7 @@ public class Item : MonoBehaviour
         if (itemType == ItemType.Throwable)
         {
             ApplyDamageInRange();
+
             acivateThis?.Invoke();
             Invoke("DestroyItem", 3); // Destroy after impact
         }
@@ -113,22 +116,25 @@ public class Item : MonoBehaviour
     {
         // Perform a sphere overlap check around the item's current position
         Collider[] hitColliders = Physics.OverlapSphere(transform.position, damageZone);
+        itemCollider.enabled = false;
 
         foreach (var hitCollider in hitColliders)
         {
             if (ShouldAffectLayer(hitCollider.gameObject.layer))
             {
-                Debug.Log($"Item hit: {hitCollider.gameObject.name}");
 
                 // Apply damage to building or resident
                 if (hitCollider.gameObject.TryGetComponent<Building>(out Building building))
                 {
                     building.AnnoyTarget(damageAmount); // Call the AnnoyTarget method for Buildings
+                    GameManager.instance.gameData.score += damageAmount * GameManager.instance.gameData.multiplier;
+                    Debug.Log($"Item hit: {hitCollider.gameObject.name}");
                 }
                 else if (hitCollider.gameObject.TryGetComponent<ResidentAi>(out ResidentAi residentAI))
                 {
                     residentAI.TakeDamage(damageAmount, stunTimer); // Call the TakeDamage method for People
-                    
+                    GameManager.instance.gameData.score += damageAmount * GameManager.instance.gameData.multiplier;
+                    Debug.Log($"Item hit: {hitCollider.gameObject.name}");
                 }
             }
             else
@@ -159,13 +165,14 @@ public class Item : MonoBehaviour
                 return false;
         }
     }
-    void ConsumableItem()
+    void ResetItemTimer()
     {
         UI_Manager.instance.DissableItemTimer();
-        time = 0;
+        time = 0f;
     }
     public void ConsumeItem()
     {
+        Debug.Log("Item consumed");
         itemUsed = true;
         acivateThis?.Invoke();
         ApplyDamageInRange(); // apply damage once a dnd deactivate
@@ -175,6 +182,7 @@ public class Item : MonoBehaviour
     IEnumerator DestroyConsumable()
     {
         yield return new WaitForSeconds(activeTime);
+        Debug.Log("Ite destroyed");
         DestroyItem();
     }
 
@@ -187,9 +195,6 @@ public class Item : MonoBehaviour
     {
             Gizmos.color = Color.red;
             Gizmos.DrawWireSphere(transform.position, damageZone); 
-       
-            Gizmos.color = Color.green; 
-            Gizmos.DrawWireCube(transform.position, itemCollider.bounds.size);
     }
 
 }

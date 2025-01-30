@@ -75,7 +75,7 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 14337
   m_ExcludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -103,15 +103,14 @@ MonoBehaviour:
   itemType: 0
   effectLayer: 2
   canStun: 1
-  consumableItems: 1
   damageZone: 5
   damageAmount: 40
   itemMass: 3
   stunTimer: 0
+  activeTime: 2
   acivateThis:
     m_PersistentCalls:
       m_Calls: []
-  time: 0
   itemThrown: 0
 --- !u!114 &5881569331273477572
 MonoBehaviour:
@@ -135,7 +134,7 @@ SphereCollider:
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 16384
   m_ExcludeLayers:
     serializedVersion: 2
     m_Bits: 0

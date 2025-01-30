@@ -115,7 +115,7 @@ public class Building : MonoBehaviour
                 resident.GetComponent<ResidentAi>().home = transform;// add adoor position
                 spawnedResidents.Add(resident);
                 residentsSpawned++;
-                gameData.multiplier += 1;
+                GameManager.instance.multiplier += 1;
             }
             Debug.Log($"Wave {currentWave}: Spawned {peopleToSpawn} residents.");
         }
@@ -131,7 +131,7 @@ public class Building : MonoBehaviour
         for (int i = 0; i < residentsToRemove; i++)
         {
             Destroy(spawnedResidents[i]);
-            gameData.multiplier -= 1;
+            GameManager.instance.multiplier -= 1;
         }
 
         // Update the spawned residents list

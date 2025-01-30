@@ -4,6 +4,10 @@ public class ReturnedToBuilding : MonoBehaviour
 {
     private void OnTriggerEnter(Collider other)
     {
-        other.gameObject.GetComponent<Building>().DecreaseAnnoyance();
+        if (other.gameObject.GetComponent<Building>())
+        {
+            other.gameObject.GetComponent<Building>().DecreaseAnnoyance();
+            Destroy(gameObject);
+        }
     }
 }

@@ -5,7 +5,7 @@ using UnityEngine.UI;
 public class UI_Manager : MonoBehaviour
 {
     public static UI_Manager instance;
-    [SerializeField] SaveGameData gameData;
+    //[SerializeField] SaveGameData gameData;
 
     [Header("Dethpanel")]
     public Transform dethPanel;
@@ -41,13 +41,12 @@ public class UI_Manager : MonoBehaviour
     public TMP_Text itemUseTimer;
 
     public bool inOptions;
-    float time;
+    public float time;
     private void Awake()
     {
         instance = this;
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
-        FreshScore();
         dangerSlider.value = 0;
         dangerSlider.maxValue = 100;
         strenghtSlider.value = 0;
@@ -87,14 +86,6 @@ public class UI_Manager : MonoBehaviour
         }
 
     }
-    
-    void FreshScore()
-    {
-        gameData.score = 0;
-        gameData.timescore = 0;
-        gameData.multiplier = 1;
-        gameData.highScore[0] = 0;
-    }
     // /////////////////////////////////////////////////////////////////////////////////////
     //                          MENU
     // /////////////////////////////////////////////////////////////////////////////////////
@@ -117,12 +108,12 @@ public class UI_Manager : MonoBehaviour
     {
         TimeTracker();
         scoreCounter.text = "score: " + GameManager.instance.gameData.score;
-        multiplierCounter.text = $"{gameData.multiplier} X";
+        multiplierCounter.text = GameManager.instance.gameData.multiplier + "X";
 
     }
     void TimeTracker()
     {
-        gameData.timescore += Time.deltaTime;
+        time += Time.deltaTime;
         int minutes = Mathf.FloorToInt(time / 60);
         int seconds = Mathf.FloorToInt(time % 60);
         timeCounter.text = string.Format("{0:00}:{1:00}", minutes, seconds);

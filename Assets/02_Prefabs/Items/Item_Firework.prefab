@@ -76,7 +76,7 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 14337
   m_ExcludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -104,11 +104,11 @@ MonoBehaviour:
   itemType: 0
   effectLayer: 1
   canStun: 0
-  consumableItems: 2
   damageZone: 50
   damageAmount: 60
   itemMass: 3
   stunTimer: 5
+  activeTime: 3
   acivateThis:
     m_PersistentCalls:
       m_Calls:
@@ -121,11 +121,10 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: A
+          m_StringArgument: Activate
           m_BoolArgument: 0
         m_CallState: 2
-  time: 0
-  itemThrown: 0
+  itemThrown: 1
 --- !u!114 &5881569331273477572
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -148,7 +147,7 @@ SphereCollider:
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 16384
   m_ExcludeLayers:
     serializedVersion: 2
     m_Bits: 0
