@@ -1,12 +1,154 @@
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.AI;
 using UnityEngine.Events;
 
+
 [RequireComponent(typeof(MeshCollider))]
-[RequireComponent(typeof(NavMeshObstacle))]
 public class Building : MonoBehaviour
 {
+    /////////////////////////////////////////////////////////
+    //                    Building Stats
+    /////////////////////////////////////////////////////////
+
+    [Header("Building")]
+    [Tooltip("Maximum annoyance before the building reaches its limit.")]
+    public int maxAnnoyance;
+    private int currentAnnoyance;
+    private int threshold;        // Current threshold for wave advancement
+    private int oldThreshold;     // The threshold of the previous wave
+
+    [Tooltip("Event triggered when the building is fully annoyed.")]
+    public UnityEvent buildingAnnoyed;
+
+    /////////////////////////////////////////////////////////
+    //                    Residence Settings
+    /////////////////////////////////////////////////////////
+
+    [Header("Residence")]
+    [Tooltip("Total number of residents that can spawn.")]
+    [SerializeField] private int totalResidentCount;
+
+    [Tooltip("Prefab for the resident AI.")]
+    [SerializeField] private AiVariants aiVariants;
+
+    [Tooltip("Spawn point for residents.")]
+    [SerializeField] private Transform residentSpawnPoint;
+
+    private List<GameObject> spawnedResidents = new();
+    private int residentsSpawned = 0;
+
+    /////////////////////////////////////////////////////////
+    //                    Wave System
+    /////////////////////////////////////////////////////////
+
+    [Header("Wave Info")]
+    [Tooltip("Maximum number of annoyance waves before reaching max annoyance.")]
+    [SerializeField] private int maxWaves = 5;
+    private int currentWave = 0;
+    private int spawnPeoplePerWave;
+
+    [Tooltip("Reference to game data for score tracking.")]
+    [SerializeField] private SaveGameData gameData;
+
+    private void Awake()
+    {
+        spawnedResidents = new List<GameObject>();
+        currentAnnoyance = 0;
+        threshold = maxAnnoyance / maxWaves;  // Set initial threshold for wave progression
+        oldThreshold = 0;
+        spawnPeoplePerWave = totalResidentCount / maxWaves;
+    }
+
+    /////////////////////////////////////////////////////////
+    //                    Annoyance Management
+    /////////////////////////////////////////////////////////
+    public void AnnoyTarget(int amount)
+    {
+        currentAnnoyance += amount;
+        gameData.score += amount * gameData.multiplier;
+
+        if (currentAnnoyance >= threshold)
+        {
+            AdvanceWave();
+            SpawnResidents();
+        }
+
+        if (currentAnnoyance >= maxAnnoyance)
+        {
+            currentAnnoyance = maxAnnoyance;
+            IsAnnoyed();
+        }
+    }
+    public void DecreaseAnnoyance()
+    {
+        int prevThreshold = threshold;
+        currentAnnoyance -= maxAnnoyance / totalResidentCount;
+        currentAnnoyance = Mathf.Max(0, currentAnnoyance);
+
+        if (currentAnnoyance < oldThreshold)
+        {
+            threshold = oldThreshold;
+            oldThreshold -= maxAnnoyance / maxWaves;
+            RemoveResidents();
+        }
+
+        if (currentAnnoyance == 0)
+        {
+            buildingAnnoyed?.Invoke();
+        }
+    }
+    private void IsAnnoyed()
+    {
+        if (currentAnnoyance == maxAnnoyance)
+        {
+            buildingAnnoyed?.Invoke();
+        }
+    }
+
+    private void AdvanceWave()
+    {
+        currentWave++;
+        oldThreshold = threshold;
+        threshold += maxAnnoyance / maxWaves;
+    }
+
+    /////////////////////////////////////////////////////////
+    //                    Resident Management
+    /////////////////////////////////////////////////////////
+    private void SpawnResidents()
+    {
+        int spawnablePeople = spawnPeoplePerWave * currentWave;
+        int peopleToSpawn = Mathf.Min(spawnablePeople - spawnedResidents.Count, totalResidentCount - residentsSpawned);
+
+        for (int i = 0; i < peopleToSpawn; i++)
+        {
+            GameObject resident = Instantiate(aiVariants.Variants[Random.Range(0, aiVariants.Variants.Length)], residentSpawnPoint.position, Quaternion.identity);
+            resident.GetComponent<ResidentAi>().home = transform;
+            spawnedResidents.Add(resident);
+            residentsSpawned++;
+            GameManager.instance.multiplier++;
+        }
+        Debug.Log($"Wave {currentWave}: Spawned {peopleToSpawn} residents.");
+    }
+
+    /// <summary>
+    /// Removes residents if annoyance drops below the previous wave threshold.
+    /// </summary>
+    private void RemoveResidents()
+    {
+        int residentsToRemove = spawnedResidents.Count - (int)((float)currentAnnoyance / (maxAnnoyance / maxWaves));
+        residentsToRemove = Mathf.Clamp(residentsToRemove, 0, spawnedResidents.Count);
+
+        for (int i = 0; i < residentsToRemove; i++)
+        {
+            Destroy(spawnedResidents[i]);
+            GameManager.instance.multiplier--;
+        }
+
+        spawnedResidents.RemoveRange(0, residentsToRemove);
+    }
+}
+    /*
     [Header("Building")]
     public int maxAnnoyance;
     private int currentAnnoyance;
@@ -16,7 +158,7 @@ public class Building : MonoBehaviour
 
     [Header("Residence")]
     [SerializeField] int totalResidentCount;  // Total residents that can be spawned
-    [SerializeField] GameObject residentPrefab;
+    [SerializeField] GameObject aiVariants;
     [SerializeField] Transform residentSpawnPoint;
     private List<GameObject> spawnedResidents;
     private int residentsSpawned = 0;
@@ -111,7 +253,7 @@ public class Building : MonoBehaviour
             int peopleToSpawn = Mathf.Min(spawnablePeople - spawnedResidents.Count, totalResidentCount - residentsSpawned);
             for (int i = 0; i < peopleToSpawn; i++)
             {
-                GameObject resident = Instantiate(residentPrefab, residentSpawnPoint.position, Quaternion.identity);
+                GameObject resident = Instantiate(aiVariants, residentSpawnPoint.position, Quaternion.identity);
                 resident.GetComponent<ResidentAi>().home = transform;// add adoor position
                 spawnedResidents.Add(resident);
                 residentsSpawned++;
@@ -136,7 +278,7 @@ public class Building : MonoBehaviour
 
         // Update the spawned residents list
         spawnedResidents.RemoveRange(0, residentsToRemove);
-    }
+    }*/
 
     /*
     //
@@ -250,4 +392,4 @@ public class Building : MonoBehaviour
             SpawnCitizens();
         }
     }*/
-}
+
