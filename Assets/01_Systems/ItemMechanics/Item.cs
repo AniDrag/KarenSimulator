@@ -1,4 +1,4 @@
-using UnityEditor;
+using System.Collections;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -10,13 +10,6 @@ public class Item : MonoBehaviour
     {
         Consumable,
         Throwable
-    }
-
-    public enum ConsumableItems
-    {
-        none,
-        Airhorn,
-        Firework
     }
 
     public enum EffectLayer
@@ -31,24 +24,35 @@ public class Item : MonoBehaviour
         DontStun
     }
 
-    [Header("Item settings")]
+    [Header("Item baseSettings")]
     public ItemType itemType;
     public EffectLayer effectLayer;
     public CanStun canStun;
-    public ConsumableItems consumableItems;
+    [Header("General item settign")]
     public float damageZone;
     public int damageAmount;
     [SerializeField] float itemMass;
     [SerializeField] float stunTimer;
+    [Header("Consumable item settings")]
+    [Tooltip("How long the item is active")]
+    public float activeTime;
+    float time;
+
+    [Header("Event on use of item")]
     [SerializeField] UnityEvent acivateThis;
 
+    // do the consumable timer 
+    //activate ui for tier to show how long the item is consumed for
+    // and kill itm on this
+    // also sound and stuff shold be active7u64w<q
 
-    public float time; 
 
     // Debug
+    float killTim = 10;
     Rigidbody itemBody;
     CapsuleCollider itemCollider;
     public bool itemThrown;
+    bool itemUsed = false;
 
 
     private void Awake()
@@ -65,10 +69,25 @@ public class Item : MonoBehaviour
         {
             transform.localPosition = Vector3.zero;
             transform.localRotation = Quaternion.identity;
+
+                killTim += Time.deltaTime;
+                if (killTim <= 0) // kill object
+                {
+                    Destroy(gameObject);
+                }
+            // kill wehn thrown and if it is a throwable
         }
-        if (consumableItems == ConsumableItems.Airhorn && time > 0)
+        if (itemUsed)//
         {
-            consumableItem();
+            UI_Manager.instance.EnableItemTimer();
+            time -= Time.deltaTime;
+            int minutes = Mathf.FloorToInt(time / 60);
+            int seconds = Mathf.FloorToInt(time % 60);
+            UI_Manager.instance.itemUseTimer.text = string.Format("{0:00}:{1:00}", minutes, seconds);
+            if(time  >= activeTime)
+            {
+                ConsumableItem();
+            }
         }
     }
 
@@ -81,12 +100,11 @@ public class Item : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        // Apply damage within the radius of the item impact
-        ApplyDamageInRange();
-        acivateThis?.Invoke();
         if (itemType == ItemType.Throwable)
         {
-            Invoke("DestroyItem", 5); // Destroy after impact
+            ApplyDamageInRange();
+            acivateThis?.Invoke();
+            Invoke("DestroyItem", 3); // Destroy after impact
         }
 
     }
@@ -109,11 +127,8 @@ public class Item : MonoBehaviour
                 }
                 else if (hitCollider.gameObject.TryGetComponent<ResidentAi>(out ResidentAi residentAI))
                 {
-                    residentAI.TakeDamage(damageAmount); // Call the TakeDamage method for People
-                    if (canStun == CanStun.Stun)
-                    {
-                        residentAI.Stun(stunTimer);
-                    }
+                    residentAI.TakeDamage(damageAmount, stunTimer); // Call the TakeDamage method for People
+                    
                 }
             }
             else
@@ -144,32 +159,23 @@ public class Item : MonoBehaviour
                 return false;
         }
     }
-    void consumableItem()
+    void ConsumableItem()
     {
-        if(consumableItems == ConsumableItems.Airhorn)
-        {
-            time -= Time.deltaTime;
-            int minutes = Mathf.FloorToInt(time / 60);
-            int seconds = Mathf.FloorToInt(time % 60);
-            Debug.Log("Plays airhorn animation");
-        }
-        if (time <= 0)
-        {
-            DestroyItem(); 
-        }
+        UI_Manager.instance.DissableItemTimer();
+        time = 0;
     }
     public void ConsumeItem()
     {
-        if (consumableItems == ConsumableItems.Airhorn)
-        {
-            consumableItem();
-        }
-        else
-        {
-            ApplyDamageInRange();
-            acivateThis?.Invoke();
-            Invoke("DestroyItem", 5);
-        }
+        itemUsed = true;
+        acivateThis?.Invoke();
+        ApplyDamageInRange(); // apply damage once a dnd deactivate
+        StartCoroutine(DestroyConsumable());
+        
+    }
+    IEnumerator DestroyConsumable()
+    {
+        yield return new WaitForSeconds(activeTime);
+        DestroyItem();
     }
 
     void DestroyItem()
@@ -179,19 +185,11 @@ public class Item : MonoBehaviour
 
     private void OnDrawGizmos()
     {
-        // Draw a sphere to represent the damage zone
-        if (itemType == ItemType.Throwable && damageZone > 0)
-        {
-            Gizmos.color = Color.red; // Set color for damage zone
-            Gizmos.DrawWireSphere(transform.position, damageZone); // Draw the wire sphere
-        }
-
-        // Draw a wireframe cube or sphere for item collider if it's a throwable item
-        if (itemType == ItemType.Throwable && itemCollider != null)
-        {
-            Gizmos.color = Color.green; // Set color for the item collider
-            Gizmos.DrawWireCube(transform.position, itemCollider.bounds.size); // Use the bounds size of the collider
-        }
+            Gizmos.color = Color.red;
+            Gizmos.DrawWireSphere(transform.position, damageZone); 
+       
+            Gizmos.color = Color.green; 
+            Gizmos.DrawWireCube(transform.position, itemCollider.bounds.size);
     }
 
 }

@@ -8,11 +8,8 @@ public class MainMenu : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     private void Awake()
     {
-        if (inMenu)
-        {
             Cursor.lockState = CursorLockMode.Confined;
             Cursor.visible = true;
-        }
     }
     public void GameStart()
     {
@@ -25,15 +22,6 @@ public class MainMenu : MonoBehaviour
     public void Contineu()
     {
         SceneManager.LoadSceneAsync(2);
-    }
-
-    public void PlayerDied()
-    {
-        if(dethPanel != null)
-        {
-            dethPanel.gameObject.SetActive(true);
-            Invoke("BackToMenu", 10);
-        }
     }
     public void BackToMenu()
     {

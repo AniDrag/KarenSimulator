@@ -5,14 +5,21 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager instance;
 
+    [SerializeField] UI_Manager ui;
     [Header("Refrences")]
     public SaveGameData gameData;
     public KeyBinds keyBinds;
+    public PlayerBaseMovemant playerMovemant;
+
     public bool isPlayerAlive;
     public int playerLives = 2;
+    public int multiplier;
+
     private void Awake()
     {
+        isPlayerAlive = true;
         instance = this;
+        playerLives = 2;
     }
     void Start()
     {
@@ -22,16 +29,27 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (UI_Manager.instance.dangerSlider.value == UI_Manager.instance.dangerSlider.maxValue)
+        gameData.multiplier = 1 + multiplier;
+        if (!isPlayerAlive)
         {
-            HandEploded();
+            playerMovemant.enabled = false;
+            // save latest score
+            if (Input.anyKeyDown)
+            {
+                SceneManager.LoadSceneAsync(0);
+            }
         }
     }
 
     public void LoseGamel()
     {
-        UI_Manager.instance.dethPanel.gameObject.SetActive(true);
-        UI_Manager.instance.dethPanel.gameObject.GetComponent<PlayerDeth>().DeadPlayer = true;
+        isPlayerAlive = false;
+        ui.dethPanel.gameObject.SetActive(true);
+        ui.dethPanel.gameObject.GetComponent<PlayerDeth>().DeadPlayer = true;
+        if (gameData.highScore[0] < gameData.score)
+        {
+            gameData.highScore[0] = gameData.score;
+        } // overwrite highscore if it is bigger
     }
     public void HandEploded()
     {

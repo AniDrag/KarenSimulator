@@ -6,11 +6,12 @@ using UnityEngine.Events;
 [RequireComponent(typeof(NavMeshAgent))]
 [RequireComponent(typeof(MeshCollider))]
 [RequireComponent(typeof(Animator))]
+[RequireComponent(typeof(Rigidbody))]
 public class ResidentAi : MonoBehaviour
 {
 
     [Header("AI stats")]
-    public int annoyance;
+    public int annoyance = 20;
     public int maxAnnoyance;
     public float decreaseAnnoyanceSpeed;
 
@@ -43,15 +44,14 @@ public class ResidentAi : MonoBehaviour
     private bool tookDamage;
     NavMeshAgent agentAI;
     Rigidbody aiBody;
-    float stunTime;
 
     bool stuned;
     private void Awake()
     {
         agentAI = GetComponent<NavMeshAgent>();
         attackSpeed = attackAnimation;
-        //aiBody = GetComponent<Rigidbody>();
-        //aiBody.freezeRotation = true;
+        aiBody = GetComponent<Rigidbody>();
+        aiBody.freezeRotation = true;
     }
     private void Start()
     {
@@ -61,17 +61,15 @@ public class ResidentAi : MonoBehaviour
 
     private void Update()
     {
-        if (stuned)
+        if (tookDamage) // if stunned ai cannot move
         {
             agentAI.speed = 0;
         }
 
-        aiAnimator.SetBool(isMoving, agentAI.velocity.magnitude > 0.01f);
-        // same but if stat is sprinting when it finds a player it sprints otherwise it pattrols witch it will only walk around.
-        if (annoyance != 0 && !tookDamage && Vector3.Distance(target.position, transform.position) < attackRange + 0.2f)
-        {
-            aiAnimator.SetBool(isAttackig, attacked);
-        }
+        aiAnimator.SetBool(isDamaged,tookDamage); // if stuned ot took damage be in take damage anim wit vel 0
+        aiAnimator.SetBool(isMoving, agentAI.velocity.magnitude > 0.01f);// if everything is ok just keep on movig and vel is more thant 0,01;
+        aiAnimator.SetBool(isAttackig, attacked); // attacks when it can attack, attack triggered with distacne and suff
+        
     }
 
     //Patroll
@@ -133,7 +131,7 @@ public class ResidentAi : MonoBehaviour
     /// <summary> /////////////////////////////////////////////////////////////////////////////////////////////////////
     ///                 Take Damage
     /// </summary>//////////////////////////////////////////////////////////////////////////////////////////////////////
-    public void TakeDamage(int dpsAmount)
+    public void TakeDamage(int dpsAmount, float stunTime)
     {
         annoyance += dpsAmount;
         if (annoyance >= maxAnnoyance)
@@ -141,16 +139,29 @@ public class ResidentAi : MonoBehaviour
             annoyance = maxAnnoyance;
             playOnMaxAnoyance?.Invoke();
           
-            StartCoroutine(TookDamageReset());
+            StartCoroutine(TookDamageReset(stunTime));
 
         }
 
         tookDamage = true;
 
     }
-    IEnumerator TookDamageReset()
+    IEnumerator TookDamageReset(float stunTime)
     {
-        yield return new WaitForSeconds(1);
+        float time;
+        
+        if(stunTime > 0)
+        {
+            time = stunTime;
+        }
+        else
+        {
+            time = 1f;
+        }
+
+        WaitForSeconds wait = new WaitForSeconds(time);
+
+        yield return wait;
         tookDamage = false;
     }
     //////////////////////////////////////////////////////////////////////////////////////
@@ -170,21 +181,6 @@ public class ResidentAi : MonoBehaviour
             }
         }
         yield return Wait;
-    }
-    //////////////////////////////////////////////////////////////////////////////////////
-    ///         Stun
-    //////////////////////////////////////////////////////////////////////////////////////
-    public void Stun(float timer)
-    {
-        stuned = true;
-        stunTime = timer;
-        StartCoroutine(ResetStun());
-    }
-
-    IEnumerator ResetStun ()
-    {
-        yield return new WaitForSeconds(stunTime);
-        stuned = false;
     }
 }
 //////////////////////////////////////////////////////////////////////////////////////////

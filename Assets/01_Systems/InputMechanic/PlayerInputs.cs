@@ -1,4 +1,5 @@
 using System.Collections;
+using System.Security.Cryptography;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Events;
@@ -23,48 +24,48 @@ public class PlayerInputs : MonoBehaviour
     [SerializeField] float _Debug_throwMultiplier = 1f;
 
     bool weaponInADS;
-
+    Transform hitlocation;
     [Header("Settings menu")]
     [Tooltip("Not in use dont use! tel me if u want to do smthign")]
     public UnityEvent activateSettings;
     public UnityEvent deactivateSettings;
     bool inSettings;
-    int hands = 2;
-    private void Awake()
-    {
-        CursorOff();
-        hands = 2;
-    }
     private void Update()
     {
-        AimCamera();
         MenuInputs();
 
-        if (inSettings) { return; }
-        
-        if (itemEquiped != null && itemEquiped.itemType == Item.ItemType.Throwable && itemInstance != null)
+        if (!inSettings)
         {
-            ThrowableItemAction();
-        }
-        else if (itemEquiped != null && itemEquiped.itemType == Item.ItemType.Consumable && itemInstance != null)
-        {
-            UseConsumable();
+            AimCamera();
+
+            if (itemEquiped != null && itemEquiped.itemType == Item.ItemType.Throwable && itemInstance != null)
+            {
+                ThrowableItemAction();
+            }
+            else if (itemEquiped != null && itemEquiped.itemType == Item.ItemType.Consumable && itemInstance != null)
+            {
+                UseConsumable();
+            }
         }
     }
 
     void UseConsumable()
     {
-        itemEquiped.ConsumeItem();
+        if (Input.GetKeyDown(GameManager.instance.gameData.inputKeys.fire))
+        {
+            itemEquiped.ConsumeItem();
+            CleareItemInfo();
+        }
     }
     void ThrowableItemAction()
     {
-        if (Input.GetKeyDown(KeyCode.Mouse1) && !weaponInADS)
+        if (Input.GetKeyDown(GameManager.instance.gameData.inputKeys.aim) && !weaponInADS)
         {
             Debug.Log("Aiming");
             weaponInADS = true;
             ActivateSliders();
         }
-        else if (Input.GetKeyDown(KeyCode.Mouse0) && weaponInADS)
+        else if (Input.GetKeyDown(GameManager.instance.gameData.inputKeys.fire) && weaponInADS)
         {
             Debug.Log("Item thrown");
 
@@ -90,20 +91,15 @@ public class PlayerInputs : MonoBehaviour
     {
         UI_Manager.instance.STR_data.isActive = true;
         UI_Manager.instance.danger_data.isActive = true;
-
-        //activateDanger.isActive = true;
-        //activateStrenght.isActive = true;
     }
 
     void DeactivateSliders()
     {
+        Debug.Log("Sliders inactive");
         UI_Manager.instance.STR_data.isActive = false;
         UI_Manager.instance.danger_data.isActive = false;
-        Debug.Log("Sliders inactive");
-        activateDanger.isActive = false;
         UI_Manager.instance.strenghtSlider.value = 0;
         UI_Manager.instance.dangerSlider.value = 0;
-        strenghtSlider.value = 0;
     }
 
     IEnumerator DeactivateAim()
@@ -133,7 +129,6 @@ public class PlayerInputs : MonoBehaviour
         UI_Manager.instance.annoyanceAmount.text = "Annoyance: " + itemEquiped.damageAmount;
         UI_Manager.instance.areaOfEffect.text = "Radious"+ itemEquiped.damageZone;
         ItemLayerEffect();
-
         IfItemCanStun();
 
     }
@@ -170,45 +165,19 @@ public class PlayerInputs : MonoBehaviour
             UI_Manager.instance.canStun.text = "Stun - /";
         }
     }
-    void CursorOff()
-    {
-        Cursor.lockState = CursorLockMode.Locked;
-        Cursor.visible = false;
-    }
-    void CursorOn()
-    {
-        Cursor.lockState= CursorLockMode.Confined;
-        Cursor.visible = true;
-    }
-    
-    public void HandExploded()
-    {
-        hands--;
-        if(hands == 1)
-        {
-            playerHand.position = secondHand.position;
-        }
-        else
-        {
-            REF.Ui.GetComponent<MainMenu>().PlayerDied();
-        }
-    }
-
     void MenuInputs()
     {
         if (Input.GetKeyDown(REF.inputKeys.menu) && !inSettings)
         {
             activateSettings.Invoke();
-            CursorOn();
             inSettings = true;
-            UI_Manager.instance.inOptions = true;
+            UI_Manager.instance.OpenOptions();
         }
         else if (inSettings && Input.GetKeyDown(REF.inputKeys.menu))
         {
             deactivateSettings.Invoke();
-            CursorOff();
             inSettings = false;
-            UI_Manager.instance.inOptions = false;
+            UI_Manager.instance.CloseOptions();
         }
         
     }
@@ -218,6 +187,7 @@ public class PlayerInputs : MonoBehaviour
         RaycastHit hit;
         if(Physics.Raycast(camRay, out hit, 100))
         {
+            hitlocation = hit.transform;
             Vector3 lookAtPoint = hit.point - playerHand.position;
             lookAtPoint.Normalize();
 
@@ -226,5 +196,5 @@ public class PlayerInputs : MonoBehaviour
             playerHand.rotation = Quaternion.Slerp(playerHand.rotation, rotateHand, 0.2f);
         }
     }
+    
 }
-
