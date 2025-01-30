@@ -12,8 +12,8 @@ EditorBuildSettings:
     path: Assets/00_Scenes/Tests/Animation.unity
     guid: dba51d60ee6a03b4ebe048460fe17f97
   - enabled: 1
-    path: Assets/00_Scenes/Tests/City.unity
-    guid: 43ec3a3e8d9a025438a2f4243e7b9fb1
+    path: Assets/00_Scenes/TestEnschede.unity
+    guid: 3a9ead589450b214a9f6bd7529b6ad3a
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}
   m_UseUCBPForAssetBundles: 0

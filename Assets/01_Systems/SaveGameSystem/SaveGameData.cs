@@ -1,4 +1,4 @@
-using NUnit.Framework;
+using System.Collections.Generic;
 using UnityEngine;
 
 [CreateAssetMenu(fileName = "SaveName", menuName = "Tools/SaveOBJ")]
@@ -7,7 +7,7 @@ public class SaveGameData : ScriptableObject
     [Header("Player Details")]
     [Tooltip("Name of the player for this save file.")]
     public string playerName;
-    public List scores;
+    public List<int> scores;
     [Header("Progress Tracking")]
     [Tooltip("Player's current score.")]
     public int score;

@@ -24,7 +24,8 @@ public class GameManager : MonoBehaviour
     {
         if (UI_Manager.instance.dangerSlider.value == UI_Manager.instance.dangerSlider.maxValue)
         {
-            HandEploded();
+            //Debug.Log("Test1");
+            //HandEploded();
         }
     }
 

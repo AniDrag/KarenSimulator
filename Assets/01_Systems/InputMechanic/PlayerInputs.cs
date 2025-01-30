@@ -1,9 +1,7 @@
 using System.Collections;
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.UI;
-using static Item;
 
 public class PlayerInputs : MonoBehaviour
 {
