@@ -14,10 +14,10 @@ public class PlayerRefrences : MonoBehaviour
     public Camera cameraTPS;
     public Camera mainViewCamera;
     public CameraCTR cammeraControler;
-    public SwitchScreenOnPress switchScreens;
 
     [Header("UI elements")]
     public Transform Ui;
+
 
 
 }
