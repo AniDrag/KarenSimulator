@@ -131,14 +131,13 @@ GameObject:
   - component: {fileID: 829558471}
   - component: {fileID: 829558470}
   - component: {fileID: 829558472}
-  - component: {fileID: 829558473}
   m_Layer: 5
   m_Name: Comic Panel 5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &829558469
 RectTransform:
   m_ObjectHideFlags: 0
@@ -201,9 +200,9 @@ Animator:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 829558468}
-  m_Enabled: 0
+  m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 0523c15af2e8dd7419c2cc8e5da0dc77, type: 2}
+  m_Controller: {fileID: 9100000, guid: f110f96d09c54cd498f832c2bcd9d6f0, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -215,22 +214,6 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &829558473
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 829558468}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 582897847825e284fb90428d76e1a1b1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  theEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  SleepTimeout: 0
 --- !u!1 &832575517
 GameObject:
   m_ObjectHideFlags: 0
@@ -292,14 +275,13 @@ GameObject:
   - component: {fileID: 1058443641}
   - component: {fileID: 1058443640}
   - component: {fileID: 1058443642}
-  - component: {fileID: 1058443643}
   m_Layer: 5
   m_Name: Comic Panel 4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1058443639
 RectTransform:
   m_ObjectHideFlags: 0
@@ -362,9 +344,9 @@ Animator:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1058443638}
-  m_Enabled: 0
+  m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 0523c15af2e8dd7419c2cc8e5da0dc77, type: 2}
+  m_Controller: {fileID: 9100000, guid: 22568e5c93cc6034295e6a09d1012665, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -376,22 +358,6 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &1058443643
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1058443638}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 582897847825e284fb90428d76e1a1b1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  theEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  SleepTimeout: 0
 --- !u!1 &1058564405
 GameObject:
   m_ObjectHideFlags: 0
@@ -510,14 +476,13 @@ GameObject:
   - component: {fileID: 1400429293}
   - component: {fileID: 1400429292}
   - component: {fileID: 1400429294}
-  - component: {fileID: 1400429295}
   m_Layer: 5
   m_Name: Comic Panel 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1400429291
 RectTransform:
   m_ObjectHideFlags: 0
@@ -582,7 +547,7 @@ Animator:
   m_GameObject: {fileID: 1400429290}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 0523c15af2e8dd7419c2cc8e5da0dc77, type: 2}
+  m_Controller: {fileID: 9100000, guid: 4e1cdf986ac98ba42b8f1fceb5627aab, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -594,22 +559,6 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &1400429295
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1400429290}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 582897847825e284fb90428d76e1a1b1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  theEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  SleepTimeout: 0
 --- !u!1 &1548984654
 GameObject:
   m_ObjectHideFlags: 0
@@ -659,9 +608,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   theEvent:
-    m_PersistentCalls:
+  - m_PersistentCalls:
       m_Calls: []
-  SleepTimeout: 0
+  sleepTiem: 2
 --- !u!65 &1548984658
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -749,9 +698,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   theEvent:
-    m_PersistentCalls:
+  - m_PersistentCalls:
       m_Calls: []
-  SleepTimeout: 0
+  sleepTiem: 2
 --- !u!1 &1611221456
 GameObject:
   m_ObjectHideFlags: 0
@@ -843,14 +792,13 @@ GameObject:
   - component: {fileID: 1615264749}
   - component: {fileID: 1615264748}
   - component: {fileID: 1615264750}
-  - component: {fileID: 1615264751}
   m_Layer: 5
   m_Name: Comic Panel 3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1615264747
 RectTransform:
   m_ObjectHideFlags: 0
@@ -913,9 +861,9 @@ Animator:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1615264746}
-  m_Enabled: 0
+  m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 0523c15af2e8dd7419c2cc8e5da0dc77, type: 2}
+  m_Controller: {fileID: 9100000, guid: fe7c7b07779cd1d48910d400de89f91d, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -927,22 +875,6 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &1615264751
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1615264746}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 582897847825e284fb90428d76e1a1b1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  theEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  SleepTimeout: 0
 --- !u!1 &1620022784
 GameObject:
   m_ObjectHideFlags: 0
@@ -987,6 +919,7 @@ GameObject:
   - component: {fileID: 1842545550}
   - component: {fileID: 1842545549}
   - component: {fileID: 1842545548}
+  - component: {fileID: 1842545551}
   m_Layer: 5
   m_Name: RunTimeUI
   m_TagString: Untagged
@@ -1083,6 +1016,46 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
+--- !u!114 &1842545551
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1842545546}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 582897847825e284fb90428d76e1a1b1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  theEvent:
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1918761583}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 1918761585}
+        m_TargetAssemblyTypeName: UnityEngine.Animator, UnityEngine
+        m_MethodName: SetTrigger
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: thisActive
+          m_BoolArgument: 1
+        m_CallState: 2
+  sleepTiem: 2
 --- !u!1 &1879601336
 GameObject:
   m_ObjectHideFlags: 0
@@ -1095,14 +1068,13 @@ GameObject:
   - component: {fileID: 1879601339}
   - component: {fileID: 1879601338}
   - component: {fileID: 1879601340}
-  - component: {fileID: 1879601341}
   m_Layer: 5
   m_Name: Comic Panel 6
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1879601337
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1165,9 +1137,9 @@ Animator:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1879601336}
-  m_Enabled: 0
+  m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 0523c15af2e8dd7419c2cc8e5da0dc77, type: 2}
+  m_Controller: {fileID: 9100000, guid: 1c16546c60365d145a236db36c582bfd, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -1179,22 +1151,6 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &1879601341
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1879601336}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 582897847825e284fb90428d76e1a1b1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  theEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  SleepTimeout: 0
 --- !u!1 &1918761583
 GameObject:
   m_ObjectHideFlags: 0
@@ -1207,14 +1163,13 @@ GameObject:
   - component: {fileID: 1918761587}
   - component: {fileID: 1918761586}
   - component: {fileID: 1918761585}
-  - component: {fileID: 1918761588}
   m_Layer: 5
   m_Name: Comic Panel 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1918761584
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1291,22 +1246,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1918761583}
   m_CullTransparentMesh: 1
---- !u!114 &1918761588
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1918761583}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 582897847825e284fb90428d76e1a1b1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  theEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  SleepTimeout: 0
 --- !u!1 &2033644587
 GameObject:
   m_ObjectHideFlags: 0
