@@ -7,6 +7,7 @@ using UnityEngine.Events;
 [RequireComponent(typeof(MeshCollider))]
 [RequireComponent(typeof(Animator))]
 [RequireComponent(typeof(Rigidbody))]
+[RequireComponent(typeof(AnnoyanceCounter))]
 public class ResidentAi : MonoBehaviour
 {
 
