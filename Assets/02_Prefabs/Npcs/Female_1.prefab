@@ -1131,6 +1131,7 @@ MonoBehaviour:
   maxAnnoyance: 100
   decreaseAnnoyanceSpeed: 1
   target: {fileID: 0}
+  aiSpeed: 14
   attackRange: 1.2
   updateSpeed: 1
   attackSpeed: 1

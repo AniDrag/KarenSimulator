@@ -1,9 +1,11 @@
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 using UnityEngine.Events;
 
 
-[RequireComponent(typeof(MeshCollider))]
+[RequireComponent(typeof(NavMeshObstacle))]
+
 public class Building : MonoBehaviour
 {
     /////////////////////////////////////////////////////////

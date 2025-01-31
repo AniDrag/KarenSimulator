@@ -31,6 +31,7 @@ public class ResidentAi : MonoBehaviour
     [Header("AI Movement Settings")]
     [Tooltip("Target the AI will pursue (usually the player).")]
     public Transform target;
+    public float aiSpeed = 14;
 
     [Tooltip("Attack range within which the AI will engage the player.")]
     [SerializeField] float attackRange;
@@ -101,6 +102,7 @@ public class ResidentAi : MonoBehaviour
 
     private void Start()
     {
+        agentAI.speed = aiSpeed;
         annoyance = 100;
         agentAI.stoppingDistance = attackRange;
         FindPlayer();
