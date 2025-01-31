@@ -13,7 +13,7 @@ public class GameManager : MonoBehaviour
 
     public bool isPlayerAlive;
     public int playerLives = 2;
-    public int multiplier;
+    public int thisMultiplier;
 
     private void Awake()
     {
@@ -29,11 +29,10 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (isPlayerAlive)
-        {
-        gameData.multiplier = 1 + multiplier;
+        
+        gameData.multiplier = (1 + thisMultiplier);
 
-        }
+        
 
         if (!isPlayerAlive)
         {

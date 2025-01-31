@@ -7,11 +7,11 @@ public class AnnoyanceCounter : MonoBehaviour
     [SerializeField] bool isBuilding;
     [SerializeField] Transform UI;
     [SerializeField] TMP_Text test;
-    private void Awake()
+
+    private void Start()
     {
         ai = GetComponent<ResidentAi>();
     }
-
     // Update is called once per frame
     void Update()
     {

@@ -12,8 +12,7 @@ GameObject:
   - component: {fileID: 1695326435621632787}
   - component: {fileID: 4583771849965652019}
   - component: {fileID: 2276727962139637255}
-  - component: {fileID: 5881569331273477572}
-  - component: {fileID: 4353444519280854877}
+  - component: {fileID: 1929040760914309860}
   m_Layer: 15
   m_Name: Item_Firecracker
   m_TagString: Untagged
@@ -84,10 +83,10 @@ CapsuleCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.01574925
-  m_Height: 0.09412643
+  m_Radius: 0.06716802
+  m_Height: 0.2707517
   m_Direction: 1
-  m_Center: {x: 0, y: 0.038130745, z: 0}
+  m_Center: {x: 0, y: 0.016218608, z: 0}
 --- !u!114 &2276727962139637255
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -100,51 +99,135 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bcae788cd5b7413488abc73790347773, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  itemName: Firecracker
   itemType: 1
   effectLayer: 0
   canStun: 0
   damageZone: 5
   damageAmount: 35
   itemMass: 3
-  stunTimer: 0
+  stunTimer: 2
+  destructionDelay: 3
   activeTime: 0
-  acivateThis:
+  effectlayer:
+    serializedVersion: 2
+    m_Bits: 24576
+  activateThis:
     m_PersistentCalls:
       m_Calls: []
-  itemThrown: 0
---- !u!114 &5881569331273477572
-MonoBehaviour:
+  activateThrowOnContact:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1929040760914309860}
+        m_TargetAssemblyTypeName: UnityEngine.AudioSource, UnityEngine
+        m_MethodName: Play
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  interactionOBJ: {fileID: 7200035405504581417}
+--- !u!82 &1929040760914309860
+AudioSource:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2020653594162335818}
   m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ea849683b3e8f5a4fb369fb35d685d67, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!135 &4353444519280854877
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2020653594162335818}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: b0d8a655510c05b45a23c38419db6d5e, type: 3}
+  m_Resource: {fileID: 8300000, guid: b0d8a655510c05b45a23c38419db6d5e, type: 3}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
     serializedVersion: 2
-    m_Bits: 16384
-  m_ExcludeLayers:
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
     serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 1
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Radius: 0.24190098
-  m_Center: {x: 0, y: 0.044291936, z: 0}
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &7200035405504581417
 GameObject:
   m_ObjectHideFlags: 0
@@ -154,8 +237,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 682990125119027527}
+  - component: {fileID: 5294921490372937600}
+  - component: {fileID: 2238323406589147515}
   m_Layer: 15
-  m_Name: GameObject
+  m_Name: Interactible
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -176,6 +261,39 @@ Transform:
   m_Children: []
   m_Father: {fileID: 491342220115985245}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &5294921490372937600
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7200035405504581417}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ea849683b3e8f5a4fb369fb35d685d67, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!135 &2238323406589147515
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7200035405504581417}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 16384
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 243767
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Radius: 0.5
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &7926365292041422016
 PrefabInstance:
   m_ObjectHideFlags: 0

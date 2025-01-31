@@ -33,6 +33,7 @@ public class Building : MonoBehaviour
 
     [Tooltip("Spawn point for residents.")]
     [SerializeField] private Transform residentSpawnPoint;
+    [SerializeField] Transform home;
 
     private List<GameObject> spawnedResidents = new();
     private int residentsSpawned = 0;
@@ -48,7 +49,7 @@ public class Building : MonoBehaviour
     private int spawnPeoplePerWave;
 
     [Tooltip("Reference to game data for score tracking.")]
-    [SerializeField] private SaveGameData gameData;
+    private SaveGameData gameData;
 
     private void Awake()
     {
@@ -58,6 +59,10 @@ public class Building : MonoBehaviour
         oldThreshold = 0;
         spawnPeoplePerWave = totalResidentCount / maxWaves;
     }
+    private void Start()
+    {
+        gameData = GameManager.instance.gameData;
+    }
 
     /////////////////////////////////////////////////////////
     //                    Annoyance Management
@@ -65,9 +70,8 @@ public class Building : MonoBehaviour
     public void AnnoyTarget(int amount)
     {
         currentAnnoyance += amount;
-        gameData.score += amount * gameData.multiplier;
 
-        if (currentAnnoyance >= threshold)
+        if (currentAnnoyance >= threshold && currentWave <= maxWaves)
         {
             AdvanceWave();
             SpawnResidents();
@@ -117,18 +121,25 @@ public class Building : MonoBehaviour
     /////////////////////////////////////////////////////////
     private void SpawnResidents()
     {
+        Debug.LogWarning("Ai spaning");
         int spawnablePeople = spawnPeoplePerWave * currentWave;
         int peopleToSpawn = Mathf.Min(spawnablePeople - spawnedResidents.Count, totalResidentCount - residentsSpawned);
 
         for (int i = 0; i < peopleToSpawn; i++)
         {
+            Debug.LogWarning("inside loop");
             GameObject resident = Instantiate(aiVariants.Variants[Random.Range(0, aiVariants.Variants.Length)], residentSpawnPoint.position, Quaternion.identity);
-            resident.GetComponent<ResidentAi>().home = transform;
+            resident.transform.SetParent(home);
+            Debug.LogWarning("1");
+            resident.GetComponent<ResidentAi>().GetHome(home.position);
+            Debug.LogWarning("2");
+            resident.GetComponent<ResidentAi>().annoyance = 100;
             spawnedResidents.Add(resident);
             residentsSpawned++;
-            GameManager.instance.multiplier++;
+            Debug.LogWarning("+ 1 to multiplier");
+            GameManager.instance.thisMultiplier +=1;
         }
-        Debug.Log($"Wave {currentWave}: Spawned {peopleToSpawn} residents.");
+        Debug.LogWarning($"Wave {currentWave}: Spawned {peopleToSpawn} residents.");
     }
 
     /// <summary>
@@ -142,7 +153,8 @@ public class Building : MonoBehaviour
         for (int i = 0; i < residentsToRemove; i++)
         {
             Destroy(spawnedResidents[i]);
-            GameManager.instance.multiplier--;
+            Debug.Log("- 1 to multiplier");
+            GameManager.instance.thisMultiplier-=1;
         }
 
         spawnedResidents.RemoveRange(0, residentsToRemove);

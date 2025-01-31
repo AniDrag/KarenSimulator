@@ -12,4 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bddc0e2158d4e8d4a9010ef2adfc760f, type: 3}
   m_Name: variant
   m_EditorClassIdentifier: 
-  Variants: []
+  Variants:
+  - {fileID: 835244057196174031, guid: 3f8be1c5fc8e8384fa281d5f23c42350, type: 3}
+  - {fileID: 835244057196174031, guid: 0d499601f828e884985b73b0ff95cec4, type: 3}
+  - {fileID: 835244057196174031, guid: 582d4ab8a755d9241af4c26a6ec81299, type: 3}
+  - {fileID: 7912035733427289471, guid: bc669ae467fad0a41a3242b6a0573e3f, type: 3}
+  - {fileID: 835244057196174031, guid: 8c1ea02d272de0945a5903695b915d67, type: 3}
+  - {fileID: 835244057196174031, guid: f2730d04b8d914f4bafc9b667f2c58f0, type: 3}
+  - {fileID: 835244057196174031, guid: 97e168940f185df409cf589184b33e2c, type: 3}
+  - {fileID: 835244057196174031, guid: 993e0b9bd381ddf4ab5665d071f1fa87, type: 3}

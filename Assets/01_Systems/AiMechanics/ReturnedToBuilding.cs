@@ -1,5 +1,5 @@
 using UnityEngine;
-
+[RequireComponent(typeof(SphereCollider))]
 public class ReturnedToBuilding : MonoBehaviour
 {
     private void OnTriggerEnter(Collider other)

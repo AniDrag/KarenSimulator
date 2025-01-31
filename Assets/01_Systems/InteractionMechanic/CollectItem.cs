@@ -1,8 +1,13 @@
 using UnityEngine;
-
+[RequireComponent(typeof(SphereCollider))]
 public class CollectItem : MonoBehaviour
 {
+    GameObject parent;
     bool collectingItme;
+    private void Start()
+    {
+        parent = transform.parent.gameObject;
+    }
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))// only if player colides
@@ -21,14 +26,16 @@ public class CollectItem : MonoBehaviour
     {
         if (cl.itemInstance == null)
         {
-            cl.EquipItem(transform.gameObject);
+            cl.EquipItem(parent);
             collectingItme=false;
-            Destroy(gameObject);
+            Debug.Log("Item Destroyed");
+            Destroy(parent);
             
         }
         else
         {
             Debug.Log("Item instace full");
+            collectingItme = false;
         }
     }
     /*

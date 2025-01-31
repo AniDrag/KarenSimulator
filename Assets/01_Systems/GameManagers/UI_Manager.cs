@@ -25,6 +25,7 @@ public class UI_Manager : MonoBehaviour
     public ItemSliders danger_data;
 
     [Header("Item Info")]
+    public TMP_Text itemName;
     public TMP_Text annoyanceAmount;
     public TMP_Text areaOfEffect;
     public TMP_Text damagelayers;
@@ -39,9 +40,11 @@ public class UI_Manager : MonoBehaviour
     [Header("item use timer")]
     public Transform itemTimerTransform;
     public TMP_Text itemUseTimer;
-
+    [Header("Private stuff")]
     public bool inOptions;
     public float time;
+
+    [SerializeField] TMP_Text finalScore;
     private void Awake()
     {
         instance = this;
@@ -61,6 +64,8 @@ public class UI_Manager : MonoBehaviour
     //Possible volume anagmet here or a seperate Manager
     void Update()
     {
+        finalScore.text = $"Your Score: {GameManager.instance.gameData.score}";
+
         // /////////////////////////////////////////////////////////////////////////////////////
         //                          SCORE
         // /////////////////////////////////////////////////////////////////////////////////////

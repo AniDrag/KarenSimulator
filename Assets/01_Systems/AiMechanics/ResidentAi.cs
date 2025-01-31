@@ -16,7 +16,7 @@ public class ResidentAi : MonoBehaviour
 
     [Header("AI Stats")]
     [Tooltip("Current annoyance level of the AI.")]
-    public int annoyance = 20;
+    public int annoyance;
 
     [Tooltip("Maximum annoyance before the AI reacts strongly.")]
     public int maxAnnoyance;
@@ -72,8 +72,7 @@ public class ResidentAi : MonoBehaviour
     [SerializeField] UnityEvent playOnTakeDamage;
 
     [Tooltip("Triggered when the AI reaches max annoyance.")]
-    [SerializeField] UnityEvent playOnMaxAnnoyance;
-
+    [SerializeField] UnityEvent playOnChasePlayer;
     [Tooltip("Local de-annoyance effect object.")]
     [SerializeField] GameObject localDeAnnoy;
 
@@ -82,8 +81,9 @@ public class ResidentAi : MonoBehaviour
     /////////////////////////////////////////////////////////
 
     [Tooltip("AI's home location, where it returns when annoyance is 0.")]
-    public Transform home;
+    public Vector3 home;
 
+    bool anoyanceDecrease;
     private bool attacked;
     private bool tookDamage;
     private NavMeshAgent agentAI;
@@ -96,28 +96,36 @@ public class ResidentAi : MonoBehaviour
         attackSpeed = attackAnimation;
         aiBody = GetComponent<Rigidbody>();
         aiBody.freezeRotation = true;
+        decreaseAnnoyanceSpeed = 1;
     }
 
     private void Start()
     {
+        annoyance = 100;
         agentAI.stoppingDistance = attackRange;
         FindPlayer();
         if (home == null)
         {
-            home.position = transform.position;
+            home = transform.position;
         }
     }
 
     private void Update()
     {
+        //Debug.LogWarning(annoyance + " LP1");
         if (tookDamage)
         {
             agentAI.speed = 0;
         }
+        if(!anoyanceDecrease && annoyance > 0)
+        {
+            anoyanceDecrease = true;
+            StartCoroutine(DecreaseAnnoyanceOverTime());
+        }
 
         aiAnimator.SetBool(isDamaged, tookDamage);
         aiAnimator.SetBool(isMoving, agentAI.velocity.magnitude > 0.01f);
-        aiAnimator.SetBool(isAttacking, attacked);
+        aiAnimator.SetBool(isAttacking, attacked && annoyance > 0);
     }
 
     /////////////////////////////////////////////////////////
@@ -132,7 +140,7 @@ public class ResidentAi : MonoBehaviour
             if (annoyance == 0 && home != null)
             {
                 localDeAnnoy.SetActive(true);
-                agentAI.SetDestination(home.position);
+                agentAI.SetDestination(home);
             }
             else if (attacked || tookDamage)
             {
@@ -150,6 +158,7 @@ public class ResidentAi : MonoBehaviour
                     StartCoroutine(AttackPlayer());
                 }
             }
+            playOnChasePlayer?.Invoke();
             yield return Wait;
         }
     }
@@ -161,6 +170,7 @@ public class ResidentAi : MonoBehaviour
         {
             if (hit.gameObject.CompareTag("Player"))
             {
+              //  Debug.LogWarning(annoyance + "LP2");
                 target = hit.transform;
                 Debug.Log("Player Found");
                 StartCoroutine(ChasePlayer());
@@ -180,14 +190,21 @@ public class ResidentAi : MonoBehaviour
 
     public void TakeDamage(int dpsAmount, float stunTime)
     {
-        annoyance += dpsAmount;
-        if (annoyance >= maxAnnoyance)
+        Debug.LogWarning("Damage invoked");
+        if (!tookDamage)
         {
-            annoyance = maxAnnoyance;
-            playOnMaxAnnoyance?.Invoke();
+        Debug.LogWarning("took damage");
+            annoyance += dpsAmount;
+            Debug.LogWarning(dpsAmount + "added damage");
+
+            if (annoyance >= maxAnnoyance)
+            {
+                annoyance = maxAnnoyance;
+            }
+            playOnTakeDamage?.Invoke();
             StartCoroutine(TookDamageReset(stunTime));
+            tookDamage = true;
         }
-        tookDamage = true;
     }
 
     IEnumerator TookDamageReset(float stunTime)
@@ -203,21 +220,30 @@ public class ResidentAi : MonoBehaviour
 
     public IEnumerator DecreaseAnnoyanceOverTime()
     {
-        WaitForSeconds Wait = new WaitForSeconds(decreaseAnnoyanceSpeed);
-        while (enabled && annoyance >= 0)
+        yield return new WaitForSeconds(decreaseAnnoyanceSpeed);
+        
+        //Debug.LogWarning(annoyance + "LP3");
+        annoyance -= 1;
+        if (annoyance <= 0)
         {
-            annoyance -= 1;
-            if (annoyance == 0)
-            {
-                StopCoroutine(DecreaseAnnoyanceOverTime());
-            }
+            StopCoroutine(DecreaseAnnoyanceOverTime());
+            
         }
-        yield return Wait;
+        else
+        {
+            StartCoroutine(DecreaseAnnoyanceOverTime());
+        }
+        
+    }
+    public void GetHome(Vector3 homelocation)
+    {
+        Debug.Log("Home set");
+        home = homelocation;
     }
 }
 
 
-/*
+    /*
 [Header("AI stats")]
 public int annoyance = 20;
 public int maxAnnoyance;
@@ -265,6 +291,7 @@ private void Awake()
 private void Start()
 {
     agentAI.stoppingDistance = attackRange;
+
     FindPlayer();
     if(home == null)
     {
@@ -397,9 +424,9 @@ public IEnumerator DecreaseAnnoyanceOverTime()
     }
     yield return Wait;
 }
-}*/
+}
 //////////////////////////////////////////////////////////////////////////////////////////
-///
+///*/
 /*
 [Header("AI Settings (for people to use)")]
 [SerializeField] float aiSpeed;

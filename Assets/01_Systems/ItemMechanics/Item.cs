@@ -4,11 +4,13 @@ using UnityEngine.Events;
 
 [RequireComponent(typeof(Rigidbody))]
 [RequireComponent(typeof(CapsuleCollider))]
+[RequireComponent(typeof(AudioSource))]
 public class Item : MonoBehaviour
 {
     /////////////////////////////////////////////////////////
     //                Item Enums & Variables
     /////////////////////////////////////////////////////////
+
     public enum ItemType { Consumable, Throwable }
     public enum EffectLayer { All, Buildings, People }
     public enum CanStun { Stun, DontStun }
@@ -22,409 +24,230 @@ public class Item : MonoBehaviour
     [Header("General Item Settings")]
     [Tooltip("Radius in which the item applies damage upon impact.")]
     public float damageZone;
-
     [Tooltip("Amount of damage the item deals.")]
     public int damageAmount;
+    [SerializeField] float itemMass;
 
-    [Tooltip("Mass of the item. Must be 1 or more for proper physics.")]
-    [SerializeField] float itemMass = 1f;
-
+    [Header("Item timers")]
     [Tooltip("Time the stun effect lasts when applied.")]
     [SerializeField] float stunTimer;
-
-    [Header("Timing Settings")]
-    [Tooltip("Time before item destroys itself after hitting a building or missing a target.")]
-    [SerializeField] private float destructionDelay = 3f;
-
-    [Header("Consumable Item Settings")]
-    [Tooltip("How long the item remains active before being removed.")]
+    [Header("Consumable item settings")]
+    [Tooltip("How long the item is active")]
     public float activeTime;
 
-    private float time;
-    private LayerMask effectlayer;
+    public LayerMask effectlayer;
 
-    [Header("Events On Use")]
+    [Header("Event on use of item")]
     [Tooltip("Events triggered when the item is used.")]
-    [SerializeField] UnityEvent activateThis;
+    [SerializeField] UnityEvent activateOnItemConsume;
+    [SerializeField] UnityEvent activateThrowOnContact;
 
     /////////////////////////////////////////////////////////
     //                 Private Variables
     /////////////////////////////////////////////////////////
+    public GameObject interactionOBJ;
     private Rigidbody itemBody;
     private CapsuleCollider itemCollider;
     private bool itemThrown = false;
     private bool itemUsed = false;
     private bool hitSomething = false; // Tracks if the item hit anything
-    private float destroyTimer = 10f; // Failsafe timer for unused items
+    private float killTime = 5f; // Failsafe timer for unused items
+    private float time;
 
-    /////////////////////////////////////////////////////////
-    //                     Initialization
-    /////////////////////////////////////////////////////////
+
+
     private void Awake()
     {
         itemBody = GetComponent<Rigidbody>();
-        itemBody.isKinematic = true;
         itemBody.mass = Mathf.Max(itemMass, 1f); // Ensure mass is at least 1
+        itemBody.isKinematic = true;
         itemCollider = GetComponent<CapsuleCollider>();
-        itemCollider.isTrigger = true;
+        itemCollider.enabled = false;
         time = 0;
     }
-
-    /////////////////////////////////////////////////////////
-    //                   Update Method
-    /////////////////////////////////////////////////////////
     private void Update()
     {
-        // Ensure item doesn't remain forever
+        
         if (!itemThrown)
         {
             transform.localPosition = Vector3.zero;
             transform.localRotation = Quaternion.identity;
-            destroyTimer -= Time.deltaTime;
-            if (destroyTimer <= 0)
+        }
+        else
+        {
+            killTime -= Time.deltaTime;
+            if (killTime <= 0) // kill object
             {
-                Destroy(gameObject);
+                activateThrowOnContact?.Invoke();
+                Debug.LogWarning("Sector 1");
+                DestroyItem();
             }
         }
-
-        // Handle consumable item timer
-        if (itemUsed)
+        // kill wehn thrown and if it is a throwable
+        
+        if (itemUsed && itemType == ItemType.Consumable)//
         {
-            UI_Manager.instance.EnableItemTimer();
-            time += Time.deltaTime;
+            time = activeTime;
+            time -= Time.deltaTime;
             int minutes = Mathf.FloorToInt(time / 60);
             int seconds = Mathf.FloorToInt(time % 60);
             UI_Manager.instance.itemUseTimer.text = string.Format("{0:00}:{1:00}", minutes, seconds);
 
-            if (time >= activeTime)
+            if (time >= activeTime)// doesnt do actualy anythng
             {
                 ResetItemTimer();
             }
         }
     }
 
-    /////////////////////////////////////////////////////////
-    //                 Throwing Mechanics
-    /////////////////////////////////////////////////////////
-    public void ThrowItem()
-    {
-        itemBody.isKinematic = false;
-        itemCollider.isTrigger = false;
-        itemThrown = true;
-    }
-
-    /////////////////////////////////////////////////////////
-    //               Collision Handling
-    /////////////////////////////////////////////////////////
     private void OnCollisionEnter(Collision collision)
     {
         if (itemType == ItemType.Throwable && !hitSomething)
         {
             hitSomething = true; // Mark that the item has hit something
             ApplyDamageInRange();
-            activateThis?.Invoke();
+            activateThrowOnContact?.Invoke();
 
-            // If it hits a building, destroy in a few seconds
+            // checks what to do with the item destro on impat or let it bounce
             if (collision.gameObject.layer == LayerMask.NameToLayer("Buildings"))
             {
-                Invoke("DestroyItem", destructionDelay);
+                //Debug.LogWarning("Sector 2");
+                Invoke("DestroyItem", killTime);
             }
-            // If it hits a person and is meant for people, destroy immediately
             else if (collision.gameObject.layer == LayerMask.NameToLayer("People") && effectLayer == EffectLayer.People)
             {
-                Destroy(gameObject);
+                //Debug.LogWarning("Sector 3");
+                Invoke("DestroyItem", 1);
             }
-            // If it hits the ground and is meant for people, stay active for a few seconds
             else if (effectLayer == EffectLayer.People)
             {
-                Invoke("DestroyItem", destructionDelay);
+               // Debug.LogWarning("Sector 4");
+                Invoke("DestroyItem", killTime);
             }
         }
+
+
+    }
+    /////////////////////////////////////////////////////////
+    //        Throwable item triggers
+    /////////////////////////////////////////////////////////
+    public void ThrowItem()
+    {
+        transform.SetParent(null);
+        itemBody.isKinematic = false;
+        itemThrown = true;
+        StartCoroutine(EnableColliderAfterDelay(0.1f)); // Small delay before enabling collider
+    }
+
+    private IEnumerator EnableColliderAfterDelay(float delay)
+    {
+        yield return new WaitForSeconds(delay);
+        itemCollider.enabled = true;
+    }
+    /////////////////////////////////////////////////////////
+    //        Consumable item triggers
+    /////////////////////////////////////////////////////////
+    public void ConsumeItem()
+    {
+        Debug.Log("Item consumed");
+        itemUsed = true;
+        activateOnItemConsume?.Invoke();
+        ApplyDamageInRange(); // apply damage once a dnd deactivate
+        StartCoroutine(DestroyConsumable());
+    }
+    private IEnumerator DestroyConsumable()
+    {
+        yield return new WaitForSeconds(activeTime);
+        Debug.Log("Item destroyed after active time.");
+        //Debug.LogWarning("Sector 5");
+        DestroyItem();
     }
 
     /////////////////////////////////////////////////////////
-    //        Damage Application & Layer Filtering
+    //                  Damage Application 
     /////////////////////////////////////////////////////////
+
     private void ApplyDamageInRange()
     {
-        Collider[] hitColliders = Physics.OverlapSphere(transform.position, damageZone);
+        Collider[] hitColliders = Physics.OverlapSphere(transform.position, damageZone, effectlayer);
         itemCollider.enabled = false;
 
         foreach (var hitCollider in hitColliders)
         {
             if (ShouldAffectLayer(hitCollider.gameObject.layer))
             {
-                // Apply damage to Buildings
-                if (hitCollider.gameObject.TryGetComponent<Building>(out Building building))
-                {
-                    building.AnnoyTarget(damageAmount);
-                    GameManager.instance.gameData.score += damageAmount * GameManager.instance.gameData.multiplier;
-                }
-
-                // Apply damage to People (AI)
-                if (hitCollider.gameObject.TryGetComponent<ResidentAi>(out ResidentAi residentAI))
-                {
-                    residentAI.TakeDamage(damageAmount, stunTimer);
-                    GameManager.instance.gameData.score += damageAmount * GameManager.instance.gameData.multiplier;
-                    Destroy(gameObject); // Destroy item upon hitting AI
-                }
+                HandleBuildingDamage(hitCollider);
+                HandleResidentAIDamage(hitCollider);
             }
         }
     }
-
     /////////////////////////////////////////////////////////
-    //       Layer Filtering Based on Effect Type
+    //                  Effect Layers
     /////////////////////////////////////////////////////////
-    private bool ShouldAffectLayer(int layer)
+    private void HandleBuildingDamage(Collider hitCollider)
     {
-        int buildingsLayer = LayerMask.NameToLayer("Buildings");
-        int peopleLayer = LayerMask.NameToLayer("People");
-
-        switch (effectLayer)
+        Building building = hitCollider.GetComponent<Building>();
+        if (building != null)
         {
-            case EffectLayer.All:
-                return layer == buildingsLayer || layer == peopleLayer;
-            case EffectLayer.Buildings:
-                return layer == buildingsLayer;
-            case EffectLayer.People:
-                return layer == peopleLayer;
-            default:
-                return false;
+            Debug.LogWarning("Building received annoyance");
+            building.AnnoyTarget(damageAmount);
+            UpdateScore();
         }
     }
 
-    /////////////////////////////////////////////////////////
-    //             Consumable Item Handling
-    /////////////////////////////////////////////////////////
-    public void ConsumeItem()
+    private void HandleResidentAIDamage(Collider hitCollider)
     {
-        Debug.Log("Item consumed");
-        itemUsed = true;
-        activateThis?.Invoke();
-        ApplyDamageInRange();
-        StartCoroutine(DestroyConsumable());
+        ResidentAi residentAI = hitCollider.GetComponent<ResidentAi>();
+        if (residentAI != null)
+        {
+            Debug.LogWarning("AI received annoyance");
+            residentAI.TakeDamage(damageAmount, stunTimer);
+            UpdateScore();
+            Debug.LogWarning("Sector 6");
+            DestroyItem();
+        }
     }
 
-    private IEnumerator DestroyConsumable()
+    private bool ShouldAffectLayer(int layer)
     {
-        yield return new WaitForSeconds(activeTime);
-        Debug.Log("Item destroyed after active time.");
-        DestroyItem();
+        // Check the layer of the collided object based on the EffectLayer
+        int buildingsLayer = LayerMask.NameToLayer("Buildings");
+        int peopleLayer = LayerMask.NameToLayer("People");
+
+        if (effectLayer == EffectLayer.All)
+            return true;
+        if (effectLayer == EffectLayer.Buildings && layer == buildingsLayer)
+            return true;
+        if (effectLayer == EffectLayer.People && layer == peopleLayer)
+            return true;
+        return false;
+
+    }
+    /////////////////////////////////////////////////////////
+    //                      Other
+    /////////////////////////////////////////////////////////
+    private void UpdateScore()
+    {
+        GameManager.instance.gameData.score += damageAmount * GameManager.instance.gameData.multiplier;
     }
 
-    private void ResetItemTimer()
+    void ResetItemTimer()
     {
         UI_Manager.instance.DissableItemTimer();
         time = 0f;
     }
 
-    /////////////////////////////////////////////////////////
-    //                  Debug & Cleanup
-    /////////////////////////////////////////////////////////
-    private void DestroyItem()
+    void DestroyItem()
     {
+        //Debug.LogWarning("Invoked Destroy Function");
         Destroy(gameObject);
     }
 
+    
     private void OnDrawGizmos()
     {
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(transform.position, damageZone);
     }
-}
-
-/*
-public enum ItemType
-{
-    Consumable,
-    Throwable
-}
-
-public enum EffectLayer
-{
-    All,
-    Buildings,
-    People
-}
-public enum CanStun
-{
-    Stun,
-    DontStun
-}
-
-[Header("Item baseSettings")]
-public ItemType itemType;
-public EffectLayer effectLayer;
-public CanStun canStun;
-[Header("General item settign")]
-public float damageZone;
-public int damageAmount;
-[SerializeField] float itemMass;
-[SerializeField] float stunTimer;
-[Header("Consumable item settings")]
-[Tooltip("How long the item is active")]
-public float activeTime;
-float time;
-LayerMask effectlayer;
-
-[Header("Event on use of item")]
-[SerializeField] UnityEvent acivateThis;
-
-// do the consumable timer 
-//activate ui for tier to show how long the item is consumed for
-// and kill itm on this
-// also sound and stuff shold be active7u64w<q
-
-
-// Debug
-float killTim = 10;
-Rigidbody itemBody;
-CapsuleCollider itemCollider;
-public bool itemThrown;
-bool itemUsed = false;
-
-
-private void Awake()
-{
-    itemBody = GetComponent<Rigidbody>();
-    itemBody.isKinematic = true;
-    itemBody.mass = itemMass;
-    itemCollider = GetComponent<CapsuleCollider>();
-    itemCollider.isTrigger = true;
-    time = 0;
-}
-private void Update()
-{
-    if (!itemThrown)
-    {
-        transform.localPosition = Vector3.zero;
-        transform.localRotation = Quaternion.identity;
-
-            killTim += Time.deltaTime;
-            if (killTim <= 0) // kill object
-            {
-                Destroy(gameObject);
-            }
-        // kill wehn thrown and if it is a throwable
-    }
-    if (itemUsed)//
-    {
-        UI_Manager.instance.EnableItemTimer();
-        time += Time.deltaTime;
-        int minutes = Mathf.FloorToInt(time / 60);
-        int seconds = Mathf.FloorToInt(time % 60);
-        UI_Manager.instance.itemUseTimer.text = string.Format("{0:00}:{1:00}", minutes, seconds);
-        if(time  >= activeTime)
-        {
-            ResetItemTimer();
-        }
-    }
-}
-
-public void ThrowItem()
-{
-    itemBody.isKinematic = false;
-    itemCollider.isTrigger = false;
-    itemThrown = true;
-}
-
-private void OnCollisionEnter(Collision collision)
-{
-    if (itemType == ItemType.Throwable)
-    {
-        ApplyDamageInRange();
-
-        acivateThis?.Invoke();
-        Invoke("DestroyItem", 3); // Destroy after impact
-    }
 
 }
-
-private void ApplyDamageInRange()
-{
-    // Perform a sphere overlap check around the item's current position
-    Collider[] hitColliders = Physics.OverlapSphere(transform.position, damageZone);
-    itemCollider.enabled = false;
-
-    foreach (var hitCollider in hitColliders)
-    {
-        if (ShouldAffectLayer(hitCollider.gameObject.layer))
-        {
-
-            // Apply damage to building or resident
-            if (hitCollider.gameObject.TryGetComponent<Building>(out Building building))
-            {
-                building.AnnoyTarget(damageAmount); // Call the AnnoyTarget method for Buildings
-                GameManager.instance.gameData.score += damageAmount * GameManager.instance.gameData.multiplier;
-                Debug.Log($"Item hit: {hitCollider.gameObject.name}");
-            }
-            if (hitCollider.gameObject.TryGetComponent<ResidentAi>(out ResidentAi residentAI))
-            {
-                residentAI.TakeDamage(damageAmount, stunTimer); // Call the TakeDamage method for People
-                GameManager.instance.gameData.score += damageAmount * GameManager.instance.gameData.multiplier;
-                Debug.Log($"Item hit: {hitCollider.gameObject.name}");
-                Destroy(gameObject);
-            }
-        }
-        else
-        {
-            //Debug.Log($"Item ignored: {hitCollider.gameObject.name}");
-        }
-    }
-}
-
-private bool ShouldAffectLayer(int layer)
-{
-    // Check the layer of the collided object based on the EffectLayer
-    int buildingsLayer = LayerMask.NameToLayer("Buildings");
-    int peopleLayer = LayerMask.NameToLayer("People");
-
-    switch (effectLayer)
-    {
-
-        case EffectLayer.All:
-            // Only hit Buildings and People layers
-            return layer == buildingsLayer || layer == peopleLayer;
-        case EffectLayer.Buildings:
-            // Hit only Buildings
-            return layer == buildingsLayer;
-        case EffectLayer.People:
-            // Hit only People
-            return layer == peopleLayer;
-        default:
-            return false;
-    }
-}
-void ResetItemTimer()
-{
-    UI_Manager.instance.DissableItemTimer();
-    time = 0f;
-}
-public void ConsumeItem()
-{
-    Debug.Log("Item consumed");
-    itemUsed = true;
-    acivateThis?.Invoke();
-    ApplyDamageInRange(); // apply damage once a dnd deactivate
-    StartCoroutine(DestroyConsumable());
-
-}
-IEnumerator DestroyConsumable()
-{
-    yield return new WaitForSeconds(activeTime);
-    Debug.Log("Ite destroyed");
-    DestroyItem();
-}
-
-void DestroyItem()
-{
-    Destroy(gameObject);
-}
-
-private void OnDrawGizmos()
-{
-        Gizmos.color = Color.red;
-        Gizmos.DrawWireSphere(transform.position, damageZone); 
-}
-
-}*/

@@ -6,7 +6,7 @@ public class ItemSpawner : MonoBehaviour
     [Header("Settings")]
     [Tooltip("A scriptable object that has a preset of items that it can spawn. Location OBJ_Prefabs")]
     public ItemSpawnList prefabLsit;
-    [SerializeField] float itemRespawnDelay = 5f;
+    [SerializeField] float maxItemRespawnTime = 10f;
     [SerializeField] Transform spawnItemLocation;
     [SerializeField] Transform itemIcon;
 
@@ -35,8 +35,8 @@ public class ItemSpawner : MonoBehaviour
 
     IEnumerator StartSpawnTimer()
     {
-        Debug.Log("Starting respawn timer...");
-        yield return new WaitForSeconds(itemRespawnDelay);
+       // Debug.Log("Starting respawn timer...");
+        yield return new WaitForSeconds(Random.Range(0, maxItemRespawnTime));
 
         // Spawn the item after the timer
         SpawnItem();
@@ -48,12 +48,12 @@ public class ItemSpawner : MonoBehaviour
         // Check if the spawn list is valid
         if (prefabLsit == null || prefabLsit.allSpawnables.Length == 0)
         {
-            Debug.LogError("No spawnable objects defined in the spawnables preset.");
+           // Debug.LogError("No spawnable objects defined in the spawnables preset.");
             return;
         }
 
         // Set itemSpawned to true to prevent multiple spawns
-        Debug.Log("Spawning a new item.");
+        //Debug.Log("Spawning a new item.");
 
         // Randomly select an item to spawn
         spawnIndex = Random.Range(0, prefabLsit.allSpawnables.Length);
@@ -63,11 +63,6 @@ public class ItemSpawner : MonoBehaviour
         thisItem.transform.localScale = new Vector3(4, 4, 4);
         // Reset transform to align with the spawn location
         thisItem.transform.localPosition = Vector3.zero;
-    }
-
-    public void RemoveThisItem()
-    {
-        thisItem = null;
     }
 }
 
