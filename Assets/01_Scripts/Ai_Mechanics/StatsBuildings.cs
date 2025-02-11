@@ -15,4 +15,10 @@ public class StatsBuildings : MonoBehaviour
     {
         
     }
+
+    public void AnnoyTarget( int amount)
+    {
+        Debug.Log("Target annoyed for: " + amount);
+        Game_Manager.instance.GetPoints(amount);
+    }
 }

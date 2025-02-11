@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 [RequireComponent(typeof(DealAnnoyance))]
 public class StatsAI : MonoBehaviour
@@ -14,5 +12,11 @@ public class StatsAI : MonoBehaviour
     void Update()
     {
         
+    }
+
+    public void AnnoyTarget(int amount)
+    {
+        Debug.Log("Target annoyed for: " + amount);
+        Game_Manager.instance.GetPoints(amount);
     }
 }

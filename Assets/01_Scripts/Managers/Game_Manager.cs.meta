@@ -3,7 +3,18 @@ guid: dd18cdb3ddd63d14a9fa724ee2c904a6
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - player: {instanceID: 0}
+  - playerMainHand: {instanceID: 0}
+  - playerSecondaryHand: {instanceID: 0}
+  - playerOrientation: {instanceID: 0}
+  - playerMovemant: {instanceID: 0}
+  - playerInputs: {instanceID: 0}
+  - SoundFXSource: {instanceID: 0}
+  - dethSFX: {instanceID: 0}
+  - explosionSFX: {instanceID: 0}
+  - explosionPaeticles: {instanceID: 0}
+  - playerScores: {fileID: 11400000, guid: 72d26b9dcf27d4e499663875b1fc005a, type: 2}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 
