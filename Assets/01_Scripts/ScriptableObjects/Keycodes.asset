@@ -15,8 +15,11 @@ MonoBehaviour:
   interact: 101
   showStats: 9
   menu: 27
-  sprint: 304
-  crouch: 306
+  sprintHold: 304
+  sprintToggle: 103
+  crouchToggle: 99
+  crouchHold: 306
+  walkToggle: 301
   jump: 32
   useItem: 323
   aim: 324

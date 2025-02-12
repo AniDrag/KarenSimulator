@@ -11,8 +11,11 @@ public class KeyBinds : ScriptableObject
     public KeyCode menu = KeyCode.Escape;
 
     [Header("Player Movement")]
-    public KeyCode sprint = KeyCode.LeftShift;
-    public KeyCode crouch = KeyCode.C;
+    public KeyCode sprintHold = KeyCode.LeftShift;
+    public KeyCode sprintToggle = KeyCode.LeftShift; // only one sprint is fesable
+    public KeyCode crouchToggle = KeyCode.C;
+    public KeyCode crouchHold = KeyCode.LeftControl;
+    public KeyCode walkToggle = KeyCode.CapsLock;
     public KeyCode jump = KeyCode.Space;
 
     [Header("Player Combat")]
@@ -20,11 +23,14 @@ public class KeyBinds : ScriptableObject
     public KeyCode aim = KeyCode.Mouse1;
     public void ResetKeyBinds()
     {
-        interact = KeyCode.F;
+        interact = KeyCode.E;
         menu = KeyCode.Escape;
 
-        sprint = KeyCode.LeftShift;
-        crouch = KeyCode.C;
+        sprintHold = KeyCode.LeftShift;
+        sprintToggle = KeyCode.LeftShift;
+        crouchToggle = KeyCode.C;
+        crouchHold = KeyCode.LeftControl;
+        walkToggle = KeyCode.CapsLock;
         jump = KeyCode.Space;
 
         useItem = KeyCode.Mouse0;
