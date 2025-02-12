@@ -1,5 +1,4 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 /// <summary>
 /// Default speed
@@ -141,45 +140,9 @@ public class PlayerMovement : MonoBehaviour
         player_input_vertical = Input.GetAxisRaw("Vertical");
 
         //--Sprint-------------------------------------------------------
-        if (Input.GetKeyDown(KEYS.sprintToggle) && isGrounded)
-        {
-            isRunning = !isRunning;
-            runCheck = true;
-            StartCoroutine(Run());
-        }
-        else if (Input.GetKey(KEYS.sprintHold) && isGrounded)
-        {
-            isRunning = true;
-        }
-        else if (!Input.GetKey(KEYS.sprintHold) && !runCheck)
-        {
             isRunning = false;
-        }
-
         //--Crouch-------------------------------------------------------
-        if (Input.GetKeyDown(KEYS.crouchToggle))
-        {
-            isCrouching = !isCrouching;
-            crouchCheck = true;
-            StartCoroutine(Crouch());
-        }
-        else if (Input.GetKey(KEYS.crouchHold))
-        {
-            isCrouching = true;
-        }
-        else if (!Input.GetKey(KEYS.crouchHold) && !crouchCheck)
-        {
-            isCrouching = false;
-        }
-
-        //--Walking------------------------------------------------------
-        if (Input.GetKeyDown(KEYS.walkToggle))
-        {
-            isWalking = !isWalking;
-            walkCheck = true;
-            StartCoroutine(Walk());
-        }
-
+            isCrouching = Input.GetKey(KEYS.crouchHold);
         //--Jumping -----------------------------------------------------
         if (Input.GetKeyDown(KEYS.jump) && isGrounded && canJump)
         {
@@ -257,25 +220,6 @@ public class PlayerMovement : MonoBehaviour
             _speed = defaultSpeed * speedMultiplier;
         }
     }
-
-    IEnumerator Run()
-    {
-        yield return new WaitForSeconds(0.02f);
-        runCheck = false;
-    }
-
-    IEnumerator Walk()
-    {
-        yield return new WaitForSeconds(0.02f);
-        walkCheck = false;
-    }
-
-    IEnumerator Crouch()
-    {
-        yield return new WaitForSeconds(0.02f);
-        crouchCheck = false;
-    }
-
     IEnumerator Grounded()
     {
         while (enabled)

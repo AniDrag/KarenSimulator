@@ -1,7 +1,7 @@
 using System.Collections;
 using UnityEngine;
 [RequireComponent(typeof(SphereCollider))]
-public class CollectItem : MonoBehaviour
+public class ItemCollector : MonoBehaviour
 {
     [Tooltip("Yes in seconds")]
     [SerializeField] float collectItemCooldown;
@@ -23,7 +23,7 @@ public class CollectItem : MonoBehaviour
         collectionZone.radius = collectItemRange;
     }
 
-    
+
     private void OnTriggerStay(Collider other)// colide with item specific layer only.
     {
         //if (other.gameObject.GetComponent<Item>() == null)
@@ -37,9 +37,9 @@ public class CollectItem : MonoBehaviour
             // Debug: Check if the hand is empty
             bool isHandEmpty = hand.childCount == 0;
             Debug.Log("Is Hand Empty: " + isHandEmpty);
-            
+
             // Check all conditions
-            if (hasItemComponent && isHandEmpty )
+            if (hasItemComponent && isHandEmpty)
             {
                 Debug.Log("Item collected: " + other.gameObject.name);
                 StartCoroutine(GetItem(other.gameObject));
@@ -65,3 +65,4 @@ public class CollectItem : MonoBehaviour
         Gizmos.DrawWireSphere(transform.position, collectItemRange);
     }
 }
+

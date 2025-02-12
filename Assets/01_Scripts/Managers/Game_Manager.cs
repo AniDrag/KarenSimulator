@@ -25,10 +25,10 @@ public class Game_Manager : MonoBehaviour
     public Transform playerMainHand;
     public Transform playerSecondaryHand;
     public Transform playerOrientation;
-    public PlayerMovemant playerMovemant;
+    public PlayerMovement playerMovemant;
     public PlayerInputs playerInputs;
     public Camera playerCamera;
-
+    public KeyBinds KEYS;
     [Header("----- SFX ----")]
     public AudioSource SoundFXSource;
     [Tooltip("add sound FX here. will be triggered by items and such")]
