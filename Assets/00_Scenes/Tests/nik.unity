@@ -355,7 +355,7 @@ Camera:
     y: 0
     width: 1
     height: 1
-  near clip plane: 0.5
+  near clip plane: 0.3
   far clip plane: 1000
   field of view: 60
   orthographic: 0
@@ -3378,6 +3378,12 @@ Transform:
   - {fileID: 599568316}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1996102849 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1546263868095680016, guid: 14aed604143c4af409d42bbfb6d2e2c5,
+    type: 3}
+  m_PrefabInstance: {fileID: 6360442489290973732}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2061060668
 GameObject:
   m_ObjectHideFlags: 0
@@ -3973,9 +3979,14 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 7065478138951579830, guid: 14aed604143c4af409d42bbfb6d2e2c5, type: 3}
+    - {fileID: 8602948374970649569, guid: 14aed604143c4af409d42bbfb6d2e2c5, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 1546263868095680016, guid: 14aed604143c4af409d42bbfb6d2e2c5,
+        type: 3}
+      insertIndex: 3
+      addedObject: {fileID: 6360442489290973742}
   m_SourcePrefab: {fileID: 100100000, guid: 14aed604143c4af409d42bbfb6d2e2c5, type: 3}
 --- !u!114 &6360442489290973733 stripped
 MonoBehaviour:
@@ -3983,7 +3994,7 @@ MonoBehaviour:
     type: 3}
   m_PrefabInstance: {fileID: 6360442489290973732}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 1996102849}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e6a44616449c541468aba074b58ebd90, type: 3}
@@ -4001,7 +4012,7 @@ MonoBehaviour:
     type: 3}
   m_PrefabInstance: {fileID: 6360442489290973732}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 1996102849}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 01f679f8ce01e8d40a4c1185c106f80c, type: 3}
@@ -4019,6 +4030,20 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 6360442489290973732}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &6360442489290973742
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1996102849}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8f35a5a6fdb440f4fa70ad306dce688c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  collectItemCooldown: 5
+  collectItemRange: 2
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
