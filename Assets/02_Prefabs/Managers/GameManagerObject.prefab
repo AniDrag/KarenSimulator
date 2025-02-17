@@ -46,15 +46,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 0}
-  playerMainHand: {fileID: 0}
-  playerSecondaryHand: {fileID: 0}
   playerOrientation: {fileID: 0}
   playerMovemant: {fileID: 0}
   playerInputs: {fileID: 0}
-  SoundFXSource: {fileID: 0}
+  playerCamera: {fileID: 0}
+  camPostion: {fileID: 0}
+  playerMainHand: {fileID: 0}
+  playerSecondaryHand: {fileID: 0}
+  explosionPaeticles: {fileID: 0}
+  KEYS: {fileID: 11400000, guid: 225f6f3bdacd85240b737766ab43600f, type: 2}
+  SoundFXSource: {fileID: 7523426377696673855}
   dethSFX: {fileID: 0}
   explosionSFX: {fileID: 0}
-  explosionPaeticles: {fileID: 0}
   inMainMenu: 0
   inComicScene: 0
   inWorldScene: 0
