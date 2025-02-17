@@ -1,18 +1,27 @@
-using System.Collections;
-using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class Camera_Manager : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    public static Camera_Manager Instance;
 
-    // Update is called once per frame
-    void Update()
+// References to all the cameras we are managing
+  public Camera fpsCamera;
+    //public CameraControls fpsControls;
+    public Camera topDownCamera;
+    public Camera screenOverlayCamera;
+
+    void Awake()
     {
-        
+        if (Camera_Manager.Instance != null)
+        {
+            Instance = this;
+        }
+        else
+        {
+            //destroy / deactivate it self;
+            Destroy(this);
+
+        }
     }
 }
