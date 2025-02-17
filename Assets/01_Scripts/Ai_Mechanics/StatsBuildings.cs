@@ -2,15 +2,22 @@ using UnityEngine;
 [RequireComponent(typeof(DealAnnoyance))]
 public class StatsBuildings : MonoBehaviour
 {
+    [Header("Building settings")]
+    [SerializeField] AI_Collections AiSpawnList;
+    [SerializeField] float timeBetweenNPCspawns;
+    [SerializeField] int residentCount;
+    [SerializeField] int maxWaves;
+    [SerializeField] Transform aiSpawnocation;
 
 
-    // Start is called before the first frame update
+    int currentWave;
+    int spawnedNPCs;
+    float timer;
     void Start()
     {
         
     }
 
-    // Update is called once per frame
     void Update()
     {
         

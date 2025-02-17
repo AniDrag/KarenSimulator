@@ -10,6 +10,6 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 394f72902ff8adf40889a9e61c3164c4, type: 3}
-  m_Name: Ai variant set
+  m_Name: AiSpawnList_0
   m_EditorClassIdentifier: 
   allResidentVariants: []
