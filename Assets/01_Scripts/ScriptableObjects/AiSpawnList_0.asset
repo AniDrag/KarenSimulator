@@ -12,4 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 394f72902ff8adf40889a9e61c3164c4, type: 3}
   m_Name: AiSpawnList_0
   m_EditorClassIdentifier: 
-  allResidentVariants: []
+  allResidentVariants:
+  - {fileID: 4412294066083479408, guid: fc3fdc9b0c010144fa84f61588a4b224, type: 3}
+  - {fileID: 4412294066083479408, guid: cc48d8132dde7394ca0172af953564e4, type: 3}
