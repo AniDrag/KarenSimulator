@@ -1,4 +1,5 @@
 using System.Collections;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 /// <summary>
@@ -141,7 +142,8 @@ public class Game_Manager : MonoBehaviour
         {
             Debug.Log("Player Died");
             isDead = true; // Set dead flag
-            playerScores.scores.Add(score); // Add current score to the player's scores
+            playerScores.scoresRuns.Add(score); // Add current score to the player's scores
+           //playerScores.timescores.Add();
             Debug.Log("Saving score");
 
             if (score > playerScores.highScore) // Check if the player achieved a high score

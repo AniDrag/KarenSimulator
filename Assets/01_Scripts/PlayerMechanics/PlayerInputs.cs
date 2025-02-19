@@ -19,7 +19,9 @@ public class PlayerInputs : MonoBehaviour
     private bool isAiming = false; // Whether the player is in aiming mode
     private bool isConsumable = false; // Whether the equipped item is consumable
     private bool isThrowable = false; // Whether the equipped item is throwable
-
+    
+    public UI_Manager UImanager;
+    public float remainingTime;
     // Initializes references and states at the start of the game.
     void Start()
     {
@@ -100,7 +102,9 @@ public class PlayerInputs : MonoBehaviour
 
             rb.mass = itemScript.itemMass;
             Debug.Log("Item mass is: " + rb.mass);
-            rb.AddForce(hand.forward * 10f, ForceMode.Impulse); // Adjust force as needed
+
+            // 10 on the line below shoild be the strenght slider value
+            rb.AddForce(hand.forward * UImanager.strengthMeter.value, ForceMode.Impulse); // Adjust force as needed
             Debug.Log("Item has been launched");
         }
         else
@@ -124,6 +128,8 @@ public class PlayerInputs : MonoBehaviour
         if (item == null || !isConsumable) return;
 
         Debug.Log("Using Consumable: " + itemScript.ItemName);
+
+        ItemInfo();
 
         // Activate the consumable item
         item.GetComponent<ItemColision>().enabled = true;
@@ -201,6 +207,14 @@ public class PlayerInputs : MonoBehaviour
         Debug.Log("Entered Aiming Mode, activate Danger slider and aim slider here");
 
         // Optional: Add logic to adjust camera or player stance for aiming
+    }
+
+    void ItemInfo()
+    {
+        remainingTime -= Time.deltaTime;
+        int minutes = Mathf.FloorToInt(remainingTime / 60);
+        int seconds = Mathf.FloorToInt(remainingTime % 60);
+        UImanager.itemUseCountDownText.text = string.Format("{0:00}:{1:00}", minutes, seconds);
     }
 }
 /*
