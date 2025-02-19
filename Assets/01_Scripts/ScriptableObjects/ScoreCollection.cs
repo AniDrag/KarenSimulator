@@ -2,7 +2,8 @@ using System.Collections.Generic;
 using UnityEngine;
 public class StoringScores{
 
-
+    public int score;
+    public int time;
 }
 [CreateAssetMenu(fileName = "ScoreCounter", menuName = "Tools/new scoreCounter")]
 public class ScoreCollection : ScriptableObject
@@ -13,6 +14,7 @@ public class ScoreCollection : ScriptableObject
     public float LongestTimeAlive;
 
     [Tooltip("stores all score")]
-    public List<int> scores;
-    public StoringScores[] storeSCORE;
+    public List<int> scoresRuns;
+    public List<int> timescores;
 }
+    
