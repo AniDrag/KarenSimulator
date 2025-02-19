@@ -7,25 +7,34 @@ public class StatsBuildings : MonoBehaviour
     public int maxAnnoyance = 100;
     public int currentAnnoyance = 0;
     [Header("--- Building settings ---")]
-    [SerializeField] AI_Collections AiSpawnList;
-    [SerializeField] float timeBetweenNPCspawns = 3;
+    [SerializeField] AI_Collections esidentSpawnList;
+    [SerializeField] float timeBetweenesidentspawns = 3;
     [SerializeField] int residentCount = 8;
     [SerializeField] int maxWaves = 4;
 
     //gets annoyed and spawns a npc
     // private stuff
     [SerializeField] Transform aiSpawnocation;
+    [SerializeField] private Color color;
+    [SerializeField] private Color colorReset;
+    bool colorBackTobasic;
     // calcualte an int for spawns with a while
-    int currentWave;
-    int waveTreshold;
-    int oldWaveTreshold;
-    int addToWaveTreshold;
+    public int currentWave;
+    public int waveTreshold;
+    public int oldWaveTreshold;
+    public int addToWaveTreshold;
     void Start()
     {
         aiSpawnocation = transform.GetChild(3).transform;
         addToWaveTreshold = maxAnnoyance / maxWaves;
         currentWave = 0;
-        waveTreshold = addToWaveTreshold;
+        waveTreshold += addToWaveTreshold;
+        foreach (Transform building in transform)
+        {
+            MeshRenderer mesh = building.GetComponent<MeshRenderer>();
+            if (!mesh) continue;
+            mesh.material.color = color;
+        }
     }
 
    
@@ -34,8 +43,19 @@ public class StatsBuildings : MonoBehaviour
     {
         Debug.Log("Target annoyed for: " + amount);
         Game_Manager.instance.GetPoints(amount);
+        currentAnnoyance += amount;
         // checs if annoyance is maxed
-        if (currentAnnoyance > maxAnnoyance) currentAnnoyance = maxAnnoyance;
+        if (currentAnnoyance > maxAnnoyance) 
+        {
+            colorBackTobasic = false;
+            currentAnnoyance = maxAnnoyance;
+            foreach (Transform building in transform)
+            {
+                MeshRenderer mesh = building.GetComponent<MeshRenderer>();
+                if (!mesh) continue;
+                mesh.material.color = color;
+            }
+        }
         CheckAnnoyanceLevel();
     }
     void CheckAnnoyanceLevel()
@@ -47,6 +67,10 @@ public class StatsBuildings : MonoBehaviour
             waveTreshold += addToWaveTreshold;
             StartCoroutine(SpwanAI());
         }
+        else
+        {
+            Debug.Log("Annoyance isnt enough" + currentAnnoyance + " / " + waveTreshold);
+        }
     }
 
     IEnumerator SpwanAI()
@@ -56,13 +80,32 @@ public class StatsBuildings : MonoBehaviour
 
         while (counter <= spawnCount)
         {
+            Debug.Log("Spawning ai" + counter + "/" + spawnCount);
             counter++;
-            int index = Random.Range(0, AiSpawnList.allResidentVariants.Length);
-            Instantiate(AiSpawnList.allResidentVariants[index], aiSpawnocation);
-            yield return new WaitForSeconds(timeBetweenNPCspawns);
+            int index = Random.Range(0, esidentSpawnList.allResidentVariants.Length);
+            GameObject resident = Instantiate(esidentSpawnList.allResidentVariants[index], aiSpawnocation);
+            StatsAI residentStats = resident.GetComponent<StatsAI>();
+            residentStats.Home = gameObject;
+            yield return new WaitForSeconds(timeBetweenesidentspawns);
         }
         CheckAnnoyanceLevel();
         
+    }
+
+    public void CitizenReturned()
+    {
+        currentAnnoyance -= maxAnnoyance / residentCount;
+        Game_Manager.instance.DecreaseMultiplier();
+        if (!colorBackTobasic)
+        {
+            colorBackTobasic = true;
+            foreach (Transform building in transform)
+            {
+                MeshRenderer mesh = building.GetComponent<MeshRenderer>();
+                if (!mesh) continue;
+                mesh.material.color = colorReset;
+            }
+        }
     }
     void OnDrawGizmos()
     {

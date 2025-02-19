@@ -969,7 +969,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
+  - {fileID: 2100000, guid: aa09d180f5086c9459dd622d80a7ee5e, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1381,6 +1381,11 @@ MonoBehaviour:
   residentCount: 8
   maxWaves: 4
   aiSpawnocation: {fileID: 516924404}
+  color: {r: 0, g: 0, b: 0, a: 0}
+  currentWave: 0
+  waveTreshold: 0
+  oldWaveTreshold: 0
+  addToWaveTreshold: 0
 --- !u!114 &1185444677
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1516,6 +1521,11 @@ MonoBehaviour:
   residentCount: 8
   maxWaves: 4
   aiSpawnocation: {fileID: 2084612373}
+  color: {r: 0.8207547, g: 0.31324401, b: 0.28261834, a: 0}
+  currentWave: 0
+  waveTreshold: 0
+  oldWaveTreshold: 0
+  addToWaveTreshold: 0
 --- !u!114 &1274426069
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1778,6 +1788,11 @@ MonoBehaviour:
   residentCount: 8
   maxWaves: 4
   aiSpawnocation: {fileID: 1215716162}
+  color: {r: 0, g: 0, b: 0, a: 0}
+  currentWave: 0
+  waveTreshold: 0
+  oldWaveTreshold: 0
+  addToWaveTreshold: 0
 --- !u!114 &1729338165
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1868,6 +1883,11 @@ MonoBehaviour:
   residentCount: 8
   maxWaves: 4
   aiSpawnocation: {fileID: 1292026650}
+  color: {r: 0, g: 0, b: 0, a: 0}
+  currentWave: 0
+  waveTreshold: 0
+  oldWaveTreshold: 0
+  addToWaveTreshold: 0
 --- !u!114 &1798351110
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2308,6 +2328,66 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 247545994017924780, guid: 20a175c6b63e24544a9d5f7c85799637,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 247545994017924780, guid: 20a175c6b63e24544a9d5f7c85799637,
+        type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 247545994017924780, guid: 20a175c6b63e24544a9d5f7c85799637,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 247545994017924780, guid: 20a175c6b63e24544a9d5f7c85799637,
+        type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 247545994017924780, guid: 20a175c6b63e24544a9d5f7c85799637,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 247545994017924780, guid: 20a175c6b63e24544a9d5f7c85799637,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 469463813363987670, guid: 20a175c6b63e24544a9d5f7c85799637,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 469463813363987670, guid: 20a175c6b63e24544a9d5f7c85799637,
+        type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 469463813363987670, guid: 20a175c6b63e24544a9d5f7c85799637,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 469463813363987670, guid: 20a175c6b63e24544a9d5f7c85799637,
+        type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 469463813363987670, guid: 20a175c6b63e24544a9d5f7c85799637,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 469463813363987670, guid: 20a175c6b63e24544a9d5f7c85799637,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4878352853534107878, guid: 20a175c6b63e24544a9d5f7c85799637,
         type: 3}
       propertyPath: m_LocalPosition.x

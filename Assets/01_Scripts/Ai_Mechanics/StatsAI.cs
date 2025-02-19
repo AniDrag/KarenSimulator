@@ -1,4 +1,5 @@
 using System.Collections;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.AI;
 /// <summary>
@@ -41,6 +42,8 @@ public class StatsAI : MonoBehaviour
     NavMeshAgent agentAI;
     [SerializeField] float aiLogicUpdateRate;
     private Transform target;
+    public GameObject Home;
+    bool returniingHome;
 
 
     private void Start()
@@ -63,20 +66,33 @@ public class StatsAI : MonoBehaviour
         {
             aiAnimator.SetBool(isMoving, agentAI.velocity.magnitude > 0.01f);
             aiAnimator.SetBool(isAttackig, attacked);
+            returniingHome = annoyance == 0;
             // If not attacking, move towards the target
-            if (!attacked)
+            if (!returniingHome)
             {
-                agentAI.SetDestination(target.position);
-            }
-
-            // Check if within attack range
-            if (Vector3.Distance(target.position, transform.position) <= hitRange + 0.1f)
-            {
-                // Look at the player and attack
                 if (!attacked)
                 {
-                    attacked = true;
-                    AttackPlayer();
+                    agentAI.SetDestination(target.position);
+                }
+
+                // Check if within attack range
+                if (Vector3.Distance(target.position, transform.position) <= hitRange + 0.1f)
+                {
+                    // Look at the player and attack
+                    if (!attacked)
+                    {
+                        attacked = true;
+                        AttackPlayer();
+                    }
+                }
+            }
+            else
+            {
+                agentAI.SetDestination(Home.transform.position);
+                if (Vector3.Distance(target.position, transform.position) <= 8)
+                {
+                    Home.GetComponent<StatsBuildings>().CitizenReturned();
+                    Destroy(gameObject);
                 }
             }
 
