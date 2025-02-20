@@ -24,11 +24,11 @@ using UnityEngine.AI;
 ///     * - aiLogicUpdateRate: How often the AI logic updates (in seconds).
 /// <summary> 
 [RequireComponent(typeof(NavMeshAgent))]
-[RequireComponent(typeof(DealAnnoyance))]
 public class StatsAI : MonoBehaviour
 {
     [Header("AI settings")]
-    [SerializeField] float annoyance;
+    [SerializeField] int annoyance;
+    [SerializeField] int maxAnnoyance;
     [SerializeField] float hitRange;
     [SerializeField] float movemantSpeed;
     [Tooltip("The first child should have the animator on them selves!! so add the Resident rig as teh first child kak must be on the top")]
@@ -52,10 +52,12 @@ public class StatsAI : MonoBehaviour
         agentAI.speed = movemantSpeed;
         agentAI.stoppingDistance = hitRange;
         agentAI.angularSpeed = 1000;
-        annoyance = 0;
+        annoyance = maxAnnoyance;
         FindPlayer();
         aiAnimator = transform.GetChild(0).GetComponent<Animator>();
-        
+        StartCoroutine(DecreaseAnnoyance());
+
+
     }
     
     IEnumerator AILogic()
@@ -88,9 +90,17 @@ public class StatsAI : MonoBehaviour
             }
             else
             {
-                agentAI.SetDestination(Home.transform.position);
+                if (Home !=null)
+                {
+                    agentAI.SetDestination(Home.transform.position);
+                }
+                else
+                {
+                    Debug.LogWarning("no home assigned to" + gameObject.name);
+                }
                 if (Vector3.Distance(target.position, transform.position) <= 8)
                 {
+                    
                     Home.GetComponent<StatsBuildings>().CitizenReturned();
                     Destroy(gameObject);
                 }
@@ -136,6 +146,18 @@ public class StatsAI : MonoBehaviour
         {
             annoyance = 100;
             Game_Manager.instance.score += 50;
+        }
+        StopCoroutine(DecreaseAnnoyance());
+        StartCoroutine(DecreaseAnnoyance());
+    }
+
+    IEnumerator DecreaseAnnoyance()
+    {
+        WaitForSeconds time = new WaitForSeconds(1);
+        while (annoyance >= 0)
+        {
+            annoyance -= 1;
+            yield return time;
         }
     }
 }

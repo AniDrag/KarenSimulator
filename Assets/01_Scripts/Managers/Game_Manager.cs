@@ -173,11 +173,7 @@ public class Game_Manager : MonoBehaviour
     {
         Debug.Log("Multiplier increased");
         multiplier++; // Increase score multiplier
-        if (Debug_Manager.instance != null)
-        {
-
-            Debug_Manager.instance.multiplier.text = multiplier.ToString();
-        }
+        UI_Manager.instance.UpdateScore(score, multiplier);
     }
 
     /// <summary>
@@ -189,7 +185,7 @@ public class Game_Manager : MonoBehaviour
         {
             Debug.Log("Multiplier decreased");
             multiplier--; // Decrease score multiplier
-            Debug_Manager.instance.multiplier.text = $"x: {multiplier}";
+            UI_Manager.instance.UpdateScore(score, multiplier);
         }
     }
 
@@ -201,11 +197,7 @@ public class Game_Manager : MonoBehaviour
         Debug.Log("Acquired Score: " + annoyanceAmount * multiplier);
         score += annoyanceAmount * multiplier; // Add points to the current score
 
-        if (Debug_Manager.instance != null)
-        {
-            Debug.Log("showing score: " + annoyanceAmount * multiplier);
-            Debug_Manager.instance.scoreCounter.text = $"score: {score}";
-        }
+        UI_Manager.instance.UpdateScore(score, multiplier);
     }
 }
 

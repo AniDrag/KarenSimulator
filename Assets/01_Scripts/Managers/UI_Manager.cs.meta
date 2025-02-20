@@ -3,7 +3,25 @@ guid: ba9c800e4f6003843a28f0b97ef01ba0
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - optionData: {fileID: 11400000, guid: b4a7549b168fa2744962403118256eb7, type: 2}
+  - musicSlider: {instanceID: 0}
+  - SFXSlider: {instanceID: 0}
+  - horizontalSensitivity: {instanceID: 0}
+  - verticalSensitivity: {instanceID: 0}
+  - audioMixer: {fileID: 24100000, guid: f04c913d49bc55648b35f021fd06dd03, type: 2}
+  - strengthMeter: {instanceID: 0}
+  - dangerMeter: {instanceID: 0}
+  - score: {instanceID: 0}
+  - timer: {instanceID: 0}
+  - multiplier: {instanceID: 0}
+  - itemUseCountDownText: {instanceID: 0}
+  - annoyance: {instanceID: 0}
+  - effectsLayers: {instanceID: 0}
+  - stun: {instanceID: 0}
+  - effectRadious: {instanceID: 0}
+  - PauseMenu: {instanceID: 0}
+  - playerhand: {instanceID: 0}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

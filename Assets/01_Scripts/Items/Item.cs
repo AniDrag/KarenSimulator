@@ -30,17 +30,17 @@ public class Item : MonoBehaviour
     public EffectLayer effectLayer; // The layer(s) this item will affect (either Buildings, People, or both).
 
     [Tooltip("How much annoyance it causes")]
-    [SerializeField] private int annoyanceAmount; // The amount of annoyance the item causes to affected entities.
+    public int annoyanceAmount; // The amount of annoyance the item causes to affected entities.
 
     [Tooltip("How heavy is the item? Also influences bounce and range")]
     public float itemMass; // Defines the mass of the item, affecting its bounce and throw range.
 
     [Tooltip("How big of an area does the item affect? Red wireframe")]
-    [SerializeField] private float itemEffectRange; // The effect range of the item, used for applying effects within this radius.
+    public float itemEffectRange; // The effect range of the item, used for applying effects within this radius.
 
     [Header("---- Item Timing ----")]
     [Tooltip("On collision or after use if consumable is used, the amount of time that passes after item was consumed or thrown")]
-    [SerializeField] private float startItemActivation; // Delay before activation starts after collision or use.
+    public int startItemActivation; // Delay before activation starts after collision or use.
 
     [Tooltip("When item collides or triggers automatically, it plays a sound after it starts activation")]
     [SerializeField] private float invokeSoundAfterSeconds; // Delay before sound is played after activation.

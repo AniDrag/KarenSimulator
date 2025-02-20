@@ -1,6 +1,5 @@
 using System.Collections;
 using UnityEngine;
-[RequireComponent(typeof(DealAnnoyance))]
 public class StatsBuildings : MonoBehaviour
 {
     [Header("--- Building stats ---")]

@@ -104,7 +104,7 @@ public class PlayerInputs : MonoBehaviour
             Debug.Log("Item mass is: " + rb.mass);
 
             // 10 on the line below shoild be the strenght slider value
-            rb.AddForce(hand.forward * UImanager.strengthMeter.value, ForceMode.Impulse); // Adjust force as needed
+            rb.AddForce(hand.forward * UI_Manager.instance.strengthMeter.value, ForceMode.Impulse); // Adjust force as needed
             Debug.Log("Item has been launched");
         }
         else
@@ -120,6 +120,8 @@ public class PlayerInputs : MonoBehaviour
         item.GetComponent<ItemColision>().enabled = true;
         Debug.Log("Activated item collisions");
         ResetEquips();
+        UI_Manager.instance.ResetItemStatsInfo();
+        UI_Manager.instance.ResetSliders();
     }
 
     // Uses the equipped consumable item if it's available and valid.
@@ -129,7 +131,7 @@ public class PlayerInputs : MonoBehaviour
 
         Debug.Log("Using Consumable: " + itemScript.ItemName);
 
-        ItemInfo();
+        UI_Manager.instance.StartUseTimer(itemScript.startItemActivation);
 
         // Activate the consumable item
         item.GetComponent<ItemColision>().enabled = true;
@@ -151,6 +153,7 @@ public class PlayerInputs : MonoBehaviour
         }
 
         ResetEquips();
+        UI_Manager.instance.ResetItemStatsInfo();
     }
 
     /// <summary>
@@ -168,15 +171,14 @@ public class PlayerInputs : MonoBehaviour
         }
         
 
-        item.GetComponent<Item>().Collected = true;
-
-        // Check if the item has an Item script
         itemScript = item.GetComponent<Item>();
+        // Check if the item has an Item script
         if (itemScript == null)
         {
             Debug.LogWarning("Equipped item does not have an Item script!");
             return;
         }
+        itemScript.Collected = true;
         // delete in actual game
         if(Debug_Manager.instance != null)
         {
@@ -191,31 +193,24 @@ public class PlayerInputs : MonoBehaviour
         // Set item type flags
         isConsumable = (itemScript.type == Item.Type.Consumable);
         isThrowable = (itemScript.type == Item.Type.Throwable);
+        UI_Manager.instance.SetItemStatsInfo(item.GetComponent<Item>());
 
-        Debug.Log("Game Object: " + item.name + " Equipped Item Name: " + itemScript.ItemName + " (Type: " + itemScript.type + ")");
+        //Debug.Log("Game Object: " + item.name + " Equipped Item Name: " + itemScript.ItemName + " (Type: " + itemScript.type + ")");
     }
 
     // Starts the aiming mode, where the player can aim the item before throwing it.
     void StartAiming()
     {
         if (item == null) return; // Exit if no item is equipped
-        if (Debug_Manager.instance != null)
-        {
-            Debug_Manager.instance.AimingItem();
-        }
+        if (UI_Manager.instance == null) Debug.Log("has no Ui Manaer");
+        UI_Manager.instance.activateSliders = true;
         isAiming = true;
-        Debug.Log("Entered Aiming Mode, activate Danger slider and aim slider here");
+        //Debug.Log("Entered Aiming Mode, activate Danger slider and aim slider here");
 
         // Optional: Add logic to adjust camera or player stance for aiming
     }
 
-    void ItemInfo()
-    {
-        remainingTime -= Time.deltaTime;
-        int minutes = Mathf.FloorToInt(remainingTime / 60);
-        int seconds = Mathf.FloorToInt(remainingTime % 60);
-        UImanager.itemUseCountDownText.text = string.Format("{0:00}:{1:00}", minutes, seconds);
-    }
+    
 }
 /*
 [SerializeField] KeyBinds KEYS;

@@ -24,8 +24,6 @@ public class CameraControler : MonoBehaviour
     void Start()
     {
         playerCamera = GetComponent<Camera>();
-        Cursor.lockState = CursorLockMode.Locked;
-        Cursor.visible = false;
         playerOrientation = Game_Manager.instance.playerOrientation;
     }
 
