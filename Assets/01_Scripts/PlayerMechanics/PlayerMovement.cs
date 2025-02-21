@@ -41,6 +41,7 @@ public class PlayerMovement : MonoBehaviour
     [Header("--- Jump settings ---")]
     [SerializeField] private float jumpForce = 2f;
     [SerializeField] private float jumpResetTimer = 0.3f;
+    [SerializeField] float _downForce;
     bool canJump; // For the coroutine
     bool resetingJump;
 
@@ -173,20 +174,18 @@ public class PlayerMovement : MonoBehaviour
             if (isGrounded)
             {
                 _rigid_body.AddForce(player_move_direction.normalized * _speed, ForceMode.Force);
-            }
-            else
-            {
-                _rigid_body.AddForce(player_move_direction.normalized * _speed * airControls, ForceMode.Force);
-            }
-
-            // Clamp velocity for snappier movement
-            if (isGrounded)
-            {
+                // Clamp velocity for snappier movement
                 _clamp_velocity = _rigid_body.velocity;
                 _clamp_velocity.x = Mathf.Clamp(_clamp_velocity.x, -_speed, _speed);
                 _clamp_velocity.z = Mathf.Clamp(_clamp_velocity.z, -_speed, _speed);
                 _rigid_body.velocity = _clamp_velocity;
             }
+            else if (!isGrounded)
+            {
+                _rigid_body.AddForce(player_move_direction.normalized * _speed * airControls, ForceMode.Force);
+                _rigid_body.AddForce(Vector3.down * _downForce, ForceMode.Force);
+            }
+
         }
     }
 

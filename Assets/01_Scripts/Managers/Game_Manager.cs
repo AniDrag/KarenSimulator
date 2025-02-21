@@ -22,6 +22,7 @@ public class Game_Manager : MonoBehaviour
         if (Game_Manager.instance == null)
         {
             instance = this;
+            DontDestroyOnLoad(gameObject);
         }
         else
         {
@@ -36,6 +37,7 @@ public class Game_Manager : MonoBehaviour
     public PlayerInputs playerInputs; // Reference to the player input handling script.
 
     [Header("----- Camera References ----")]
+    public CameraControler playerCamController;
     public Camera playerCamera; // Camera that follows the player.
     public Transform camPostion; // Position of the camera.
     public Transform playerMainHand; // Reference to the player's main hand.
@@ -65,7 +67,7 @@ public class Game_Manager : MonoBehaviour
     public int playerLives = 2; // The number of lives the player has.
     public int multiplier = 1; // The multiplier for the player's score.
     public int score; // The current score of the player.
-    public float Time; // The time elapsed in the game.
+    public float gameTime; // The time elapsed in the game.
 
     [Header("----- Debug ----")]
     [Tooltip("controls the delay before we are teleported to death scene")]
@@ -79,6 +81,7 @@ public class Game_Manager : MonoBehaviour
     /// </summary>
     void Start()
     {
+        SetParameters();
         // Check the current active scene and set the appropriate game state
         if (SceneManager.GetActiveScene().buildIndex == 0)
         {
@@ -116,7 +119,7 @@ public class Game_Manager : MonoBehaviour
         if (!isDead) // Ensure the player is not already dead
         {
             Debug.Log("Hand exploded");
-            playerLives--; // Decrease player lives on explosion
+            playerLives-= 1; // Decrease player lives on explosion
 
             if (playerLives == 0)
             {
@@ -132,6 +135,21 @@ public class Game_Manager : MonoBehaviour
         }
     }
 
+    void SetParameters()
+    {
+        playerCamController = playerCamera.GetComponent<CameraControler>();
+        playerInputs = player.GetComponent<PlayerInputs>();
+        playerMovemant = player.GetComponent<PlayerMovement>();
+        playerLives = 2;
+        if (player == null) Debug.LogError("Player transform not assigend");
+        if (playerMovemant == null) Debug.LogError("Player movemant not assigend");
+        if (playerInputs == null) Debug.LogError("Player Inputs not assigend");
+        if (playerCamera == null) Debug.LogError("Player Camera not assigned");
+        if (playerCamController == null) Debug.LogError("Player Camera controller not assigned");
+        if (playerMainHand == null) Debug.LogError("Player Main hand not assigned");
+        if (playerSecondaryHand == null) Debug.LogError("Player second hand not assigned");
+        if (playerMainHand == null) Debug.LogError("Player Main hand not assigned");
+    }
     /// <summary>
     /// Method called when the player dies.
     /// Saves the player's score and transitions to the death scene.
@@ -143,6 +161,14 @@ public class Game_Manager : MonoBehaviour
             Debug.Log("Player Died");
             isDead = true; // Set dead flag
             playerScores.scoresRuns.Add(score); // Add current score to the player's scores
+            if(UI_Manager.instance != null)
+            {
+                gameTime = UI_Manager.instance.timerInGame;
+            }
+            else
+            {
+                Debug.LogError("No Ui manager in scene");
+            }
            //playerScores.timescores.Add();
             Debug.Log("Saving score");
 

@@ -74,7 +74,7 @@ public class PlayerInputs : MonoBehaviour
         if (item == null || !isThrowable) return;
 
         Debug.Log("Throwing Item: " + itemScript.ItemName);
-
+        item.GetComponent<CapsuleCollider>().isTrigger = false;
         // Detach item from hand and enable physics
         item.transform.SetParent(null);
         Rigidbody rb = item.AddComponent<Rigidbody>();
@@ -104,6 +104,7 @@ public class PlayerInputs : MonoBehaviour
             Debug.Log("Item mass is: " + rb.mass);
 
             // 10 on the line below shoild be the strenght slider value
+            item.GetComponent<ItemColision>().enabled = true;
             rb.AddForce(hand.forward * UI_Manager.instance.strengthMeter.value, ForceMode.Impulse); // Adjust force as needed
             Debug.Log("Item has been launched");
         }
@@ -117,7 +118,6 @@ public class PlayerInputs : MonoBehaviour
         }
 
         // Enable collision detection
-        item.GetComponent<ItemColision>().enabled = true;
         Debug.Log("Activated item collisions");
         ResetEquips();
         UI_Manager.instance.ResetItemStatsInfo();

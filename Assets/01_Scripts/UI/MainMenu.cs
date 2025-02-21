@@ -16,15 +16,14 @@ public class MainMenu : MonoBehaviour
         SceneManager.LoadSceneAsync(1); // Loads the first scene (comic scene)
     }
 
-    public void BackToMain()
-    {
-        SceneManager.LoadSceneAsync(0);
-    }
+    
     // Function to quit the application
     public void QuitApplication()
     {
+
+        Application.Quit();//
 #if UNITY_EDITOR
-        UnityEditor.EditorApplication.isPlaying = false; // Stops play mode in editor
+        UnityEditor.EditorApplication.isPlaying = false; // Stops play mode in editor NIk_ also isnt called when a build is made! use with caution.
 #else
             Application.Quit(); // Quits the application in a build
 #endif
