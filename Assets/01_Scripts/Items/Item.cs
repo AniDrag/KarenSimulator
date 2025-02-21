@@ -65,7 +65,7 @@ public class Item : MonoBehaviour
     {
         // Set default mass if it's not defined
         if (itemMass <= 0) itemMass = 1;
-
+        transform.GetComponent<CapsuleCollider>().isTrigger = true;
         // Get the ItemColision component and set up its properties
         itemCollision = GetComponent<ItemColision>();
         if (itemCollision == null)

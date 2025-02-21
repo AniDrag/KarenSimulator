@@ -65,7 +65,7 @@ public class Game_Manager : MonoBehaviour
     public int playerLives = 2; // The number of lives the player has.
     public int multiplier = 1; // The multiplier for the player's score.
     public int score; // The current score of the player.
-    public float Time; // The time elapsed in the game.
+    public float gameTime; // The time elapsed in the game.
 
     [Header("----- Debug ----")]
     [Tooltip("controls the delay before we are teleported to death scene")]
@@ -79,6 +79,7 @@ public class Game_Manager : MonoBehaviour
     /// </summary>
     void Start()
     {
+        playerLives = 2;
         // Check the current active scene and set the appropriate game state
         if (SceneManager.GetActiveScene().buildIndex == 0)
         {
@@ -116,7 +117,7 @@ public class Game_Manager : MonoBehaviour
         if (!isDead) // Ensure the player is not already dead
         {
             Debug.Log("Hand exploded");
-            playerLives--; // Decrease player lives on explosion
+            playerLives-= 1; // Decrease player lives on explosion
 
             if (playerLives == 0)
             {
@@ -143,6 +144,7 @@ public class Game_Manager : MonoBehaviour
             Debug.Log("Player Died");
             isDead = true; // Set dead flag
             playerScores.scoresRuns.Add(score); // Add current score to the player's scores
+            gameTime = UI_Manager.instance.timerInGame;
            //playerScores.timescores.Add();
             Debug.Log("Saving score");
 

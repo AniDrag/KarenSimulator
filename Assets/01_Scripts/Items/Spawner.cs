@@ -1,9 +1,11 @@
+using System.Collections;
 using UnityEngine;
 
 public class Spawner : MonoBehaviour
 {
     [Tooltip("Scriptable object of Item list")]
     [SerializeField] ItemSpawnList itemList;
+    [SerializeField] float itemSpawnDelay;
 
     GameObject spawnedItem;
     Transform spawnLocation;
@@ -13,26 +15,33 @@ public class Spawner : MonoBehaviour
     void Start()
     {
         spawnLocation = transform.GetChild(0).transform;
+        SpawnItem();
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(spawnLocation.childCount == 0 && !itemSpawned)
+
+        if (!itemSpawned &&spawnLocation.childCount == 0)
         {
             itemSpawned = true;
             SpawnItem();
         }
     }
 
-    void SpawnItem()
+    IEnumerator SpawnItem()
     {
-
-        itemIndex = Random.Range(0,itemList.allSpawnables.Length);
+        yield return new WaitForSeconds(itemSpawnDelay);
+        Spawning();
+        
+    }
+    void Spawning()
+    {
+        itemIndex = Random.Range(0, itemList.allSpawnables.Length);
 
         spawnedItem = Instantiate(itemList.allSpawnables[itemIndex], spawnLocation);
         spawnedItem.transform.SetParent(spawnLocation);
-        spawnedItem.transform.localScale = new Vector3(4,4,4);
+        spawnedItem.transform.localScale = new Vector3(4, 4, 4);
         Invoke("ResetSpawn", 1);
     }
     void ResetSpawn()

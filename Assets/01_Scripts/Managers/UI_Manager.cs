@@ -34,7 +34,7 @@ public class UI_Manager : MonoBehaviour
     //Update these when something happenes
     [Header("--- Score ---")]
     public TMP_Text score; //score player       --> when we aquire scoer!
-    public TMP_Text timer; // timer in game     --> every 1s 
+    public TMP_Text gameTime; // timer in game     --> every 1s 
     public TMP_Text multiplier;               //--> when we aquirte multiplier.
 
     [Header("--- Item stats ---")] //           --> all update on item equip and return to 0 when item used.
@@ -51,7 +51,7 @@ public class UI_Manager : MonoBehaviour
     public GameObject PauseMenu; // pause menu to go to main, settings, etc
     public GameObject InfoPanel;
     public GameObject SettingsPanel;
-    private int timerInGame; // trunt in to int since we dont use decimal nums
+    public int timerInGame; // trunt in to int since we dont use decimal nums
 
 
     public float speedslider = 20f; // speed slider
@@ -170,7 +170,7 @@ public class UI_Manager : MonoBehaviour
             timerInGame += 1;
             int Minutes = Mathf.FloorToInt(timerInGame / 60);
             int Seconds = Mathf.FloorToInt(timerInGame % 60);
-            timer.text = string.Format("{0:00}:{1:00}", Minutes, Seconds);
+            gameTime.text = string.Format("{0:00}:{1:00}", Minutes, Seconds);
         }
     }
 
