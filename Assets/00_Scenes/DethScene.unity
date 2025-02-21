@@ -130,16 +130,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 2376804177473706778, guid: 42f948e6a688a9d449ecc5b4acd6ce13,
-        type: 3}
-      propertyPath: m_enableWordWrapping
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3655445559011963487, guid: 42f948e6a688a9d449ecc5b4acd6ce13,
-        type: 3}
-      propertyPath: m_enableWordWrapping
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 3875854008394111470, guid: 42f948e6a688a9d449ecc5b4acd6ce13,
         type: 3}
       propertyPath: m_Pivot.x

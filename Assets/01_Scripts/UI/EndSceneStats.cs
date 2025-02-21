@@ -1,5 +1,6 @@
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class EndSceneStats : MonoBehaviour
 {
@@ -8,9 +9,19 @@ public class EndSceneStats : MonoBehaviour
     Game_Manager GM;
     private void Start()
     {
-        GM = Game_Manager.instance;
-        scoreText.text = $"SCORE: {GM.score}";
-        timeLivedText.text = $"TIME LIVED: {GM.gameTime}";
-
+        if (GM != null)
+        {
+            GM = Game_Manager.instance;
+            scoreText.text = $"SCORE: {GM.score}";
+            timeLivedText.text = $"TIME LIVED: {GM.gameTime}";
+        }
+        else
+        {
+            Debug.LogError("No Game manager!!");
+        }
+    }
+    public void BackToMenu()
+    {
+        SceneManager.LoadSceneAsync(0);
     }
 }
