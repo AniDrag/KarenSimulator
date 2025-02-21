@@ -2013,7 +2013,8 @@ AnimationClip:
         time: 0.6833334
         value: {x: 0.14884274, y: -0.038464412, z: 0.25263396, w: 0.9552709}
         inSlope: {x: -0.00000044702256, y: -0.0000013411022, z: 0.0000017881694, w: -1.2732926e-11}
-        outSlope: {x: -0.00000044702256, y: -0.0000013411022, z: 0.0000017881694, w: -1.2732926e-11}
+        outSlope: {x: -0.00000044702256, y: -0.0000013411022, z: 0.0000017881694,
+          w: -1.2732926e-11}
         tangentMode: 0
         weightedMode: 0
         inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
@@ -2118,8 +2119,10 @@ AnimationClip:
       - serializedVersion: 3
         time: 2.1166668
         value: {x: 0.027530463, y: -0.09229911, z: 0.17883454, w: 0.9791533}
-        inSlope: {x: -0.00000022351765, y: -0.0000020116586, z: -0.0000013411058, w: 0.000001788141}
-        outSlope: {x: -0.00000022351765, y: -0.0000020116586, z: -0.0000013411058, w: 0.000001788141}
+        inSlope: {x: -0.00000022351765, y: -0.0000020116586, z: -0.0000013411058,
+          w: 0.000001788141}
+        outSlope: {x: -0.00000022351765, y: -0.0000020116586, z: -0.0000013411058,
+          w: 0.000001788141}
         tangentMode: 0
         weightedMode: 0
         inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
@@ -6315,6 +6318,45 @@ AnimationClip:
     classID: 135
     script: {fileID: 0}
     flags: 0
+  - serializedVersion: 2
+    curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0
+        inSlope: Infinity
+        outSlope: Infinity
+        tangentMode: 103
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 0.68333334
+        value: 1
+        inSlope: Infinity
+        outSlope: Infinity
+        tangentMode: 103
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 1.2166667
+        value: 0
+        inSlope: Infinity
+        outSlope: Infinity
+        tangentMode: 103
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_Enabled
+    path: mixamorig:Hips/mixamorig:Spine/mixamorig:Spine1/mixamorig:Spine2/mixamorig:RightShoulder/mixamorig:RightArm/mixamorig:RightForeArm/mixamorig:RightHand/mixamorig:RightHandIndex1/playerKiller
+    classID: 135
+    script: {fileID: 0}
+    flags: 0
   m_PPtrCurves: []
   m_SampleRate: 60
   m_WrapMode: 0
@@ -6595,6 +6637,15 @@ AnimationClip:
       isSerializeReferenceCurve: 0
     - serializedVersion: 2
       path: 1893718001
+      attribute: 3305885265
+      script: {fileID: 0}
+      typeID: 135
+      customType: 0
+      isPPtrCurve: 0
+      isIntCurve: 0
+      isSerializeReferenceCurve: 0
+    - serializedVersion: 2
+      path: 3218750188
       attribute: 3305885265
       script: {fileID: 0}
       typeID: 135
@@ -31578,6 +31629,45 @@ AnimationClip:
       m_RotationOrder: 4
     attribute: m_Enabled
     path: mixamorig:Hips/mixamorig:Spine/mixamorig:Spine1/mixamorig:Spine2/mixamorig:RightShoulder/mixamorig:RightArm/mixamorig:RightForeArm/mixamorig:RightHand/mixamorig:RightHandIndex1/mixamorig:RightHandIndex2/HitColider
+    classID: 135
+    script: {fileID: 0}
+    flags: 0
+  - serializedVersion: 2
+    curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0
+        inSlope: Infinity
+        outSlope: Infinity
+        tangentMode: 103
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 0.68333334
+        value: 1
+        inSlope: Infinity
+        outSlope: Infinity
+        tangentMode: 103
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 1.2166667
+        value: 0
+        inSlope: Infinity
+        outSlope: Infinity
+        tangentMode: 103
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_Enabled
+    path: mixamorig:Hips/mixamorig:Spine/mixamorig:Spine1/mixamorig:Spine2/mixamorig:RightShoulder/mixamorig:RightArm/mixamorig:RightForeArm/mixamorig:RightHand/mixamorig:RightHandIndex1/playerKiller
     classID: 135
     script: {fileID: 0}
     flags: 0

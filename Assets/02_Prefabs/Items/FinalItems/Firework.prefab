@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 1842099020799639270}
   - component: {fileID: 8539655787456776392}
   - component: {fileID: 713895275477868653}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Firework
   m_TagString: Untagged
   m_Icon: {fileID: 0}

@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 3730366831828650976}
   - component: {fileID: 5757023244203979199}
   - component: {fileID: 7982419455366451904}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Airhorn
   m_TagString: Untagged
   m_Icon: {fileID: 0}

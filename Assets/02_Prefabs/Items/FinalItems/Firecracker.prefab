@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 323887555216578914}
   - component: {fileID: 5836178854777806591}
   - component: {fileID: 5607792835717001358}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Firecracker
   m_TagString: Untagged
   m_Icon: {fileID: 0}
