@@ -55,6 +55,7 @@ public class UI_Manager : MonoBehaviour
 
 
     public float speedslider = 20f; // speed slider
+    bool movemantActive;
 
     // check list
     /// <summary>
@@ -94,6 +95,7 @@ public class UI_Manager : MonoBehaviour
         UpdateMusicSoundVolume();
         UpdateSFXSoundVolume();
         DeactivateMouse();
+        UpdateScore(Game_Manager.instance.score, Game_Manager.instance.multiplier);
     }
 
     // a few pointes 1. not everything should be inside the update fuction
@@ -103,6 +105,11 @@ public class UI_Manager : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Escape)) // Check for Escape key press
         {
             HandleEscapeKey();
+        }
+        if (PauseMenu.activeSelf && !movemantActive)
+        {
+            Game_Manager.instance.playerMovemant.enabled = false;
+            Game_Manager.instance.playerCamController.enabled = false;
         }
 
         /* // timer in game -->> Ok so this starts at game time , should activate at start! and can be active every second if we want to optimize or every 0.01 seconds. depends. Done with corutines.
@@ -284,6 +291,7 @@ public class UI_Manager : MonoBehaviour
 
     public void UpdateScore(int newScore, int newMultiplier)
     {
+        Debug.Log("Updating score");
         score.text =$"Score: {newScore}";
         multiplier.text = $"{newMultiplier} x";
     }

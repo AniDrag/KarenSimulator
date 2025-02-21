@@ -5,7 +5,7 @@ public class Spawner : MonoBehaviour
 {
     [Tooltip("Scriptable object of Item list")]
     [SerializeField] ItemSpawnList itemList;
-    [SerializeField] float itemSpawnDelay;
+    [SerializeField] float itemSpawnDelay = 10;
 
     GameObject spawnedItem;
     Transform spawnLocation;
@@ -15,14 +15,14 @@ public class Spawner : MonoBehaviour
     void Start()
     {
         spawnLocation = transform.GetChild(0).transform;
-        SpawnItem();
+        Spawning();
     }
 
     // Update is called once per frame
     void Update()
     {
 
-        if (!itemSpawned &&spawnLocation.childCount == 0)
+        if (!itemSpawned && spawnLocation.childCount == 0)
         {
             itemSpawned = true;
             SpawnItem();
