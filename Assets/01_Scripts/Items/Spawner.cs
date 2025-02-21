@@ -5,47 +5,45 @@ public class Spawner : MonoBehaviour
 {
     [Tooltip("Scriptable object of Item list")]
     [SerializeField] ItemSpawnList itemList;
-    [SerializeField] float itemSpawnDelay = 10;
 
-    GameObject spawnedItem;
-    Transform spawnLocation;
-    int itemIndex;
-    bool itemSpawned;
+    private GameObject spawnedItem;
+    private Transform spawnLocation;
+    private int itemIndex;
+    private float itemSpawnDelay;
+    private bool itemSpawned;
     // Start is called before the first frame update
     void Start()
     {
         spawnLocation = transform.GetChild(0).transform;
         Spawning();
+        itemSpawnDelay = Random.Range(20, 50);
     }
 
     // Update is called once per frame
     void Update()
     {
 
-        if (!itemSpawned && spawnLocation.childCount == 0)
+        if (!itemSpawned && spawnLocation.childCount == 0 && !itemSpawned)
         {
             itemSpawned = true;
-            SpawnItem();
+            StartCoroutine(SpawnItem());
         }
     }
 
     IEnumerator SpawnItem()
     {
         yield return new WaitForSeconds(itemSpawnDelay);
+        Debug.Log("Spawning item");
         Spawning();
         
     }
     void Spawning()
     {
         itemIndex = Random.Range(0, itemList.allSpawnables.Length);
-
+        Debug.Log(" Spawned");
         spawnedItem = Instantiate(itemList.allSpawnables[itemIndex], spawnLocation);
         spawnedItem.transform.SetParent(spawnLocation);
-        spawnedItem.transform.localScale = new Vector3(4, 4, 4);
-        Invoke("ResetSpawn", 1);
-    }
-    void ResetSpawn()
-    {
+        spawnedItem.transform.localScale = new Vector3(4, 4, 4); 
         itemSpawned = false;
     }
     void OnDrawGizmos()

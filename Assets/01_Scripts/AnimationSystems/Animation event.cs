@@ -1,18 +1,21 @@
 using UnityEngine;
-using UnityEngine.Events;
-using System.Threading;
 using System.Collections;
-
+[RequireComponent(typeof(AudioSource))]
 public class Animationevent: MonoBehaviour
 {
     int eventindex;
     [Range(1,10)]
     public float sleepTiem = 2;
     const string triggerEvent = "thisActive";
+    public AudioClip comicSounds;
+    AudioSource source;
 
     private void Start()
     {
-        eventindex = 1;
+        source = GetComponent<AudioSource>();
+        source.clip = comicSounds;
+        source.Play();
+        eventindex = 0;
         StartCoroutine(RunEvents());
     }
     IEnumerator RunEvents() 

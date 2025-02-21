@@ -1,5 +1,4 @@
 using System.Collections;
-using System.Linq;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 /// <summary>
@@ -149,6 +148,7 @@ public class Game_Manager : MonoBehaviour
         if (playerMainHand == null) Debug.LogError("Player Main hand not assigned");
         if (playerSecondaryHand == null) Debug.LogError("Player second hand not assigned");
         if (playerMainHand == null) Debug.LogError("Player Main hand not assigned");
+        if (playerOrientation == null) Debug.LogError("Player Orientation not assigned");
     }
     /// <summary>
     /// Method called when the player dies.

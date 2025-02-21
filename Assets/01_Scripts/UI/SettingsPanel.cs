@@ -1,5 +1,4 @@
 using UnityEngine;
-using UnityEngine.UI;
 
 public class SettingsPanel : MonoBehaviour
 {
@@ -37,7 +36,7 @@ public class SettingsPanel : MonoBehaviour
         switch (index)
         {
             case 0: optionData.CamMoveType = OptionsColection.CameraMovemantTypes.Default; break;
-            case 1: optionData.CamMoveType = OptionsColection.CameraMovemantTypes.InvertVertical; break;
+            case 1: optionData.CamMoveType = OptionsColection.CameraMovemantTypes.InvertHorizontal; break;
 
         }
     }

@@ -48,6 +48,7 @@ public class UI_Manager : MonoBehaviour
 
     // "Privates" anything that shouldnt be seen or used by the Designer onr artist should be under privates
     [Header("--- Debug_Settings Engineer acces only ---")]
+    public GameObject runTimeUI;
     public GameObject PauseMenu; // pause menu to go to main, settings, etc
     public GameObject InfoPanel;
     public GameObject SettingsPanel;
@@ -106,10 +107,25 @@ public class UI_Manager : MonoBehaviour
         {
             HandleEscapeKey();
         }
-        if (PauseMenu.activeSelf && !movemantActive)
+        if (Input.GetKeyDown(KeyCode.Tab) && runTimeUI.activeSelf) // Check for Escape key press
         {
+            runTimeUI.SetActive(false);
+        }
+        else if (Input.GetKeyDown(KeyCode.Tab) && !runTimeUI.activeSelf)
+        {
+            runTimeUI.SetActive(true);
+        }
+            if (PauseMenu.activeSelf && !movemantActive)
+        {
+            movemantActive = true;
             Game_Manager.instance.playerMovemant.enabled = false;
             Game_Manager.instance.playerCamController.enabled = false;
+        }
+        else if (!PauseMenu.activeSelf && movemantActive)
+        {
+            movemantActive = false;
+            Game_Manager.instance.playerMovemant.enabled = true;
+            Game_Manager.instance.playerCamController.enabled = true;
         }
 
         /* // timer in game -->> Ok so this starts at game time , should activate at start! and can be active every second if we want to optimize or every 0.01 seconds. depends. Done with corutines.
