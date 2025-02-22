@@ -4,8 +4,14 @@ MonoImporter:
   externalObjects: {}
   serializedVersion: 2
   defaultReferences:
+  - defailtWalkingSFX: {fileID: 8300000, guid: eaa3960789594e145b1a25309e3837f9, type: 3}
+  - walkingSFX: {fileID: 8300000, guid: eaa3960789594e145b1a25309e3837f9, type: 3}
+  - runningSFX: {fileID: 8300000, guid: 476c78425942c934abf2a73d4ca46992, type: 3}
+  - jumpingSFX: {instanceID: 0}
+  - crouchMovingSFX: {fileID: 8300000, guid: eaa3960789594e145b1a25309e3837f9, type: 3}
   - orientationTransform: {instanceID: 0}
   - groundCheckTransform: {instanceID: 0}
+  - playerSfx: {instanceID: 0}
   - KEYS: {fileID: 11400000, guid: 225f6f3bdacd85240b737766ab43600f, type: 2}
   executionOrder: 0
   icon: {instanceID: 0}

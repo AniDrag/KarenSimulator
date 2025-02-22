@@ -70,7 +70,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0
@@ -175,7 +175,7 @@ MonoBehaviour:
   annoyanceAmount: 0
   startItemActivation: 0
   invokeSoundAfterSeconds: 0
-  destroyAfterActivation: 0
+  destroyAfterActivation: 2
 --- !u!114 &5607792835717001358
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -195,7 +195,7 @@ MonoBehaviour:
   itemMass: 1
   itemEffectRange: 10
   startItemActivation: 0
-  invokeSoundAfterSeconds: 0
+  invokeSoundAfterSeconds: 0.1
   destroyAfterActivation: 0
   buildingsLayer:
     serializedVersion: 2

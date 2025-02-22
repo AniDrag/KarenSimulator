@@ -70,11 +70,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   annoyance: 0
-  maxAnnoyance: 0
+  maxAnnoyance: 100
   hitRange: 2
   movemantSpeed: 15
-  aiAnimator: {fileID: 0}
-  attackAnimation: {fileID: 7400000, guid: 20660bc069b288b4399dc91b188deda8, type: 2}
+  aiAnimator: {fileID: 2567443245080283063}
+  attackAnimation: {fileID: 7400000, guid: 60e285a68bc0d1a4a978fe5d7219c48d, type: 2}
   aiLogicUpdateRate: 0.01
   Home: {fileID: 0}
 --- !u!136 &6470183450088552905
@@ -232,6 +232,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -6808822763172159190, guid: efa8bb41ffb26d44497b264549777c41,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: e610e95cce744ee47bcc5e6c97075f1a, type: 2}
     - target: {fileID: 919132149155446097, guid: efa8bb41ffb26d44497b264549777c41,
         type: 3}
       propertyPath: m_Name

@@ -70,11 +70,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   annoyance: 0
-  maxAnnoyance: 0
+  maxAnnoyance: 100
   hitRange: 2
   movemantSpeed: 15
-  aiAnimator: {fileID: 0}
-  attackAnimation: {fileID: 7400000, guid: 20660bc069b288b4399dc91b188deda8, type: 2}
+  aiAnimator: {fileID: 7927713721681640543}
+  attackAnimation: {fileID: 7400000, guid: 60e285a68bc0d1a4a978fe5d7219c48d, type: 2}
   aiLogicUpdateRate: 0.01
   Home: {fileID: 0}
 --- !u!136 &6470183450088552905
@@ -237,6 +237,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: npc 1 var 3_Riged
       objectReference: {fileID: 0}
+    - target: {fileID: 4941112445651400988, guid: 984e7931db4ff3d4d9687a10d51f3536,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: e610e95cce744ee47bcc5e6c97075f1a, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:

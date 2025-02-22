@@ -51,6 +51,7 @@ public class StatsAI : MonoBehaviour
         agentAI.speed = movemantSpeed;
         agentAI.stoppingDistance = hitRange;
         agentAI.angularSpeed = 1000;
+        maxAnnoyance = 100;
         annoyance = maxAnnoyance;
         FindPlayer();
         aiAnimator = transform.GetChild(0).GetComponent<Animator>();
@@ -67,7 +68,7 @@ public class StatsAI : MonoBehaviour
         {
             aiAnimator.SetBool(isMoving, agentAI.velocity.magnitude > 0.01f);
             aiAnimator.SetBool(isAttackig, attacked);
-            returniingHome = annoyance == 0;
+            returniingHome = annoyance <= 0;
             // If not attacking, move towards the target
             if (!returniingHome)
             {
@@ -152,8 +153,8 @@ public class StatsAI : MonoBehaviour
 
     IEnumerator DecreaseAnnoyance()
     {
-        WaitForSeconds time = new WaitForSeconds(1);
-        while (annoyance >= 0)
+        WaitForSeconds time = new WaitForSeconds(2);
+        while (annoyance > 0)
         {
             annoyance -= 1;
             yield return time;

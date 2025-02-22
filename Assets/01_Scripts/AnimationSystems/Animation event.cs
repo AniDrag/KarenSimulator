@@ -20,13 +20,12 @@ public class Animationevent: MonoBehaviour
     }
     IEnumerator RunEvents() 
     {
-        yield return new WaitForSeconds(sleepTiem);
-
         if (transform.childCount -1 >= eventindex)
         {
             transform.GetChild(eventindex).gameObject.SetActive(true);
             transform.GetChild(eventindex).gameObject.GetComponent<Animator>().SetTrigger(triggerEvent);
             eventindex++;
+            yield return new WaitForSeconds(sleepTiem);
             StartCoroutine(RunEvents());
         }
     }

@@ -103,7 +103,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxAnnoyance: 100
   currentAnnoyance: 0
-  esidentSpawnList: {fileID: 11400000, guid: 2bae1eb8688d18445a209eb8e85de8c3, type: 2}
+  esidentSpawnList: {fileID: 11400000, guid: f3e4b2479f148144a8d527b62fbdeea5, type: 2}
   timeBetweenesidentspawns: 3
   residentCount: 8
   maxWaves: 4

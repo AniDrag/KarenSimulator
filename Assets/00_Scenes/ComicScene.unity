@@ -1434,8 +1434,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f893dae96a14be04594627f757e94248, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sleepTiem: 2
-  comicSounds: {fileID: 0}
+  sleepTiem: 5
+  comicSounds: {fileID: 8300000, guid: 382d955473790d941826db8ff62d37de, type: 3}
 --- !u!82 &1844052016
 AudioSource:
   m_ObjectHideFlags: 0

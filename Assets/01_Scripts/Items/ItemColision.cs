@@ -87,6 +87,8 @@ public class ItemColision : MonoBehaviour
     private void PlaySound()
     {
         // Add your sound-playing logic here
+        Game_Manager.instance.SoundFXSource.clip = itemAudio;
+        Game_Manager.instance.SoundFXSource.Play();        
         //Debug.Log("Playing sound effect");
     }
 

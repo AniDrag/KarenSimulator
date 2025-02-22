@@ -86,6 +86,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   KEYS: {fileID: 11400000, guid: 225f6f3bdacd85240b737766ab43600f, type: 2}
+  UImanager: {fileID: 0}
+  remainingTime: 0
 --- !u!114 &3879226179281171455
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -98,12 +100,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 01f679f8ce01e8d40a4c1185c106f80c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  defaultSpeed: 11
-  runSpeed: 16
-  walkSpeed: 7
-  crouchSpeed: 5
-  jumpForce: 5.5
+  defaultSpeed: 30
+  runSpeed: 40
+  walkSpeed: 20
+  crouchSpeed: 15
+  jumpForce: 8
   jumpResetTimer: 0.2
+  _downForce: 9.8
   groundCheckRadious: 0.2
   GroundCheckUpdateRate: 0.1
   groundMask:
@@ -115,11 +118,11 @@ MonoBehaviour:
   airDrag: 0.2
   playerHeight: 1.7
   playerRadious: 0.3
-  defailtWalkingSFX: {fileID: 8300000, guid: 76fd5a3f5b23792408d513a14b9c832b, type: 3}
-  walkingSFX: {fileID: 8300000, guid: 76fd5a3f5b23792408d513a14b9c832b, type: 3}
-  runningSFX: {fileID: 8300000, guid: 76fd5a3f5b23792408d513a14b9c832b, type: 3}
+  defailtWalkingSFX: {fileID: 8300000, guid: eaa3960789594e145b1a25309e3837f9, type: 3}
+  walkingSFX: {fileID: 8300000, guid: eaa3960789594e145b1a25309e3837f9, type: 3}
+  runningSFX: {fileID: 8300000, guid: 476c78425942c934abf2a73d4ca46992, type: 3}
   jumpingSFX: {fileID: 8300000, guid: 76fd5a3f5b23792408d513a14b9c832b, type: 3}
-  crouchMovingSFX: {fileID: 8300000, guid: 76fd5a3f5b23792408d513a14b9c832b, type: 3}
+  crouchMovingSFX: {fileID: 8300000, guid: eaa3960789594e145b1a25309e3837f9, type: 3}
   orientationTransform: {fileID: 6120375191906732730}
   groundCheckTransform: {fileID: 283109214613399837}
   playerSfx: {fileID: 6923440990522217067}

@@ -9,6 +9,8 @@ public class EndSceneStats : MonoBehaviour
     Game_Manager GM;
     private void Start()
     {
+        Cursor.visible = true;
+        Cursor.lockState = CursorLockMode.Confined;
         if (GM != null)
         {
             GM = Game_Manager.instance;
@@ -23,5 +25,15 @@ public class EndSceneStats : MonoBehaviour
     public void BackToMenu()
     {
         SceneManager.LoadSceneAsync(0);
+    }
+
+    public void RestartScene()
+    {
+        SceneManager.LoadSceneAsync(2);
+    }
+
+    public void ExitGame()
+    {
+        Application.Quit();
     }
 }
