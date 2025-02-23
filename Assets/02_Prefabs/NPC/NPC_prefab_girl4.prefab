@@ -69,10 +69,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 967e46d4521468c43a92ed98bcbf8161, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  annoyance: 0
-  maxAnnoyance: 100
   hitRange: 2
   movemantSpeed: 15
+  annoyance: 0
+  maxAnnoyance: 100
+  decreaseAnnoyanceSpeed: 0.5
+  decreaseAmount: 2
   aiAnimator: {fileID: 2567443245080283063}
   attackAnimation: {fileID: 7400000, guid: 60e285a68bc0d1a4a978fe5d7219c48d, type: 2}
   aiLogicUpdateRate: 0.01

@@ -26,10 +26,14 @@ using UnityEngine.AI;
 public class StatsAI : MonoBehaviour
 {
     [Header("AI settings")]
-    [SerializeField] int annoyance;
-    [SerializeField] int maxAnnoyance;
     [SerializeField] float hitRange;
     [SerializeField] float movemantSpeed;
+    [Header("Annoyance settings")]
+    [SerializeField] int annoyance;
+    [SerializeField] int maxAnnoyance;
+    [SerializeField] float decreaseAnnoyanceSpeed;
+    [SerializeField] int decreaseAmount;
+    [Header("Animation settings")]
     [Tooltip("The first child should have the animator on them selves!! so add the Resident rig as teh first child kak must be on the top")]
     [SerializeField] Animator aiAnimator;
     [SerializeField] AnimationClip attackAnimation;
@@ -145,7 +149,7 @@ public class StatsAI : MonoBehaviour
         if (annoyance > 100)
         {
             annoyance = 100;
-            Game_Manager.instance.score += 50;
+            Game_Manager.instance._score.score += 50;
         }
         StopCoroutine(DecreaseAnnoyance());
         StartCoroutine(DecreaseAnnoyance());
@@ -153,10 +157,10 @@ public class StatsAI : MonoBehaviour
 
     IEnumerator DecreaseAnnoyance()
     {
-        WaitForSeconds time = new WaitForSeconds(2);
+        WaitForSeconds time = new WaitForSeconds(decreaseAnnoyanceSpeed);
         while (annoyance > 0)
         {
-            annoyance -= 1;
+            annoyance -= decreaseAmount;
             yield return time;
         }
     }

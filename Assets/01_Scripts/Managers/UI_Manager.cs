@@ -96,7 +96,7 @@ public class UI_Manager : MonoBehaviour
         UpdateMusicSoundVolume();
         UpdateSFXSoundVolume();
         DeactivateMouse();
-        UpdateScore(Game_Manager.instance.score, Game_Manager.instance.multiplier);
+        UpdateScore(0, 0);
     }
 
     // a few pointes 1. not everything should be inside the update fuction

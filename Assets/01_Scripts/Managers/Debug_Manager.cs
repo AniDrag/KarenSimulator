@@ -25,7 +25,7 @@ public class Debug_Manager : MonoBehaviour
     }
     private void Start()
     {
-        scoreCounter.text = $"score: {Game_Manager.instance.score}";
+        scoreCounter.text = $"score: {Game_Manager.instance._score.score}";
         multiplier.text = $"x: {Game_Manager.instance.multiplier}";
     }
 

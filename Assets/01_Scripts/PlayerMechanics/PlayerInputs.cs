@@ -3,10 +3,12 @@ using UnityEngine;
 /// The PlayerInputs class handles user input for equipping, throwing, and using items in the game. 
 /// It manages the interaction between the player and their inventory, enabling item usage and aiming behavior.
 /// </summary>
+[RequireComponent(typeof(AudioSource))]
 public class PlayerInputs : MonoBehaviour
 {
 
     [SerializeField] KeyBinds KEYS; // Key bindings for player input configuration
+    [SerializeField] AudioClip aimingSound;
 
     // References
     private Game_Manager GM; // Reference to the GameManager for accessing game state
@@ -20,11 +22,15 @@ public class PlayerInputs : MonoBehaviour
     private bool isConsumable = false; // Whether the equipped item is consumable
     private bool isThrowable = false; // Whether the equipped item is throwable
     
-    public UI_Manager UImanager;
-    public float remainingTime;
+    //private UI_Manager UImanager;
+    private AudioSource audioSource;
+   // public float remainingTime;
     // Initializes references and states at the start of the game.
     void Start()
     {
+        audioSource = GetComponent<AudioSource>();
+        audioSource.playOnAwake = false;
+        audioSource.clip = aimingSound;
         GM = Game_Manager.instance;
         hand = GM.playerMainHand;
         fpsCamera = GM.playerCamera;
@@ -49,6 +55,7 @@ public class PlayerInputs : MonoBehaviour
         {
             if (isThrowable && isAiming)
             {
+                audioSource.Stop();
                 ThrowItem();
             }
             else if (isConsumable)
@@ -205,6 +212,7 @@ public class PlayerInputs : MonoBehaviour
         if (UI_Manager.instance == null) Debug.Log("has no Ui Manaer");
         UI_Manager.instance.activateSliders = true;
         isAiming = true;
+        audioSource.Play();
         //Debug.Log("Entered Aiming Mode, activate Danger slider and aim slider here");
 
         // Optional: Add logic to adjust camera or player stance for aiming

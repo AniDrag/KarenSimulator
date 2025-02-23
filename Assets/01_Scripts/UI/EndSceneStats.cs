@@ -6,20 +6,23 @@ public class EndSceneStats : MonoBehaviour
 {
     [SerializeField] TMP_Text scoreText;
     [SerializeField] TMP_Text timeLivedText;
-    Game_Manager GM;
+    [SerializeField] TMP_Text highScoreText;
+    [SerializeField] TMP_Text bestTimeText;
+    [SerializeField] ScoreCollection scores;
     private void Start()
     {
-        Cursor.visible = true;
         Cursor.lockState = CursorLockMode.Confined;
-        if (GM != null)
+        Cursor.visible = true;
+        if (scores != null)
         {
-            GM = Game_Manager.instance;
-            scoreText.text = $"SCORE: {GM.score}";
-            timeLivedText.text = $"TIME LIVED: {GM.gameTime}";
+            CalculateCurrentTime();
+            scoreText.text = $"SCORE: {scores.currentScore}";
+            highScoreText.text = $"HIGH SCORE: {scores.highScore}";
+            CalculateBestTime();
         }
         else
         {
-            Debug.LogError("No Game manager!!");
+            Debug.LogError("No Score collection Scriptable game object assigned!!");
         }
     }
     public void BackToMenu()
@@ -35,5 +38,17 @@ public class EndSceneStats : MonoBehaviour
     public void ExitGame()
     {
         Application.Quit();
+    }
+    void CalculateBestTime()
+    {
+        int bestMinutes = Mathf.FloorToInt(scores.bestTime / 60);
+        int bestSeconds = Mathf.FloorToInt(scores.bestTime % 60);
+        bestTimeText.text = $"BEST TIME: " + string.Format("{0:00}:{0:00}", bestMinutes, bestSeconds);
+    }
+    void CalculateCurrentTime()
+    {
+        int Minutes = Mathf.FloorToInt(scores.currentTime / 60);
+        int Seconds = Mathf.FloorToInt(scores.currentTime % 60);
+        timeLivedText.text = $"TIME LIVED: " + string.Format("{0:00}:{1:00}", Minutes, Seconds);
     }
 }

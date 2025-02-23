@@ -10,11 +10,12 @@ public class ScoreCollection : ScriptableObject
 {
     [Tooltip("stores the highest score")]
     public int highScore;
+    public int currentScore;
     [Tooltip("stores the time")]
-    public float LongestTimeAlive;
+    public float bestTime;
+    public float currentTime;
 
     [Tooltip("stores all score")]
-    public List<int> scoresRuns;
-    public List<int> timescores;
+    public List<StoringScores> allScores = new List<StoringScores>();
 }
     

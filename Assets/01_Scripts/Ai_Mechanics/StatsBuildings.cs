@@ -83,6 +83,7 @@ public class StatsBuildings : MonoBehaviour
             counter++;
             int index = Random.Range(0, esidentSpawnList.allResidentVariants.Length);
             GameObject resident = Instantiate(esidentSpawnList.allResidentVariants[index], aiSpawnocation);
+            Game_Manager.instance.IncreaseMultiplier();
             StatsAI residentStats = resident.GetComponent<StatsAI>();
             residentStats.Home = gameObject;
             yield return new WaitForSeconds(timeBetweenesidentspawns);

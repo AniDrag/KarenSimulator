@@ -87,6 +87,7 @@ public class PlayerMovement : MonoBehaviour
     private Vector3 player_move_direction;
     private Vector3 _clamp_velocity;
     Transform cam;// camera position transform
+    bool isPlayingSound;
 
     void Start()
     {
@@ -147,9 +148,9 @@ public class PlayerMovement : MonoBehaviour
     {
         player_input_horizontal = Input.GetAxisRaw("Horizontal");
         player_input_vertical = Input.GetAxisRaw("Vertical");
-
+        player_move_direction = (player_input_vertical * orientationTransform.forward + player_input_horizontal * orientationTransform.right).normalized;
         //--Sprint-------------------------------------------------------
-        
+
         isRunning = Input.GetKey(KEYS.sprintHold);
         //--Crouch-------------------------------------------------------
 
@@ -160,15 +161,16 @@ public class PlayerMovement : MonoBehaviour
         if (Input.GetKeyDown(KEYS.jump) && isGrounded && canJump)
         {
             // play jump sound
+            playerSfx.PlayOneShot(jumpingSFX);
             canJump = false;
             Jump();
         }
+        SpeedVelocitySetter();
     }
 
     void PlayerMovemant()
     {
-        player_move_direction = player_input_vertical * orientationTransform.forward + player_input_horizontal * orientationTransform.right;
-        SpeedVelocitySetter();
+        
         if (player_input_horizontal != 0 || player_input_vertical != 0)
         {
             if (isGrounded)
@@ -221,27 +223,42 @@ public class PlayerMovement : MonoBehaviour
 
     void SpeedVelocitySetter()
     {
+        if (player_move_direction == Vector3.zero && isGrounded)
+        {
+            if (isPlayingSound)
+            {
+                isPlayingSound = false;
+                playerSfx.Stop();
+            }
+        }
+        else if (!isPlayingSound)
+        {
+            isPlayingSound = true;
+            playerSfx.Play();
+        }
+
+        // Set speed and sound based on player state
         if (isRunning)
         {
-            //play sfx Running
+            Debug.Log("Running");
             playerSfx.clip = runningSFX;
             _speed = runSpeed * speedMultiplier;
         }
         else if (isCrouching)
         {
-            // play sfx crouching
+            Debug.Log("Crouching");
             playerSfx.clip = crouchMovingSFX;
             _speed = crouchSpeed * speedMultiplier;
         }
         else if (isWalking)
         {
-            //play sfx slow walking
+            Debug.Log("Walking");
             playerSfx.clip = walkingSFX;
             _speed = walkSpeed * speedMultiplier;
         }
         else
         {
-            // play sfx normal walking
+            Debug.Log("Default Walking");
             playerSfx.clip = defailtWalkingSFX;
             _speed = defaultSpeed * speedMultiplier;
         }

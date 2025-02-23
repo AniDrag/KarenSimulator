@@ -14,19 +14,17 @@ public class Game_Manager : MonoBehaviour
 
     private void Awake()
     {
-        // Initialize AudioSource component
-        SoundFXSource = GetComponent<AudioSource>();
 
         // Ensure only one instance of the Game_Manager exists in the game
         if (Game_Manager.instance == null)
         {
             instance = this;
-            DontDestroyOnLoad(gameObject);
         }
         else
         {
             Destroy(gameObject);
         }
+        
     }
 
     [Header("----- Player References ----")]
@@ -63,10 +61,9 @@ public class Game_Manager : MonoBehaviour
 
     [Header("----- Score Stats ----")]
     public ScoreCollection playerScores; // Holds the player's scores.
-    public int playerLives = 2; // The number of lives the player has.
+    public bool playerLives = true; // The number of lives the player has.
     public int multiplier = 1; // The multiplier for the player's score.
-    public int score; // The current score of the player.
-    public float gameTime; // The time elapsed in the game.
+    public StoringScores _score;
 
     [Header("----- Debug ----")]
     [Tooltip("controls the delay before we are teleported to death scene")]
@@ -80,6 +77,7 @@ public class Game_Manager : MonoBehaviour
     /// </summary>
     void Start()
     {
+        _score = new StoringScores();// reset upon new game
         SetParameters();
         // Check the current active scene and set the appropriate game state
         if (SceneManager.GetActiveScene().buildIndex == 0)
@@ -118,19 +116,20 @@ public class Game_Manager : MonoBehaviour
         if (!isDead) // Ensure the player is not already dead
         {
             Debug.Log("Hand exploded");
-            playerLives-= 1; // Decrease player lives on explosion
 
-            if (playerLives == 0)
+            if (!playerLives)
             {
                 Debug.Log("Last hand exploded");
                 PlayerDied(); // Trigger player death if no lives remain
             }
             else
             {
+                playerLives = false; // Decrease player lives on explosion
                 Debug.Log("Switching hand location");
                 SoundFXSource.PlayOneShot(explosionSFX); // Play explosion sound
                 playerMainHand.transform.position = playerSecondaryHand.transform.position; // Switch hand position
             }
+            
         }
     }
 
@@ -139,7 +138,8 @@ public class Game_Manager : MonoBehaviour
         playerCamController = playerCamera.GetComponent<CameraControler>();
         playerInputs = player.GetComponent<PlayerInputs>();
         playerMovemant = player.GetComponent<PlayerMovement>();
-        playerLives = 2;
+        playerLives = true;
+        SoundFXSource = GetComponent<AudioSource>();
         if (player == null) Debug.LogError("Player transform not assigend");
         if (playerMovemant == null) Debug.LogError("Player movemant not assigend");
         if (playerInputs == null) Debug.LogError("Player Inputs not assigend");
@@ -160,22 +160,29 @@ public class Game_Manager : MonoBehaviour
         {
             Debug.Log("Player Died");
             isDead = true; // Set dead flag
-            playerScores.scoresRuns.Add(score); // Add current score to the player's scores
+            playerScores.allScores.Add(_score); // Add current score to the player's scores
             if(UI_Manager.instance != null)
             {
-                gameTime = UI_Manager.instance.timerInGame;
-            }
+                _score.time = UI_Manager.instance.timerInGame;
+                playerScores.currentTime = _score.time;
+            } // Get time value from UI manager
             else
             {
                 Debug.LogError("No Ui manager in scene");
             }
-           //playerScores.timescores.Add();
+           
+            playerScores.currentScore = _score.score;
             Debug.Log("Saving score");
 
-            if (score > playerScores.highScore) // Check if the player achieved a high score
+            if (_score.score > playerScores.highScore) // Check if the player achieved a high score
             {
                 Debug.Log("Saving high score");
-                playerScores.highScore = score; // Save new high score
+                playerScores.highScore = _score.score; // Save new high score
+            }
+            if (_score.time > playerScores.bestTime) // Check if the player achieved a high score
+            {
+                Debug.Log("Saving high score");
+                playerScores.bestTime = _score.time; // Save new best rime
             }
 
             StartCoroutine(InvokeDeth()); // Start death transition
@@ -199,7 +206,7 @@ public class Game_Manager : MonoBehaviour
     {
         Debug.Log("Multiplier increased");
         multiplier++; // Increase score multiplier
-        UI_Manager.instance.UpdateScore(score, multiplier);
+        UI_Manager.instance.UpdateScore(_score.score, multiplier);
     }
 
     /// <summary>
@@ -211,7 +218,7 @@ public class Game_Manager : MonoBehaviour
         {
             Debug.Log("Multiplier decreased");
             multiplier--; // Decrease score multiplier
-            UI_Manager.instance.UpdateScore(score, multiplier);
+            UI_Manager.instance.UpdateScore(_score.score, multiplier);
         }
     }
 
@@ -221,9 +228,9 @@ public class Game_Manager : MonoBehaviour
     public void GetPoints(int annoyanceAmount)
     {
         Debug.Log("Acquired Score: " + annoyanceAmount * multiplier);
-        score += annoyanceAmount * multiplier; // Add points to the current score
+        _score.score += annoyanceAmount * multiplier; // Add points to the current score
 
-        UI_Manager.instance.UpdateScore(score, multiplier);
+        UI_Manager.instance.UpdateScore(_score.score, multiplier);
     }
 }
 
