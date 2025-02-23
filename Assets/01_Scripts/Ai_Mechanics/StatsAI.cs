@@ -102,10 +102,12 @@ public class StatsAI : MonoBehaviour
                 {
                     Debug.LogWarning("no home assigned to" + gameObject.name);
                 }
-                if (Vector3.Distance(target.position, transform.position) <= 8)
+                if (Vector3.Distance(target.position, transform.position) <= 3)
                 {
                     
                     Home.GetComponent<StatsBuildings>().CitizenReturned();
+                    Game_Manager.instance.DecreaseMultiplier();
+                    Debug.Log("I went home");
                     Destroy(gameObject);
                 }
             }

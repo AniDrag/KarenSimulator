@@ -29,7 +29,7 @@ public class Game_Manager : MonoBehaviour
 
     [Header("----- Player References ----")]
     public Transform player; // Reference to the player object.
-    public Transform playerOrientation; // Reference to the player’s orientation (camera or direction).
+    public Transform playerOrientation; // Reference to the playerï¿½s orientation (camera or direction).
     public PlayerMovement playerMovemant; // Reference to the player movement script.
     public PlayerInputs playerInputs; // Reference to the player input handling script.
 

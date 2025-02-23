@@ -16,7 +16,7 @@ public class Spawner : MonoBehaviour
     {
         spawnLocation = transform.GetChild(0).transform;
         Spawning();
-        itemSpawnDelay = Random.Range(20, 50);
+        itemSpawnDelay = Random.Range(10, 25);
     }
 
     // Update is called once per frame

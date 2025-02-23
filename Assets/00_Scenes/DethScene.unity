@@ -425,7 +425,7 @@ PrefabInstance:
     - target: {fileID: 747374279086031290, guid: 42f948e6a688a9d449ecc5b4acd6ce13,
         type: 3}
       propertyPath: m_text
-      value: You got caught
+      value: got silenced
       objectReference: {fileID: 0}
     - target: {fileID: 747374279086031290, guid: 42f948e6a688a9d449ecc5b4acd6ce13,
         type: 3}
@@ -643,22 +643,37 @@ PrefabInstance:
     - target: {fileID: 5994055273280228822, guid: 42f948e6a688a9d449ecc5b4acd6ce13,
         type: 3}
       propertyPath: m_Color.b
-      value: 0.43529415
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5994055273280228822, guid: 42f948e6a688a9d449ecc5b4acd6ce13,
         type: 3}
       propertyPath: m_Color.g
-      value: 0.53333336
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5994055273280228822, guid: 42f948e6a688a9d449ecc5b4acd6ce13,
         type: 3}
       propertyPath: m_Color.r
-      value: 0.6509804
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6665135003138187105, guid: 42f948e6a688a9d449ecc5b4acd6ce13,
         type: 3}
       propertyPath: m_Name
       value: CurrentScore
+      objectReference: {fileID: 0}
+    - target: {fileID: 7006219819627647198, guid: 42f948e6a688a9d449ecc5b4acd6ce13,
+        type: 3}
+      propertyPath: m_Colors.m_NormalColor.b
+      value: 0.43529415
+      objectReference: {fileID: 0}
+    - target: {fileID: 7006219819627647198, guid: 42f948e6a688a9d449ecc5b4acd6ce13,
+        type: 3}
+      propertyPath: m_Colors.m_NormalColor.g
+      value: 0.53333336
+      objectReference: {fileID: 0}
+    - target: {fileID: 7006219819627647198, guid: 42f948e6a688a9d449ecc5b4acd6ce13,
+        type: 3}
+      propertyPath: m_Colors.m_NormalColor.r
+      value: 0.6509804
       objectReference: {fileID: 0}
     - target: {fileID: 7006219819627647198, guid: 42f948e6a688a9d449ecc5b4acd6ce13,
         type: 3}

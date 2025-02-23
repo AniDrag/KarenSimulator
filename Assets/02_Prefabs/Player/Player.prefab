@@ -86,8 +86,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   KEYS: {fileID: 11400000, guid: 225f6f3bdacd85240b737766ab43600f, type: 2}
-  UImanager: {fileID: 0}
-  remainingTime: 0
+  aimingSound: {fileID: 0}
 --- !u!114 &3879226179281171455
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -121,7 +120,7 @@ MonoBehaviour:
   defailtWalkingSFX: {fileID: 8300000, guid: eaa3960789594e145b1a25309e3837f9, type: 3}
   walkingSFX: {fileID: 8300000, guid: eaa3960789594e145b1a25309e3837f9, type: 3}
   runningSFX: {fileID: 8300000, guid: 476c78425942c934abf2a73d4ca46992, type: 3}
-  jumpingSFX: {fileID: 8300000, guid: 76fd5a3f5b23792408d513a14b9c832b, type: 3}
+  jumpingSFX: {fileID: 0}
   crouchMovingSFX: {fileID: 8300000, guid: eaa3960789594e145b1a25309e3837f9, type: 3}
   orientationTransform: {fileID: 6120375191906732730}
   groundCheckTransform: {fileID: 283109214613399837}
